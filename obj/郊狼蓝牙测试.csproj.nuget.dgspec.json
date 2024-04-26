@@ -1,0 +1,198 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\郊狼蓝牙测试.csproj": {}
+  },
+  "projects": {
+    "D:\\VS\\AmoeetAllPrograms\\AAP\\FFmpeg\\我的多功能类库.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\VS\\AmoeetAllPrograms\\AAP\\FFmpeg\\我的多功能类库.csproj",
+        "projectName": "我的多功能类库",
+        "projectPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\FFmpeg\\我的多功能类库.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "D:\\VS\\AmoeetAllPrograms\\AAP\\ImageListView\\ImageListView.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\VS\\AmoeetAllPrograms\\AAP\\ImageListView\\ImageListView.csproj",
+        "projectName": "ImageListView",
+        "projectPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\ImageListView\\ImageListView.csproj",
+        "frameworks": {
+          "net35": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net35": {}
+      }
+    },
+    "D:\\VS\\AmoeetAllPrograms\\AAP\\LibAudioVisualizerNetFW48\\LibAudioVisualizerNetFW48.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\VS\\AmoeetAllPrograms\\AAP\\LibAudioVisualizerNetFW48\\LibAudioVisualizerNetFW48.csproj",
+        "projectName": "LibAudioVisualizerNetFW48",
+        "projectPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\LibAudioVisualizerNetFW48\\LibAudioVisualizerNetFW48.csproj",
+        "packagesPath": "C:\\Users\\Emita\\.nuget\\packages\\",
+        "outputPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\LibAudioVisualizerNetFW48\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Emita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\VS\\downkyi-main\\third_party": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "D:\\VS\\AmoeetAllPrograms\\AAP\\LibDynamicsNetFW48\\LibDynamicsNetFW48.csproj": {
+                "projectPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\LibDynamicsNetFW48\\LibDynamicsNetFW48.csproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "FftSharp": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\VS\\AmoeetAllPrograms\\AAP\\LibDynamicsNetFW48\\LibDynamicsNetFW48.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\VS\\AmoeetAllPrograms\\AAP\\LibDynamicsNetFW48\\LibDynamicsNetFW48.csproj",
+        "projectName": "LibDynamicsNetFW48",
+        "projectPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\LibDynamicsNetFW48\\LibDynamicsNetFW48.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\郊狼蓝牙测试.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\郊狼蓝牙测试.csproj",
+        "projectName": "郊狼蓝牙测试",
+        "projectPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\郊狼蓝牙测试.csproj",
+        "packagesPath": "C:\\Users\\Emita\\.nuget\\packages\\",
+        "outputPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Emita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\VS\\downkyi-main\\third_party": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "D:\\VS\\AmoeetAllPrograms\\AAP\\FFmpeg\\我的多功能类库.csproj": {
+                "projectPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\FFmpeg\\我的多功能类库.csproj"
+              },
+              "D:\\VS\\AmoeetAllPrograms\\AAP\\ImageListView\\ImageListView.csproj": {
+                "projectPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\ImageListView\\ImageListView.csproj"
+              },
+              "D:\\VS\\AmoeetAllPrograms\\AAP\\LibAudioVisualizerNetFW48\\LibAudioVisualizerNetFW48.csproj": {
+                "projectPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\LibAudioVisualizerNetFW48\\LibAudioVisualizerNetFW48.csproj"
+              },
+              "D:\\VS\\AmoeetAllPrograms\\AAP\\LibDynamicsNetFW48\\LibDynamicsNetFW48.csproj": {
+                "projectPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\LibDynamicsNetFW48\\LibDynamicsNetFW48.csproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "NAudio": {
+              "target": "Package",
+              "version": "[2.2.1, )"
+            },
+            "System.Runtime.WindowsRuntime": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
