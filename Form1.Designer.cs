@@ -297,6 +297,9 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.RSSI_trackBar)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1623,9 +1626,9 @@
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(614, 166);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(11, 12);
+            this.label27.Size = new System.Drawing.Size(17, 12);
             this.label27.TabIndex = 54;
-            this.label27.Text = "0";
+            this.label27.Text = "10";
             // 
             // B1_4
             // 
@@ -1644,9 +1647,9 @@
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(614, 126);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(11, 12);
+            this.label28.Size = new System.Drawing.Size(17, 12);
             this.label28.TabIndex = 53;
-            this.label28.Text = "0";
+            this.label28.Text = "10";
             // 
             // B1_3
             // 
@@ -1665,9 +1668,9 @@
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(614, 87);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(11, 12);
+            this.label29.Size = new System.Drawing.Size(17, 12);
             this.label29.TabIndex = 52;
-            this.label29.Text = "0";
+            this.label29.Text = "10";
             // 
             // B1_2
             // 
@@ -1686,9 +1689,9 @@
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(614, 45);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(11, 12);
+            this.label30.Size = new System.Drawing.Size(17, 12);
             this.label30.TabIndex = 51;
-            this.label30.Text = "0";
+            this.label30.Text = "10";
             // 
             // B1_1
             // 
@@ -1724,36 +1727,36 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(614, 166);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(11, 12);
+            this.label22.Size = new System.Drawing.Size(17, 12);
             this.label22.TabIndex = 46;
-            this.label22.Text = "0";
+            this.label22.Text = "10";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(614, 126);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(11, 12);
+            this.label21.Size = new System.Drawing.Size(17, 12);
             this.label21.TabIndex = 45;
-            this.label21.Text = "0";
+            this.label21.Text = "10";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(614, 87);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(11, 12);
+            this.label20.Size = new System.Drawing.Size(17, 12);
             this.label20.TabIndex = 44;
-            this.label20.Text = "0";
+            this.label20.Text = "10";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(614, 45);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(11, 12);
+            this.label19.Size = new System.Drawing.Size(17, 12);
             this.label19.TabIndex = 4;
-            this.label19.Text = "0";
+            this.label19.Text = "10";
             // 
             // A1_4
             // 
@@ -2203,6 +2206,9 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.label37);
+            this.tabPage6.Controls.Add(this.label36);
+            this.tabPage6.Controls.Add(this.panel2);
             this.tabPage6.Controls.Add(this.button23);
             this.tabPage6.Controls.Add(this.button17);
             this.tabPage6.Controls.Add(this.button35);
@@ -2427,9 +2433,9 @@
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(6, 453);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(168, 16);
+            this.checkBox3.Size = new System.Drawing.Size(96, 16);
             this.checkBox3.TabIndex = 55;
-            this.checkBox3.Text = "关闭前自动导出到运行目录";
+            this.checkBox3.Text = "自动导入导出";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // button11
@@ -3184,12 +3190,41 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(196, 458);
+            this.checkBox4.Location = new System.Drawing.Point(166, 453);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(78, 16);
             this.checkBox4.TabIndex = 44;
             this.checkBox4.Text = "checkBox4";
             this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(219, 452);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(241, 241);
+            this.panel2.TabIndex = 44;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this._018_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this._018_MouseMove);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this._018_MouseUp);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(120, 401);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(47, 12);
+            this.label36.TabIndex = 45;
+            this.label36.Text = "label36";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(261, 400);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(47, 12);
+            this.label37.TabIndex = 46;
+            this.label37.Text = "label37";
             // 
             // Form1
             // 
@@ -3314,6 +3349,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.groupBox63.ResumeLayout(false);
             this.groupBox63.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -3636,6 +3672,9 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
     }
 }
 

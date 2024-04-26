@@ -33,6 +33,9 @@ using System.Text.RegularExpressions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Drawing.Drawing2D;
 using Gma.System.MouseKeyHook;
+using Point = System.Drawing.Point;
+using System.Numerics;
+using Panel = System.Windows.Forms.Panel;
 
 
 
@@ -198,6 +201,18 @@ namespace 郊狼蓝牙测试
             CheckForIllegalCrossThreadCalls = false;
             drawAudio = new DrawAudio(panel1, drawingTimer, dataTimer, textBox6);
             初始化波形队列();
+
+
+
+            //测试.DGLab
+
+            string pathss = System.Environment.CurrentDirectory.ToString() + "/测试.DGLab";
+
+            if(checkBox3.Checked )
+               导入(pathss);
+
+
+
         }
 
 
@@ -213,7 +228,7 @@ namespace 郊狼蓝牙测试
 
             string aaa = System.Environment.CurrentDirectory.ToString() + "/测试.DGLab";
 
-
+            if (checkBox3.Checked )
             序列化保存读取.序列化保存<郊狼存档>(a郊狼存档, aaa);
 
 
@@ -1743,11 +1758,13 @@ namespace 郊狼蓝牙测试
 
         private void button13_Click(object sender, EventArgs e)
         {
-            设置测试波形();
-            测试时间 = 0;
-            最大测试时间 = 30;
-            开始测试 = true;
-            timer波形连续输出.Enabled = true;
+            设置测试波形();   
+ 
+            待执行波形列表.Add(测试波形);
+            波形循环触发测试();
+           
+              
+
         }
 
 
@@ -1914,47 +1931,8 @@ namespace 郊狼蓝牙测试
                     //测试.DGLab
 
                     string pathss = System.Environment.CurrentDirectory.ToString() + "/测试.DGLab";
-
-
-                    a郊狼存档 = 序列化保存读取.序列化读取<郊狼存档>(pathss);
-
-                    listBox1.Items.Clear();
-                    foreach (string a in a郊狼存档.DG波形列表.Keys)
-                    {
-                        listBox1.Items.Add(a);
-                    }
-                    listBox2.Items.Clear();
-                    foreach (string a in a郊狼存档.DG波形队列.Keys)
-                    {
-                        listBox2.Items.Add(a);
-                    }
-
-
-                    textBox配置名1C.Text = a郊狼存档.textBox配置名1C;
-                    textBox配置名2C.Text = a郊狼存档.textBox配置名2C;
-                    textBox配置名3C.Text = a郊狼存档.textBox配置名3C;
-                    textBox配置名4C.Text = a郊狼存档.textBox配置名4C;
-                    textBox配置名5C.Text = a郊狼存档.textBox配置名5C;
-
-
-
-
-                    comboBox配置条件1.Text = a郊狼存档.textBox配置条件1C;
-                    comboBox配置条件2.Text = a郊狼存档.textBox配置条件2C;
-                    comboBox配置条件3.Text = a郊狼存档.textBox配置条件3C;
-                    comboBox配置条件4.Text = a郊狼存档.textBox配置条件4C;
-                    comboBox配置条件5.Text = a郊狼存档.textBox配置条件5C;
-
-
-
-                    textBoxA通强度参数C.Text = a郊狼存档.textBoxA通强度参数C;
-                    textBoxB通强度参数C.Text = a郊狼存档.textBoxB通强度参数C;
-
-                    textBoxA通倍率.Text = a郊狼存档.textBoxA通倍率C;
-                    textBoxB通倍率.Text = a郊狼存档.textBoxB通倍率C;
-
-                    填充vrc配置();
-
+                    if (checkBox3.Checked)
+                        导入(pathss);
 
                     一键启动按钮.Enabled = false;
 
@@ -1972,6 +1950,77 @@ namespace 郊狼蓝牙测试
 
 
         }
+        
+        
+        void 确认非空(ComboBox a ,string b)
+        {
+            if (b!=null&&b.Trim ()!="")
+            {
+                a.Text = b;
+            }
+        }
+
+        void 确认非空(TextBox  a, string b)
+        {
+            if (b != null && b.Trim() != "")
+            {
+                a.Text = b;
+            }
+        }
+
+
+
+        void 导入(string pathss)
+        {
+
+           
+
+
+            a郊狼存档 = 序列化保存读取.序列化读取<郊狼存档>(pathss);
+
+            listBox1.Items.Clear();
+            foreach (string a in a郊狼存档.DG波形列表.Keys)
+            {
+                listBox1.Items.Add(a);
+            }
+            listBox2.Items.Clear();
+            foreach (string a in a郊狼存档.DG波形队列.Keys)
+            {
+                listBox2.Items.Add(a);
+            }
+
+
+            确认非空( textBox配置名1C,a郊狼存档.textBox配置名1C);
+            确认非空(textBox配置名2C, a郊狼存档.textBox配置名2C);
+            确认非空(textBox配置名3C,a郊狼存档.textBox配置名3C);
+            确认非空(textBox配置名4C,a郊狼存档.textBox配置名4C);
+            确认非空(textBox配置名5C,a郊狼存档.textBox配置名5C);
+
+
+
+
+            确认非空(comboBox配置条件1,a郊狼存档.textBox配置条件1C);
+            确认非空(comboBox配置条件2,a郊狼存档.textBox配置条件2C);
+            确认非空(comboBox配置条件3,a郊狼存档.textBox配置条件3C);
+            确认非空(comboBox配置条件4,a郊狼存档.textBox配置条件4C);
+            确认非空(comboBox配置条件5,a郊狼存档.textBox配置条件5C);
+
+
+
+            确认非空(textBoxA通强度参数C,a郊狼存档.textBoxA通强度参数C);
+            确认非空(textBoxB通强度参数C,a郊狼存档.textBoxB通强度参数C);
+
+            确认非空(textBoxA通倍率,a郊狼存档.textBoxA通倍率C);
+            确认非空(textBoxB通倍率,a郊狼存档.textBoxB通倍率C);
+
+            填充vrc配置();
+
+        }
+        
+        
+        
+        
+        
         控制ImageListView vv;
 
 
@@ -2209,23 +2258,23 @@ namespace 郊狼蓝牙测试
                 comboBox配置5.Items.Add(a);
             }
 
-            if (!comboBox配置1.Items.Contains(comboBox配置1.Text))
+            if (!comboBox配置1.Items.Contains(comboBox配置1.Text)&& comboBox配置1.Items.Count >0)
             {
                 comboBox配置1.Text = comboBox配置1.Items[0].ToString();
             }
-            if (!comboBox配置2.Items.Contains(comboBox配置2.Text))
+            if (!comboBox配置2.Items.Contains(comboBox配置2.Text) && comboBox配置2.Items.Count > 0)
             {
                 comboBox配置2.Text = comboBox配置2.Items[0].ToString();
             }
-            if (!comboBox配置3.Items.Contains(comboBox配置3.Text))
+            if (!comboBox配置3.Items.Contains(comboBox配置3.Text) && comboBox配置3.Items.Count > 0)
             {
                 comboBox配置3.Text = comboBox配置3.Items[0].ToString();
             }
-            if (!comboBox配置4.Items.Contains(comboBox配置4.Text))
+            if (!comboBox配置4.Items.Contains(comboBox配置4.Text) && comboBox配置4.Items.Count > 0)
             {
                 comboBox配置4.Text = comboBox配置4.Items[0].ToString();
             }
-            if (!comboBox配置5.Items.Contains(comboBox配置5.Text))
+            if (!comboBox配置5.Items.Contains(comboBox配置5.Text) && comboBox配置5.Items.Count > 0)
             {
                 comboBox配置5.Text = comboBox配置5.Items[0].ToString();
             }
@@ -2325,50 +2374,9 @@ namespace 郊狼蓝牙测试
             dialog.Filter = "郊狼存档|*.DGLab";
             System.Windows.Forms.DialogResult result = dialog.ShowDialog();
             if (result == System.Windows.Forms.DialogResult.OK)
-            {
+            { 
 
-                a郊狼存档 = 序列化保存读取.序列化读取<郊狼存档>(dialog.FileName);
-
-
-                listBox1.Items.Clear();
-                foreach (string a in a郊狼存档.DG波形列表.Keys)
-                {
-                    listBox1.Items.Add(a);
-                }
-                listBox2.Items.Clear();
-                foreach (string a in a郊狼存档.DG波形队列.Keys)
-                {
-                    listBox2.Items.Add(a);
-                }
-
-
-
-                textBox配置名1C.Text = a郊狼存档.textBox配置名1C;
-                textBox配置名2C.Text = a郊狼存档.textBox配置名2C;
-                textBox配置名3C.Text = a郊狼存档.textBox配置名3C;
-                textBox配置名4C.Text = a郊狼存档.textBox配置名4C;
-                textBox配置名5C.Text = a郊狼存档.textBox配置名5C;
-
-
-
-
-                comboBox配置条件1.Text = a郊狼存档.textBox配置条件1C;
-                comboBox配置条件2.Text = a郊狼存档.textBox配置条件2C;
-                comboBox配置条件3.Text = a郊狼存档.textBox配置条件3C;
-                comboBox配置条件4.Text = a郊狼存档.textBox配置条件4C;
-                comboBox配置条件5.Text = a郊狼存档.textBox配置条件5C;
-
-
-
-                textBoxA通强度参数C.Text = a郊狼存档.textBoxA通强度参数C;
-                textBoxB通强度参数C.Text = a郊狼存档.textBoxB通强度参数C;
-
-                textBoxA通倍率.Text = a郊狼存档.textBoxA通倍率C;
-                textBoxB通倍率.Text = a郊狼存档.textBoxB通倍率C;
-
-
-
-                填充vrc配置();
+                导入(dialog.FileName);
 
             }
 
@@ -2883,6 +2891,73 @@ Grounded:True
             gmouse.MouseDownExt -= Gmouse_MouseDownExt;
             gmouse.Dispose ();  
         }
+
+
+
+
+
+
+
+
+
+
+
+        bool G_MouseFlag;
+        Pen pen = new Pen(Color.Black);
+        Point lastPoint;
+        private void _018_MouseMove(object sender, MouseEventArgs e)
+        {
+            label36.Text = e.X.ToString();
+            label37.Text = e.Y.ToString();
+            Panel aa = sender as Panel;
+            Graphics graphics =  aa.CreateGraphics();
+            if (lastPoint.Equals(Point.Empty))//判断绘图开始点是否为空
+            {
+                lastPoint = new Point(e.X, e.Y);//记录鼠标当前位置
+            }
+            if (G_MouseFlag)//开始绘图
+            {
+                Point currentPoint = new Point(e.X, e.Y);//获取鼠标当前位置
+                graphics.DrawLine(pen, currentPoint, lastPoint);//绘图
+            }
+            lastPoint = new Point(e.X, e.Y);//记录鼠标当前位置
+        }
+
+        private void _018_MouseDown(object sender, MouseEventArgs e)
+        {
+            label36.Text = e.X.ToString();
+            label37.Text = e.Y.ToString();
+
+            if (!G_MouseFlag)
+            {
+                Panel aa = sender as Panel;
+                Graphics graphics = aa.CreateGraphics();
+                graphics.Clear(Color.White);
+            }
+
+
+            G_MouseFlag = true;//开始绘图标识设置为true
+            
+        }
+
+        private void _018_MouseUp(object sender, MouseEventArgs e)
+        {
+            G_MouseFlag = false;//开始绘图标识设置为false
+        }
+        //画圆
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Graphics graphics = this.CreateGraphics();
+            Rectangle gle = new Rectangle(20, 20, 200, 200);
+            graphics.DrawEllipse(pen, gle);
+        }
+
+
+
+
+
+
+
     }
 
  
