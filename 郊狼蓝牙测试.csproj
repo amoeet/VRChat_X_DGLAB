@@ -113,6 +113,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MouseKeyHook">
+      <Version>5.7.1</Version>
+    </PackageReference>
     <PackageReference Include="NAudio">
       <Version>2.2.1</Version>
     </PackageReference>

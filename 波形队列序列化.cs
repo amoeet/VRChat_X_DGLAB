@@ -80,13 +80,48 @@ namespace 郊狼蓝牙测试
         {
             DG波形列表 = new Dictionary<string, string>();
             DG波形队列 = new Dictionary<string, 波形队列序列化>();
-
+            textBox配置名1C = "";
+            textBox配置名2C = "";
+            textBox配置名3C = "";
+            textBox配置名4C = "";
+            textBox配置名5C = "";
+            textBoxA通强度参数C = "";
+            textBoxB通强度参数C = ""; 
+            textBox配置条件1C = "";
+            textBox配置条件2C = "";
+            textBox配置条件3C = "";
+            textBox配置条件4C = "";
+            textBox配置条件5C = "";
+            textBoxA通倍率C = "";
+            textBoxB通倍率C = "";
         }
 
 
-        public Dictionary<string, string> DG波形列表  ;
+        public Dictionary<string, string> DG波形列表;
 
-        public Dictionary<string, 波形队列序列化> DG波形队列  ;
+        public Dictionary<string, 波形队列序列化> DG波形队列;
+
+
+        public string textBox配置名1C;
+        public string textBox配置名2C;
+        public string textBox配置名3C;
+        public string textBox配置名4C;
+        public string textBox配置名5C;
+        public string textBoxA通强度参数C;
+        public string textBoxB通强度参数C;
+
+
+        public string textBox配置条件1C;
+        public string textBox配置条件2C;
+        public string textBox配置条件3C;
+        public string textBox配置条件4C;
+        public string textBox配置条件5C;
+        public string textBoxA通倍率C;
+        public string textBoxB通倍率C;
+
+
+
+
 
     }
 

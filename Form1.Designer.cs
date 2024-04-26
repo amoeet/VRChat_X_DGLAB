@@ -57,61 +57,54 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button20 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button17 = new System.Windows.Forms.Button();
+            this.button38 = new System.Windows.Forms.Button();
+            this.button37 = new System.Windows.Forms.Button();
+            this.button36 = new System.Windows.Forms.Button();
+            this.一键启动按钮 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button35 = new System.Windows.Forms.Button();
-            this.groupBox63 = new System.Windows.Forms.GroupBox();
-            this.button34 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.groupBox60 = new System.Windows.Forms.GroupBox();
+            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.button19 = new System.Windows.Forms.Button();
             this.groupBox58 = new System.Windows.Forms.GroupBox();
+            this.groupBox67 = new System.Windows.Forms.GroupBox();
+            this.groupBox68 = new System.Windows.Forms.GroupBox();
+            this.textBoxB通强度参数C = new System.Windows.Forms.ComboBox();
+            this.textBoxB通强度值 = new System.Windows.Forms.TextBox();
+            this.groupBox69 = new System.Windows.Forms.GroupBox();
+            this.textBoxB前 = new System.Windows.Forms.TextBox();
+            this.groupBox70 = new System.Windows.Forms.GroupBox();
+            this.button31 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
+            this.textBoxB通倍率 = new System.Windows.Forms.TextBox();
+            this.groupBox71 = new System.Windows.Forms.GroupBox();
+            this.textBoxB后 = new System.Windows.Forms.TextBox();
+            this.groupBox64 = new System.Windows.Forms.GroupBox();
+            this.groupBox66 = new System.Windows.Forms.GroupBox();
+            this.textBoxA通强度参数C = new System.Windows.Forms.ComboBox();
+            this.textBoxA通强度值 = new System.Windows.Forms.TextBox();
             this.groupBox62 = new System.Windows.Forms.GroupBox();
             this.textBoxA前 = new System.Windows.Forms.TextBox();
-            this.groupBox61 = new System.Windows.Forms.GroupBox();
-            this.textBoxB前 = new System.Windows.Forms.TextBox();
-            this.groupBox60 = new System.Windows.Forms.GroupBox();
-            this.textBoxB后 = new System.Windows.Forms.TextBox();
+            this.groupBox65 = new System.Windows.Forms.GroupBox();
+            this.button30 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
+            this.textBoxA通倍率 = new System.Windows.Forms.TextBox();
             this.groupBox59 = new System.Windows.Forms.GroupBox();
             this.textBoxA后 = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBoxA通强度参数 = new System.Windows.Forms.TextBox();
-            this.textBoxB通强度值 = new System.Windows.Forms.TextBox();
-            this.textBoxB通强度参数 = new System.Windows.Forms.TextBox();
-            this.textBoxA通强度值 = new System.Windows.Forms.TextBox();
-            this.button30 = new System.Windows.Forms.Button();
-            this.textBoxB通实时强度 = new System.Windows.Forms.TextBox();
-            this.button31 = new System.Windows.Forms.Button();
-            this.textBoxA通实时强度 = new System.Windows.Forms.TextBox();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.textBox服务器收到的消息 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.textBox客户端服务IP地址 = new System.Windows.Forms.TextBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.textbox客户端服务端口号 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox服务器监听端口号 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.button13 = new System.Windows.Forms.Button();
@@ -206,10 +199,29 @@
             this.button7 = new System.Windows.Forms.Button();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.button35 = new System.Windows.Forms.Button();
+            this.groupBox63 = new System.Windows.Forms.GroupBox();
+            this.button34 = new System.Windows.Forms.Button();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button20 = new System.Windows.Forms.Button();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.button16 = new System.Windows.Forms.Button();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.textBox客户端服务IP地址 = new System.Windows.Forms.TextBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.textbox客户端服务端口号 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox32 = new System.Windows.Forms.GroupBox();
             this.button18 = new System.Windows.Forms.Button();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -225,7 +237,6 @@
             this.timer一键启动用 = new System.Windows.Forms.Timer(this.components);
             this.groupBox33 = new System.Windows.Forms.GroupBox();
             this.button29 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
             this.groupBox35 = new System.Windows.Forms.GroupBox();
             this.textBox9波形队列名称 = new System.Windows.Forms.TextBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -239,46 +250,41 @@
             this.groupBox53 = new System.Windows.Forms.GroupBox();
             this.groupBox54 = new System.Windows.Forms.GroupBox();
             this.comboBox配置条件5 = new System.Windows.Forms.ComboBox();
-            this.button28 = new System.Windows.Forms.Button();
             this.groupBox55 = new System.Windows.Forms.GroupBox();
+            this.textBox配置名5C = new System.Windows.Forms.ComboBox();
             this.textBox触发值5 = new System.Windows.Forms.TextBox();
-            this.textBox配置名5 = new System.Windows.Forms.TextBox();
             this.groupBox56 = new System.Windows.Forms.GroupBox();
             this.comboBox配置5 = new System.Windows.Forms.ComboBox();
             this.groupBox48 = new System.Windows.Forms.GroupBox();
             this.groupBox49 = new System.Windows.Forms.GroupBox();
             this.comboBox配置条件4 = new System.Windows.Forms.ComboBox();
-            this.button27 = new System.Windows.Forms.Button();
             this.groupBox50 = new System.Windows.Forms.GroupBox();
             this.textBox触发值4 = new System.Windows.Forms.TextBox();
-            this.textBox配置名4 = new System.Windows.Forms.TextBox();
+            this.textBox配置名4C = new System.Windows.Forms.ComboBox();
             this.groupBox51 = new System.Windows.Forms.GroupBox();
             this.comboBox配置4 = new System.Windows.Forms.ComboBox();
             this.groupBox44 = new System.Windows.Forms.GroupBox();
             this.groupBox45 = new System.Windows.Forms.GroupBox();
             this.comboBox配置条件3 = new System.Windows.Forms.ComboBox();
-            this.button26 = new System.Windows.Forms.Button();
             this.groupBox46 = new System.Windows.Forms.GroupBox();
             this.textBox触发值3 = new System.Windows.Forms.TextBox();
-            this.textBox配置名3 = new System.Windows.Forms.TextBox();
+            this.textBox配置名3C = new System.Windows.Forms.ComboBox();
             this.groupBox47 = new System.Windows.Forms.GroupBox();
             this.comboBox配置3 = new System.Windows.Forms.ComboBox();
             this.groupBox40 = new System.Windows.Forms.GroupBox();
             this.groupBox41 = new System.Windows.Forms.GroupBox();
             this.comboBox配置条件2 = new System.Windows.Forms.ComboBox();
-            this.button25 = new System.Windows.Forms.Button();
             this.groupBox42 = new System.Windows.Forms.GroupBox();
             this.textBox触发值2 = new System.Windows.Forms.TextBox();
-            this.textBox配置名2 = new System.Windows.Forms.TextBox();
+            this.textBox配置名2C = new System.Windows.Forms.ComboBox();
             this.groupBox43 = new System.Windows.Forms.GroupBox();
             this.comboBox配置2 = new System.Windows.Forms.ComboBox();
             this.groupBox37 = new System.Windows.Forms.GroupBox();
             this.groupBox52 = new System.Windows.Forms.GroupBox();
             this.comboBox配置条件1 = new System.Windows.Forms.ComboBox();
-            this.button24 = new System.Windows.Forms.Button();
             this.groupBox39 = new System.Windows.Forms.GroupBox();
+            this.textBox配置名1C = new System.Windows.Forms.ComboBox();
             this.textBox触发值1 = new System.Windows.Forms.TextBox();
-            this.textBox配置名1 = new System.Windows.Forms.TextBox();
             this.groupBox38 = new System.Windows.Forms.GroupBox();
             this.comboBox配置1 = new System.Windows.Forms.ComboBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -286,26 +292,30 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.timerOSC = new System.Windows.Forms.Timer(this.components);
-            this.button36 = new System.Windows.Forms.Button();
-            this.button37 = new System.Windows.Forms.Button();
-            this.button38 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.RSSI_trackBar)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox63.SuspendLayout();
-            this.groupBox58.SuspendLayout();
-            this.groupBox62.SuspendLayout();
-            this.groupBox61.SuspendLayout();
             this.groupBox60.SuspendLayout();
+            this.groupBox58.SuspendLayout();
+            this.groupBox67.SuspendLayout();
+            this.groupBox68.SuspendLayout();
+            this.groupBox69.SuspendLayout();
+            this.groupBox70.SuspendLayout();
+            this.groupBox71.SuspendLayout();
+            this.groupBox64.SuspendLayout();
+            this.groupBox66.SuspendLayout();
+            this.groupBox62.SuspendLayout();
+            this.groupBox65.SuspendLayout();
             this.groupBox59.SuspendLayout();
             this.groupBox13.SuspendLayout();
-            this.groupBox12.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox9.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox18.SuspendLayout();
@@ -361,6 +371,13 @@
             this.groupBox57.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            this.groupBox63.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.groupBox32.SuspendLayout();
             this.groupBox31.SuspendLayout();
             this.groupBox33.SuspendLayout();
@@ -387,6 +404,7 @@
             this.groupBox52.SuspendLayout();
             this.groupBox39.SuspendLayout();
             this.groupBox38.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             this.SuspendLayout();
             // 
             // BLE_Scan_Start_Btn
@@ -649,49 +667,13 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(6, 14);
+            this.button1.Location = new System.Drawing.Point(429, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 83);
             this.button1.TabIndex = 33;
             this.button1.Text = "监听Vrchat输出";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.开启服务器接收消息button1_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(6, 20);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(82, 21);
-            this.textBox3.TabIndex = 34;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button20);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Location = new System.Drawing.Point(6, 745);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(167, 74);
-            this.groupBox1.TabIndex = 35;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "测试侦测参数 ";
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(24, 47);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(130, 23);
-            this.button20.TabIndex = 37;
-            this.button20.Text = "模拟获得参数变更";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(94, 20);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(60, 21);
-            this.textBox8.TabIndex = 36;
             // 
             // tabControl1
             // 
@@ -700,6 +682,8 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControl1.Location = new System.Drawing.Point(12, 11);
             this.tabControl1.Name = "tabControl1";
@@ -712,7 +696,7 @@
             this.tabPage1.Controls.Add(this.button38);
             this.tabPage1.Controls.Add(this.button37);
             this.tabPage1.Controls.Add(this.button36);
-            this.tabPage1.Controls.Add(this.button17);
+            this.tabPage1.Controls.Add(this.一键启动按钮);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.BLE_Scan_Start_Btn);
             this.tabPage1.Controls.Add(this.button6);
@@ -747,16 +731,49 @@
             this.tabPage1.Text = "蓝牙连接";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // button38
             // 
-            this.button17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button17.Location = new System.Drawing.Point(491, 6);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(173, 147);
-            this.button17.TabIndex = 40;
-            this.button17.Text = "一键开启";
-            this.button17.UseVisualStyleBackColor = false;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.button38.BackColor = System.Drawing.Color.Transparent;
+            this.button38.Location = new System.Drawing.Point(472, 772);
+            this.button38.Name = "button38";
+            this.button38.Size = new System.Drawing.Size(74, 48);
+            this.button38.TabIndex = 60;
+            this.button38.Text = "停止";
+            this.button38.UseVisualStyleBackColor = false;
+            this.button38.Click += new System.EventHandler(this.button38_Click);
+            // 
+            // button37
+            // 
+            this.button37.BackColor = System.Drawing.Color.Transparent;
+            this.button37.Location = new System.Drawing.Point(552, 771);
+            this.button37.Name = "button37";
+            this.button37.Size = new System.Drawing.Size(74, 48);
+            this.button37.TabIndex = 59;
+            this.button37.Text = "测试1次队列";
+            this.button37.UseVisualStyleBackColor = false;
+            this.button37.Click += new System.EventHandler(this.button37_Click);
+            // 
+            // button36
+            // 
+            this.button36.BackColor = System.Drawing.Color.Transparent;
+            this.button36.Location = new System.Drawing.Point(552, 711);
+            this.button36.Name = "button36";
+            this.button36.Size = new System.Drawing.Size(74, 48);
+            this.button36.TabIndex = 58;
+            this.button36.Text = "测试1次循环";
+            this.button36.UseVisualStyleBackColor = false;
+            this.button36.Click += new System.EventHandler(this.button36_Click);
+            // 
+            // 一键启动按钮
+            // 
+            this.一键启动按钮.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.一键启动按钮.Location = new System.Drawing.Point(510, 6);
+            this.一键启动按钮.Name = "一键启动按钮";
+            this.一键启动按钮.Size = new System.Drawing.Size(154, 147);
+            this.一键启动按钮.TabIndex = 40;
+            this.一键启动按钮.Text = "一键开启蓝牙，请等待片刻，链接成功会自动跳转，如果未跳转，请检查3.0主机是否正常。";
+            this.一键启动按钮.UseVisualStyleBackColor = false;
+            this.一键启动按钮.Click += new System.EventHandler(this.button17_Click);
             // 
             // button6
             // 
@@ -799,22 +816,15 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button35);
-            this.tabPage2.Controls.Add(this.groupBox63);
-            this.tabPage2.Controls.Add(this.groupBox58);
+            this.tabPage2.Controls.Add(this.groupBox60);
             this.tabPage2.Controls.Add(this.button19);
-            this.tabPage2.Controls.Add(this.button16);
-            this.tabPage2.Controls.Add(this.button15);
+            this.tabPage2.Controls.Add(this.groupBox58);
             this.tabPage2.Controls.Add(this.groupBox13);
-            this.tabPage2.Controls.Add(this.groupBox12);
+            this.tabPage2.Controls.Add(this.button15);
             this.tabPage2.Controls.Add(this.groupBox11);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.groupBox10);
-            this.tabPage2.Controls.Add(this.groupBox9);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -823,252 +833,29 @@
             this.tabPage2.Text = "VRChat的OSC连接";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button35
-            // 
-            this.button35.Location = new System.Drawing.Point(30, 911);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(130, 23);
-            this.button35.TabIndex = 38;
-            this.button35.Text = "模拟获得参数清除";
-            this.button35.UseVisualStyleBackColor = true;
-            this.button35.Click += new System.EventHandler(this.button35_Click);
-            // 
-            // groupBox63
-            // 
-            this.groupBox63.Controls.Add(this.button34);
-            this.groupBox63.Controls.Add(this.textBox10);
-            this.groupBox63.Controls.Add(this.textBox11);
-            this.groupBox63.Location = new System.Drawing.Point(6, 832);
-            this.groupBox63.Name = "groupBox63";
-            this.groupBox63.Size = new System.Drawing.Size(167, 74);
-            this.groupBox63.TabIndex = 38;
-            this.groupBox63.TabStop = false;
-            this.groupBox63.Text = "测试VRCHAT参数 ";
-            // 
-            // button34
-            // 
-            this.button34.Location = new System.Drawing.Point(24, 47);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(130, 23);
-            this.button34.TabIndex = 37;
-            this.button34.Text = "模拟获得参数变更";
-            this.button34.UseVisualStyleBackColor = true;
-            this.button34.Click += new System.EventHandler(this.button34_Click);
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(94, 20);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(60, 21);
-            this.textBox10.TabIndex = 36;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(6, 20);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(82, 21);
-            this.textBox11.TabIndex = 34;
-            // 
-            // groupBox58
-            // 
-            this.groupBox58.Controls.Add(this.groupBox62);
-            this.groupBox58.Controls.Add(this.groupBox61);
-            this.groupBox58.Controls.Add(this.groupBox60);
-            this.groupBox58.Controls.Add(this.groupBox59);
-            this.groupBox58.Controls.Add(this.checkBox2);
-            this.groupBox58.Controls.Add(this.textBoxA通强度参数);
-            this.groupBox58.Controls.Add(this.textBoxB通强度值);
-            this.groupBox58.Controls.Add(this.textBoxB通强度参数);
-            this.groupBox58.Controls.Add(this.textBoxA通强度值);
-            this.groupBox58.Controls.Add(this.button30);
-            this.groupBox58.Controls.Add(this.textBoxB通实时强度);
-            this.groupBox58.Controls.Add(this.button31);
-            this.groupBox58.Controls.Add(this.textBoxA通实时强度);
-            this.groupBox58.Controls.Add(this.button33);
-            this.groupBox58.Controls.Add(this.button32);
-            this.groupBox58.Location = new System.Drawing.Point(179, 745);
-            this.groupBox58.Name = "groupBox58";
-            this.groupBox58.Size = new System.Drawing.Size(479, 212);
-            this.groupBox58.TabIndex = 70;
-            this.groupBox58.TabStop = false;
-            this.groupBox58.Text = "实时参数控制强度";
-            // 
-            // groupBox62
-            // 
-            this.groupBox62.Controls.Add(this.textBoxA前);
-            this.groupBox62.Location = new System.Drawing.Point(126, 20);
-            this.groupBox62.Name = "groupBox62";
-            this.groupBox62.Size = new System.Drawing.Size(116, 48);
-            this.groupBox62.TabIndex = 73;
-            this.groupBox62.TabStop = false;
-            this.groupBox62.Text = "变更前的A通强度";
-            // 
-            // textBoxA前
-            // 
-            this.textBoxA前.Location = new System.Drawing.Point(6, 19);
-            this.textBoxA前.Name = "textBoxA前";
-            this.textBoxA前.Size = new System.Drawing.Size(87, 21);
-            this.textBoxA前.TabIndex = 72;
-            this.textBoxA前.Text = "1.0";
-            // 
-            // groupBox61
-            // 
-            this.groupBox61.Controls.Add(this.textBoxB前);
-            this.groupBox61.Location = new System.Drawing.Point(126, 143);
-            this.groupBox61.Name = "groupBox61";
-            this.groupBox61.Size = new System.Drawing.Size(116, 48);
-            this.groupBox61.TabIndex = 73;
-            this.groupBox61.TabStop = false;
-            this.groupBox61.Text = "变更前的B通强度";
-            // 
-            // textBoxB前
-            // 
-            this.textBoxB前.Location = new System.Drawing.Point(6, 20);
-            this.textBoxB前.Name = "textBoxB前";
-            this.textBoxB前.Size = new System.Drawing.Size(87, 21);
-            this.textBoxB前.TabIndex = 72;
-            this.textBoxB前.Text = "1.0";
-            // 
             // groupBox60
             // 
-            this.groupBox60.Controls.Add(this.textBoxB后);
-            this.groupBox60.Location = new System.Drawing.Point(278, 143);
+            this.groupBox60.Controls.Add(this.listBox5);
+            this.groupBox60.Location = new System.Drawing.Point(403, 249);
             this.groupBox60.Name = "groupBox60";
-            this.groupBox60.Size = new System.Drawing.Size(116, 48);
+            this.groupBox60.Size = new System.Drawing.Size(261, 458);
             this.groupBox60.TabIndex = 71;
             this.groupBox60.TabStop = false;
-            this.groupBox60.Text = "变更后的B通强度";
+            this.groupBox60.Text = "当前活动过的可用参数列表";
             // 
-            // textBoxB后
+            // listBox5
             // 
-            this.textBoxB后.Location = new System.Drawing.Point(6, 20);
-            this.textBoxB后.Name = "textBoxB后";
-            this.textBoxB后.Size = new System.Drawing.Size(87, 21);
-            this.textBoxB后.TabIndex = 72;
-            this.textBoxB后.Text = "1.0";
-            // 
-            // groupBox59
-            // 
-            this.groupBox59.Controls.Add(this.textBoxA后);
-            this.groupBox59.Location = new System.Drawing.Point(278, 21);
-            this.groupBox59.Name = "groupBox59";
-            this.groupBox59.Size = new System.Drawing.Size(116, 48);
-            this.groupBox59.TabIndex = 70;
-            this.groupBox59.TabStop = false;
-            this.groupBox59.Text = "变更后的A通强度";
-            // 
-            // textBoxA后
-            // 
-            this.textBoxA后.Location = new System.Drawing.Point(6, 19);
-            this.textBoxA后.Name = "textBoxA后";
-            this.textBoxA后.Size = new System.Drawing.Size(87, 21);
-            this.textBoxA后.TabIndex = 72;
-            this.textBoxA后.Text = "1.0";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(13, 23);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(96, 16);
-            this.checkBox2.TabIndex = 69;
-            this.checkBox2.Text = "启用强度控制";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // textBoxA通强度参数
-            // 
-            this.textBoxA通强度参数.Location = new System.Drawing.Point(13, 74);
-            this.textBoxA通强度参数.Name = "textBoxA通强度参数";
-            this.textBoxA通强度参数.Size = new System.Drawing.Size(86, 21);
-            this.textBoxA通强度参数.TabIndex = 61;
-            this.textBoxA通强度参数.Text = "CTR_Stretch";
-            // 
-            // textBoxB通强度值
-            // 
-            this.textBoxB通强度值.Location = new System.Drawing.Point(105, 112);
-            this.textBoxB通强度值.Name = "textBoxB通强度值";
-            this.textBoxB通强度值.Size = new System.Drawing.Size(86, 21);
-            this.textBoxB通强度值.TabIndex = 68;
-            this.textBoxB通强度值.Text = "0.1";
-            this.textBoxB通强度值.TextChanged += new System.EventHandler(this.textBoxB通强度值_TextChanged);
-            // 
-            // textBoxB通强度参数
-            // 
-            this.textBoxB通强度参数.Location = new System.Drawing.Point(13, 112);
-            this.textBoxB通强度参数.Name = "textBoxB通强度参数";
-            this.textBoxB通强度参数.Size = new System.Drawing.Size(86, 21);
-            this.textBoxB通强度参数.TabIndex = 39;
-            this.textBoxB通强度参数.Text = "AUF_Angle";
-            // 
-            // textBoxA通强度值
-            // 
-            this.textBoxA通强度值.Location = new System.Drawing.Point(105, 74);
-            this.textBoxA通强度值.Name = "textBoxA通强度值";
-            this.textBoxA通强度值.Size = new System.Drawing.Size(86, 21);
-            this.textBoxA通强度值.TabIndex = 67;
-            this.textBoxA通强度值.Text = "0.1";
-            this.textBoxA通强度值.TextChanged += new System.EventHandler(this.textBoxA通强度值_TextChanged);
-            // 
-            // button30
-            // 
-            this.button30.Location = new System.Drawing.Point(197, 67);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(75, 32);
-            this.button30.TabIndex = 62;
-            this.button30.Text = "降低0.1";
-            this.button30.UseVisualStyleBackColor = true;
-            this.button30.Click += new System.EventHandler(this.button30_Click);
-            // 
-            // textBoxB通实时强度
-            // 
-            this.textBoxB通实时强度.Location = new System.Drawing.Point(278, 112);
-            this.textBoxB通实时强度.Name = "textBoxB通实时强度";
-            this.textBoxB通实时强度.Size = new System.Drawing.Size(99, 21);
-            this.textBoxB通实时强度.TabIndex = 66;
-            this.textBoxB通实时强度.Text = "1.0";
-            // 
-            // button31
-            // 
-            this.button31.Location = new System.Drawing.Point(197, 105);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(75, 32);
-            this.button31.TabIndex = 63;
-            this.button31.Text = "降低0.1";
-            this.button31.UseVisualStyleBackColor = true;
-            this.button31.Click += new System.EventHandler(this.button31_Click);
-            // 
-            // textBoxA通实时强度
-            // 
-            this.textBoxA通实时强度.Location = new System.Drawing.Point(278, 74);
-            this.textBoxA通实时强度.Name = "textBoxA通实时强度";
-            this.textBoxA通实时强度.Size = new System.Drawing.Size(99, 21);
-            this.textBoxA通实时强度.TabIndex = 35;
-            this.textBoxA通实时强度.Text = "1.0";
-            // 
-            // button33
-            // 
-            this.button33.Location = new System.Drawing.Point(383, 67);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(75, 32);
-            this.button33.TabIndex = 64;
-            this.button33.Text = "提高0.1";
-            this.button33.UseVisualStyleBackColor = true;
-            this.button33.Click += new System.EventHandler(this.button33_Click);
-            // 
-            // button32
-            // 
-            this.button32.Location = new System.Drawing.Point(383, 105);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(75, 32);
-            this.button32.TabIndex = 65;
-            this.button32.Text = "提高0.1";
-            this.button32.UseVisualStyleBackColor = true;
-            this.button32.Click += new System.EventHandler(this.button32_Click);
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.ItemHeight = 12;
+            this.listBox5.Location = new System.Drawing.Point(6, 20);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(249, 424);
+            this.listBox5.TabIndex = 0;
             // 
             // button19
             // 
             this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button19.Location = new System.Drawing.Point(162, 140);
+            this.button19.Location = new System.Drawing.Point(585, 146);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(66, 84);
             this.button19.TabIndex = 60;
@@ -1077,155 +864,324 @@
             this.button19.Visible = false;
             this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
-            // button16
+            // groupBox58
             // 
-            this.button16.Location = new System.Drawing.Point(498, 552);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 23);
-            this.button16.TabIndex = 50;
-            this.button16.Text = "测试颜色";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.groupBox58.Controls.Add(this.groupBox67);
+            this.groupBox58.Controls.Add(this.groupBox64);
+            this.groupBox58.Controls.Add(this.checkBox2);
+            this.groupBox58.Location = new System.Drawing.Point(239, 706);
+            this.groupBox58.Name = "groupBox58";
+            this.groupBox58.Size = new System.Drawing.Size(425, 255);
+            this.groupBox58.TabIndex = 70;
+            this.groupBox58.TabStop = false;
+            this.groupBox58.Text = "实时参数控制强度";
             // 
-            // button15
+            // groupBox67
             // 
-            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button15.Location = new System.Drawing.Point(162, 14);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(66, 83);
-            this.button15.TabIndex = 59;
-            this.button15.Text = "启用触发禁止测试";
-            this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.groupBox67.Controls.Add(this.groupBox68);
+            this.groupBox67.Controls.Add(this.groupBox69);
+            this.groupBox67.Controls.Add(this.groupBox70);
+            this.groupBox67.Controls.Add(this.groupBox71);
+            this.groupBox67.Location = new System.Drawing.Point(6, 148);
+            this.groupBox67.Name = "groupBox67";
+            this.groupBox67.Size = new System.Drawing.Size(413, 100);
+            this.groupBox67.TabIndex = 76;
+            this.groupBox67.TabStop = false;
+            this.groupBox67.Text = "用VRChat参数控制A通强度 参数数值X预设强度X强度倍率=最终强度";
+            // 
+            // groupBox68
+            // 
+            this.groupBox68.Controls.Add(this.textBoxB通强度参数C);
+            this.groupBox68.Controls.Add(this.textBoxB通强度值);
+            this.groupBox68.Location = new System.Drawing.Point(6, 20);
+            this.groupBox68.Name = "groupBox68";
+            this.groupBox68.Size = new System.Drawing.Size(98, 74);
+            this.groupBox68.TabIndex = 75;
+            this.groupBox68.TabStop = false;
+            this.groupBox68.Text = "参数数值";
+            // 
+            // textBoxB通强度参数C
+            // 
+            this.textBoxB通强度参数C.FormattingEnabled = true;
+            this.textBoxB通强度参数C.Location = new System.Drawing.Point(6, 21);
+            this.textBoxB通强度参数C.Name = "textBoxB通强度参数C";
+            this.textBoxB通强度参数C.Size = new System.Drawing.Size(86, 20);
+            this.textBoxB通强度参数C.TabIndex = 72;
+            this.textBoxB通强度参数C.Text = "AUF_Angle";
+            this.textBoxB通强度参数C.TextChanged += new System.EventHandler(this.textBoxB通强度参数C_TextChanged);
+            // 
+            // textBoxB通强度值
+            // 
+            this.textBoxB通强度值.Location = new System.Drawing.Point(6, 47);
+            this.textBoxB通强度值.Name = "textBoxB通强度值";
+            this.textBoxB通强度值.Size = new System.Drawing.Size(86, 21);
+            this.textBoxB通强度值.TabIndex = 68;
+            this.textBoxB通强度值.Text = "0.1";
+            this.textBoxB通强度值.TextChanged += new System.EventHandler(this.textBoxB通强度值_TextChanged);
+            // 
+            // groupBox69
+            // 
+            this.groupBox69.Controls.Add(this.textBoxB前);
+            this.groupBox69.Location = new System.Drawing.Point(110, 20);
+            this.groupBox69.Name = "groupBox69";
+            this.groupBox69.Size = new System.Drawing.Size(72, 74);
+            this.groupBox69.TabIndex = 73;
+            this.groupBox69.TabStop = false;
+            this.groupBox69.Text = "波形预设强度";
+            // 
+            // textBoxB前
+            // 
+            this.textBoxB前.Location = new System.Drawing.Point(7, 35);
+            this.textBoxB前.Name = "textBoxB前";
+            this.textBoxB前.Size = new System.Drawing.Size(53, 21);
+            this.textBoxB前.TabIndex = 72;
+            this.textBoxB前.Text = "1.0";
+            // 
+            // groupBox70
+            // 
+            this.groupBox70.Controls.Add(this.button31);
+            this.groupBox70.Controls.Add(this.button32);
+            this.groupBox70.Controls.Add(this.textBoxB通倍率);
+            this.groupBox70.Location = new System.Drawing.Point(188, 20);
+            this.groupBox70.Name = "groupBox70";
+            this.groupBox70.Size = new System.Drawing.Size(140, 74);
+            this.groupBox70.TabIndex = 75;
+            this.groupBox70.TabStop = false;
+            this.groupBox70.Text = "强度倍率";
+            // 
+            // button31
+            // 
+            this.button31.Location = new System.Drawing.Point(6, 18);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(42, 50);
+            this.button31.TabIndex = 63;
+            this.button31.Text = "降低0.1";
+            this.button31.UseVisualStyleBackColor = true;
+            this.button31.Click += new System.EventHandler(this.button31_Click);
+            // 
+            // button32
+            // 
+            this.button32.Location = new System.Drawing.Point(90, 15);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(46, 54);
+            this.button32.TabIndex = 65;
+            this.button32.Text = "提高0.1";
+            this.button32.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.button32_Click);
+            // 
+            // textBoxB通倍率
+            // 
+            this.textBoxB通倍率.Location = new System.Drawing.Point(54, 33);
+            this.textBoxB通倍率.Name = "textBoxB通倍率";
+            this.textBoxB通倍率.Size = new System.Drawing.Size(30, 21);
+            this.textBoxB通倍率.TabIndex = 66;
+            this.textBoxB通倍率.Text = "1.0";
+            this.textBoxB通倍率.TextChanged += new System.EventHandler(this.textBoxB通倍率_TextChanged);
+            // 
+            // groupBox71
+            // 
+            this.groupBox71.Controls.Add(this.textBoxB后);
+            this.groupBox71.Location = new System.Drawing.Point(337, 20);
+            this.groupBox71.Name = "groupBox71";
+            this.groupBox71.Size = new System.Drawing.Size(67, 74);
+            this.groupBox71.TabIndex = 70;
+            this.groupBox71.TabStop = false;
+            this.groupBox71.Text = "最终输出强度";
+            // 
+            // textBoxB后
+            // 
+            this.textBoxB后.Location = new System.Drawing.Point(6, 35);
+            this.textBoxB后.Name = "textBoxB后";
+            this.textBoxB后.Size = new System.Drawing.Size(46, 21);
+            this.textBoxB后.TabIndex = 72;
+            this.textBoxB后.Text = "1.0";
+            // 
+            // groupBox64
+            // 
+            this.groupBox64.Controls.Add(this.groupBox66);
+            this.groupBox64.Controls.Add(this.groupBox62);
+            this.groupBox64.Controls.Add(this.groupBox65);
+            this.groupBox64.Controls.Add(this.groupBox59);
+            this.groupBox64.Location = new System.Drawing.Point(6, 42);
+            this.groupBox64.Name = "groupBox64";
+            this.groupBox64.Size = new System.Drawing.Size(413, 100);
+            this.groupBox64.TabIndex = 74;
+            this.groupBox64.TabStop = false;
+            this.groupBox64.Text = "用VRChat参数控制A通强度 参数数值X预设强度X强度倍率=最终强度";
+            // 
+            // groupBox66
+            // 
+            this.groupBox66.Controls.Add(this.textBoxA通强度参数C);
+            this.groupBox66.Controls.Add(this.textBoxA通强度值);
+            this.groupBox66.Location = new System.Drawing.Point(6, 20);
+            this.groupBox66.Name = "groupBox66";
+            this.groupBox66.Size = new System.Drawing.Size(98, 74);
+            this.groupBox66.TabIndex = 75;
+            this.groupBox66.TabStop = false;
+            this.groupBox66.Text = "参数数值";
+            // 
+            // textBoxA通强度参数C
+            // 
+            this.textBoxA通强度参数C.FormattingEnabled = true;
+            this.textBoxA通强度参数C.Location = new System.Drawing.Point(6, 20);
+            this.textBoxA通强度参数C.Name = "textBoxA通强度参数C";
+            this.textBoxA通强度参数C.Size = new System.Drawing.Size(86, 20);
+            this.textBoxA通强度参数C.TabIndex = 71;
+            this.textBoxA通强度参数C.Text = "CTR_Stretch";
+            this.textBoxA通强度参数C.TextChanged += new System.EventHandler(this.textBoxA通强度参数C_TextChanged);
+            // 
+            // textBoxA通强度值
+            // 
+            this.textBoxA通强度值.Location = new System.Drawing.Point(6, 46);
+            this.textBoxA通强度值.Name = "textBoxA通强度值";
+            this.textBoxA通强度值.Size = new System.Drawing.Size(86, 21);
+            this.textBoxA通强度值.TabIndex = 67;
+            this.textBoxA通强度值.Text = "0.1";
+            this.textBoxA通强度值.TextChanged += new System.EventHandler(this.textBoxA通强度值_TextChanged);
+            // 
+            // groupBox62
+            // 
+            this.groupBox62.Controls.Add(this.textBoxA前);
+            this.groupBox62.Location = new System.Drawing.Point(110, 20);
+            this.groupBox62.Name = "groupBox62";
+            this.groupBox62.Size = new System.Drawing.Size(72, 74);
+            this.groupBox62.TabIndex = 73;
+            this.groupBox62.TabStop = false;
+            this.groupBox62.Text = "波形预设强度";
+            // 
+            // textBoxA前
+            // 
+            this.textBoxA前.Location = new System.Drawing.Point(7, 35);
+            this.textBoxA前.Name = "textBoxA前";
+            this.textBoxA前.Size = new System.Drawing.Size(53, 21);
+            this.textBoxA前.TabIndex = 72;
+            this.textBoxA前.Text = "1.0";
+            // 
+            // groupBox65
+            // 
+            this.groupBox65.Controls.Add(this.button30);
+            this.groupBox65.Controls.Add(this.button33);
+            this.groupBox65.Controls.Add(this.textBoxA通倍率);
+            this.groupBox65.Location = new System.Drawing.Point(188, 20);
+            this.groupBox65.Name = "groupBox65";
+            this.groupBox65.Size = new System.Drawing.Size(140, 74);
+            this.groupBox65.TabIndex = 75;
+            this.groupBox65.TabStop = false;
+            this.groupBox65.Text = "强度倍率";
+            // 
+            // button30
+            // 
+            this.button30.Location = new System.Drawing.Point(6, 18);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(42, 52);
+            this.button30.TabIndex = 62;
+            this.button30.Text = "降低0.1";
+            this.button30.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.button30_Click);
+            // 
+            // button33
+            // 
+            this.button33.Location = new System.Drawing.Point(90, 18);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(46, 52);
+            this.button33.TabIndex = 64;
+            this.button33.Text = "提高0.1";
+            this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
+            // 
+            // textBoxA通倍率
+            // 
+            this.textBoxA通倍率.Location = new System.Drawing.Point(54, 35);
+            this.textBoxA通倍率.Name = "textBoxA通倍率";
+            this.textBoxA通倍率.Size = new System.Drawing.Size(30, 21);
+            this.textBoxA通倍率.TabIndex = 35;
+            this.textBoxA通倍率.Text = "1.0";
+            this.textBoxA通倍率.TextChanged += new System.EventHandler(this.textBoxA通倍率_TextChanged);
+            // 
+            // groupBox59
+            // 
+            this.groupBox59.Controls.Add(this.textBoxA后);
+            this.groupBox59.Location = new System.Drawing.Point(337, 20);
+            this.groupBox59.Name = "groupBox59";
+            this.groupBox59.Size = new System.Drawing.Size(67, 74);
+            this.groupBox59.TabIndex = 70;
+            this.groupBox59.TabStop = false;
+            this.groupBox59.Text = "最终输出强度";
+            // 
+            // textBoxA后
+            // 
+            this.textBoxA后.Location = new System.Drawing.Point(6, 35);
+            this.textBoxA后.Name = "textBoxA后";
+            this.textBoxA后.Size = new System.Drawing.Size(42, 21);
+            this.textBoxA后.TabIndex = 72;
+            this.textBoxA后.Text = "1.0";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Location = new System.Drawing.Point(15, 20);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(96, 16);
+            this.checkBox2.TabIndex = 69;
+            this.checkBox2.Text = "启用强度控制";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // groupBox13
             // 
             this.groupBox13.Controls.Add(this.textBox5);
-            this.groupBox13.Location = new System.Drawing.Point(270, 13);
+            this.groupBox13.Location = new System.Drawing.Point(3, 6);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(394, 517);
+            this.groupBox13.Size = new System.Drawing.Size(394, 694);
             this.groupBox13.TabIndex = 38;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "收到的参数，不会改模的话，可用用现成的，作为触发";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(6, 20);
+            this.textBox5.Location = new System.Drawing.Point(3, 20);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox5.Size = new System.Drawing.Size(382, 491);
-            this.textBox5.TabIndex = 34;
+            this.textBox5.Size = new System.Drawing.Size(379, 667);
+            this.textBox5.TabIndex = 35;
             // 
-            // groupBox12
+            // button15
             // 
-            this.groupBox12.Controls.Add(this.textBox4);
-            this.groupBox12.Controls.Add(this.button4);
-            this.groupBox12.Location = new System.Drawing.Point(12, 653);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(572, 86);
-            this.groupBox12.TabIndex = 38;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "发送消息";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(6, 20);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(476, 53);
-            this.textBox4.TabIndex = 34;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(488, 20);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(73, 53);
-            this.button4.TabIndex = 39;
-            this.button4.Text = "向Vrchat发送消息";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.客户端发送消息button2_Click);
+            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button15.Location = new System.Drawing.Point(585, 20);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(66, 83);
+            this.button15.TabIndex = 59;
+            this.button15.Text = "启用触发禁止测试";
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.Visible = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.textBox服务器收到的消息);
-            this.groupBox11.Location = new System.Drawing.Point(6, 230);
+            this.groupBox11.Location = new System.Drawing.Point(6, 706);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(240, 300);
+            this.groupBox11.Size = new System.Drawing.Size(227, 258);
             this.groupBox11.TabIndex = 37;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "收到的消息";
             // 
             // textBox服务器收到的消息
             // 
-            this.textBox服务器收到的消息.Location = new System.Drawing.Point(6, 20);
+            this.textBox服务器收到的消息.Location = new System.Drawing.Point(9, 20);
             this.textBox服务器收到的消息.Multiline = true;
             this.textBox服务器收到的消息.Name = "textBox服务器收到的消息";
             this.textBox服务器收到的消息.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox服务器收到的消息.Size = new System.Drawing.Size(225, 274);
+            this.textBox服务器收到的消息.Size = new System.Drawing.Size(212, 229);
             this.textBox服务器收到的消息.TabIndex = 34;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(6, 158);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(137, 66);
-            this.button3.TabIndex = 38;
-            this.button3.Text = "停止监听";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.停止服务器接收消息button4_Click);
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.textBox客户端服务IP地址);
-            this.groupBox10.Location = new System.Drawing.Point(12, 543);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(200, 49);
-            this.groupBox10.TabIndex = 37;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "IP地址";
-            // 
-            // textBox客户端服务IP地址
-            // 
-            this.textBox客户端服务IP地址.Location = new System.Drawing.Point(6, 20);
-            this.textBox客户端服务IP地址.Name = "textBox客户端服务IP地址";
-            this.textBox客户端服务IP地址.Size = new System.Drawing.Size(188, 21);
-            this.textBox客户端服务IP地址.TabIndex = 34;
-            this.textBox客户端服务IP地址.Text = "127.0.0.1";
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.textbox客户端服务端口号);
-            this.groupBox9.Location = new System.Drawing.Point(12, 598);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(200, 49);
-            this.groupBox9.TabIndex = 37;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "端口号，默认9000";
-            // 
-            // textbox客户端服务端口号
-            // 
-            this.textbox客户端服务端口号.Location = new System.Drawing.Point(6, 20);
-            this.textbox客户端服务端口号.Name = "textbox客户端服务端口号";
-            this.textbox客户端服务端口号.Size = new System.Drawing.Size(188, 21);
-            this.textbox客户端服务端口号.TabIndex = 34;
-            this.textbox客户端服务端口号.Text = "9000";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(218, 543);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(194, 104);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "开启Vrchat发送消息服务";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.开启客户端发送消息服务button_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox服务器监听端口号);
-            this.groupBox2.Location = new System.Drawing.Point(6, 103);
+            this.groupBox2.Location = new System.Drawing.Point(429, 109);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(137, 49);
             this.groupBox2.TabIndex = 36;
@@ -1239,6 +1195,17 @@
             this.textBox服务器监听端口号.Size = new System.Drawing.Size(125, 21);
             this.textBox服务器监听端口号.TabIndex = 34;
             this.textBox服务器监听端口号.Text = "9001";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(429, 164);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(137, 66);
+            this.button3.TabIndex = 38;
+            this.button3.Text = "停止监听";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.停止服务器接收消息button4_Click);
             // 
             // tabPage3
             // 
@@ -1477,7 +1444,7 @@
             // B2_4
             // 
             this.B2_4.Location = new System.Drawing.Point(6, 140);
-            this.B2_4.Maximum = 100;
+            this.B2_4.Maximum = 101;
             this.B2_4.Name = "B2_4";
             this.B2_4.Size = new System.Drawing.Size(626, 45);
             this.B2_4.TabIndex = 43;
@@ -1496,7 +1463,7 @@
             // B2_3
             // 
             this.B2_3.Location = new System.Drawing.Point(6, 100);
-            this.B2_3.Maximum = 100;
+            this.B2_3.Maximum = 101;
             this.B2_3.Name = "B2_3";
             this.B2_3.Size = new System.Drawing.Size(626, 45);
             this.B2_3.TabIndex = 42;
@@ -1515,7 +1482,7 @@
             // B2_2
             // 
             this.B2_2.Location = new System.Drawing.Point(6, 60);
-            this.B2_2.Maximum = 100;
+            this.B2_2.Maximum = 101;
             this.B2_2.Name = "B2_2";
             this.B2_2.Size = new System.Drawing.Size(626, 45);
             this.B2_2.TabIndex = 41;
@@ -1534,7 +1501,7 @@
             // B2_1
             // 
             this.B2_1.Location = new System.Drawing.Point(6, 20);
-            this.B2_1.Maximum = 100;
+            this.B2_1.Maximum = 101;
             this.B2_1.Name = "B2_1";
             this.B2_1.Size = new System.Drawing.Size(626, 45);
             this.B2_1.TabIndex = 40;
@@ -1570,7 +1537,7 @@
             // A2_4
             // 
             this.A2_4.Location = new System.Drawing.Point(6, 140);
-            this.A2_4.Maximum = 100;
+            this.A2_4.Maximum = 101;
             this.A2_4.Name = "A2_4";
             this.A2_4.Size = new System.Drawing.Size(626, 45);
             this.A2_4.TabIndex = 43;
@@ -1589,7 +1556,7 @@
             // A2_3
             // 
             this.A2_3.Location = new System.Drawing.Point(6, 100);
-            this.A2_3.Maximum = 100;
+            this.A2_3.Maximum = 101;
             this.A2_3.Name = "A2_3";
             this.A2_3.Size = new System.Drawing.Size(626, 45);
             this.A2_3.TabIndex = 42;
@@ -1608,7 +1575,7 @@
             // A2_2
             // 
             this.A2_2.Location = new System.Drawing.Point(6, 60);
-            this.A2_2.Maximum = 100;
+            this.A2_2.Maximum = 101;
             this.A2_2.Name = "A2_2";
             this.A2_2.Size = new System.Drawing.Size(626, 45);
             this.A2_2.TabIndex = 41;
@@ -1627,7 +1594,7 @@
             // A2_1
             // 
             this.A2_1.Location = new System.Drawing.Point(6, 20);
-            this.A2_1.Maximum = 100;
+            this.A2_1.Maximum = 101;
             this.A2_1.Name = "A2_1";
             this.A2_1.Size = new System.Drawing.Size(626, 45);
             this.A2_1.TabIndex = 40;
@@ -1663,7 +1630,7 @@
             // B1_4
             // 
             this.B1_4.Location = new System.Drawing.Point(6, 140);
-            this.B1_4.Maximum = 240;
+            this.B1_4.Maximum = 241;
             this.B1_4.Minimum = 10;
             this.B1_4.Name = "B1_4";
             this.B1_4.Size = new System.Drawing.Size(626, 45);
@@ -1684,7 +1651,7 @@
             // B1_3
             // 
             this.B1_3.Location = new System.Drawing.Point(6, 100);
-            this.B1_3.Maximum = 240;
+            this.B1_3.Maximum = 241;
             this.B1_3.Minimum = 10;
             this.B1_3.Name = "B1_3";
             this.B1_3.Size = new System.Drawing.Size(626, 45);
@@ -1705,7 +1672,7 @@
             // B1_2
             // 
             this.B1_2.Location = new System.Drawing.Point(6, 60);
-            this.B1_2.Maximum = 240;
+            this.B1_2.Maximum = 241;
             this.B1_2.Minimum = 10;
             this.B1_2.Name = "B1_2";
             this.B1_2.Size = new System.Drawing.Size(626, 45);
@@ -1726,7 +1693,7 @@
             // B1_1
             // 
             this.B1_1.Location = new System.Drawing.Point(6, 20);
-            this.B1_1.Maximum = 240;
+            this.B1_1.Maximum = 241;
             this.B1_1.Minimum = 10;
             this.B1_1.Name = "B1_1";
             this.B1_1.Size = new System.Drawing.Size(626, 45);
@@ -1791,7 +1758,7 @@
             // A1_4
             // 
             this.A1_4.Location = new System.Drawing.Point(6, 140);
-            this.A1_4.Maximum = 240;
+            this.A1_4.Maximum = 241;
             this.A1_4.Minimum = 10;
             this.A1_4.Name = "A1_4";
             this.A1_4.Size = new System.Drawing.Size(626, 45);
@@ -1803,7 +1770,7 @@
             // A1_3
             // 
             this.A1_3.Location = new System.Drawing.Point(6, 100);
-            this.A1_3.Maximum = 240;
+            this.A1_3.Maximum = 241;
             this.A1_3.Minimum = 10;
             this.A1_3.Name = "A1_3";
             this.A1_3.Size = new System.Drawing.Size(626, 45);
@@ -1815,7 +1782,7 @@
             // A1_2
             // 
             this.A1_2.Location = new System.Drawing.Point(6, 60);
-            this.A1_2.Maximum = 240;
+            this.A1_2.Maximum = 241;
             this.A1_2.Minimum = 10;
             this.A1_2.Name = "A1_2";
             this.A1_2.Size = new System.Drawing.Size(626, 45);
@@ -1827,7 +1794,7 @@
             // A1_1
             // 
             this.A1_1.Location = new System.Drawing.Point(6, 20);
-            this.A1_1.Maximum = 240;
+            this.A1_1.Maximum = 241;
             this.A1_1.Minimum = 10;
             this.A1_1.Name = "A1_1";
             this.A1_1.Size = new System.Drawing.Size(626, 45);
@@ -1835,6 +1802,7 @@
             this.A1_1.Value = 10;
             this.A1_1.Scroll += new System.EventHandler(this.A1_1_Scroll);
             this.A1_1.ValueChanged += new System.EventHandler(this.A1_1_Scroll);
+            this.A1_1.MouseEnter += new System.EventHandler(this.A1_1_MouseEnter);
             // 
             // tabPage4
             // 
@@ -2233,11 +2201,205 @@
             this.trackBar2.TabIndex = 40;
             this.trackBar2.Value = 9;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.button23);
+            this.tabPage6.Controls.Add(this.button17);
+            this.tabPage6.Controls.Add(this.button35);
+            this.tabPage6.Controls.Add(this.groupBox63);
+            this.tabPage6.Controls.Add(this.groupBox1);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(670, 967);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "debug垃圾堆";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // button35
+            // 
+            this.button35.Location = new System.Drawing.Point(30, 172);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(130, 23);
+            this.button35.TabIndex = 41;
+            this.button35.Text = "模拟获得参数清除";
+            this.button35.UseVisualStyleBackColor = true;
+            // 
+            // groupBox63
+            // 
+            this.groupBox63.Controls.Add(this.button34);
+            this.groupBox63.Controls.Add(this.textBox10);
+            this.groupBox63.Controls.Add(this.textBox11);
+            this.groupBox63.Location = new System.Drawing.Point(6, 93);
+            this.groupBox63.Name = "groupBox63";
+            this.groupBox63.Size = new System.Drawing.Size(167, 74);
+            this.groupBox63.TabIndex = 40;
+            this.groupBox63.TabStop = false;
+            this.groupBox63.Text = "测试VRCHAT参数 ";
+            // 
+            // button34
+            // 
+            this.button34.Location = new System.Drawing.Point(24, 47);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(130, 23);
+            this.button34.TabIndex = 37;
+            this.button34.Text = "模拟获得参数变更";
+            this.button34.UseVisualStyleBackColor = true;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(94, 20);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(60, 21);
+            this.textBox10.TabIndex = 36;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(6, 20);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(82, 21);
+            this.textBox11.TabIndex = 34;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button20);
+            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(167, 74);
+            this.groupBox1.TabIndex = 39;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "测试侦测参数 ";
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(24, 47);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(130, 23);
+            this.button20.TabIndex = 37;
+            this.button20.Text = "模拟获得参数变更";
+            this.button20.UseVisualStyleBackColor = true;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(94, 20);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(60, 21);
+            this.textBox8.TabIndex = 36;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(6, 20);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(82, 21);
+            this.textBox3.TabIndex = 34;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.trackBar3);
+            this.tabPage7.Controls.Add(this.button12);
+            this.tabPage7.Controls.Add(this.button16);
+            this.tabPage7.Controls.Add(this.groupBox12);
+            this.tabPage7.Controls.Add(this.groupBox10);
+            this.tabPage7.Controls.Add(this.groupBox9);
+            this.tabPage7.Controls.Add(this.button2);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(670, 967);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "未实装";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(430, 54);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(75, 23);
+            this.button16.TabIndex = 55;
+            this.button16.Text = "测试颜色";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.textBox4);
+            this.groupBox12.Controls.Add(this.button4);
+            this.groupBox12.Location = new System.Drawing.Point(6, 116);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(572, 86);
+            this.groupBox12.TabIndex = 54;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "发送消息";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(6, 20);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox4.Size = new System.Drawing.Size(476, 53);
+            this.textBox4.TabIndex = 34;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(488, 20);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(73, 53);
+            this.button4.TabIndex = 39;
+            this.button4.Text = "向Vrchat发送消息";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.textBox客户端服务IP地址);
+            this.groupBox10.Location = new System.Drawing.Point(6, 6);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(200, 49);
+            this.groupBox10.TabIndex = 51;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "IP地址";
+            // 
+            // textBox客户端服务IP地址
+            // 
+            this.textBox客户端服务IP地址.Location = new System.Drawing.Point(6, 20);
+            this.textBox客户端服务IP地址.Name = "textBox客户端服务IP地址";
+            this.textBox客户端服务IP地址.Size = new System.Drawing.Size(188, 21);
+            this.textBox客户端服务IP地址.TabIndex = 34;
+            this.textBox客户端服务IP地址.Text = "127.0.0.1";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.textbox客户端服务端口号);
+            this.groupBox9.Location = new System.Drawing.Point(6, 61);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(200, 49);
+            this.groupBox9.TabIndex = 52;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "端口号，默认9000";
+            // 
+            // textbox客户端服务端口号
+            // 
+            this.textbox客户端服务端口号.Location = new System.Drawing.Point(6, 20);
+            this.textbox客户端服务端口号.Name = "textbox客户端服务端口号";
+            this.textbox客户端服务端口号.Size = new System.Drawing.Size(188, 21);
+            this.textbox客户端服务端口号.TabIndex = 34;
+            this.textbox客户端服务端口号.Text = "9000";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(212, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(194, 104);
+            this.button2.TabIndex = 53;
+            this.button2.Text = "开启Vrchat发送消息服务";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // groupBox32
             // 
+            this.groupBox32.Controls.Add(this.checkBox4);
             this.groupBox32.Controls.Add(this.button18);
             this.groupBox32.Controls.Add(this.checkBox3);
-            this.groupBox32.Controls.Add(this.button12);
             this.groupBox32.Controls.Add(this.button11);
             this.groupBox32.Controls.Add(this.button10);
             this.groupBox32.Controls.Add(this.listBox1);
@@ -2270,15 +2432,6 @@
             this.checkBox3.Text = "关闭前自动导出到运行目录";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(250, 199);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(74, 48);
-            this.button12.TabIndex = 52;
-            this.button12.Text = "重命名";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
             // button11
             // 
             this.button11.Location = new System.Drawing.Point(250, 145);
@@ -2287,6 +2440,7 @@
             this.button11.TabIndex = 51;
             this.button11.Text = "删除";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
@@ -2295,7 +2449,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(74, 48);
             this.button10.TabIndex = 50;
-            this.button10.Text = "测试3秒";
+            this.button10.Text = "测试一次";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -2339,7 +2493,7 @@
             this.groupBox31.Size = new System.Drawing.Size(213, 48);
             this.groupBox31.TabIndex = 47;
             this.groupBox31.TabStop = false;
-            this.groupBox31.Text = "新建波形命名（唯一)（重命名）";
+            this.groupBox31.Text = "新建波形命名（唯一)";
             // 
             // textBox8新建波形命名
             // 
@@ -2380,7 +2534,6 @@
             // groupBox33
             // 
             this.groupBox33.Controls.Add(this.button29);
-            this.groupBox33.Controls.Add(this.button23);
             this.groupBox33.Controls.Add(this.groupBox35);
             this.groupBox33.Controls.Add(this.listBox2);
             this.groupBox33.Controls.Add(this.imageListView1);
@@ -2391,7 +2544,7 @@
             this.groupBox33.Size = new System.Drawing.Size(702, 568);
             this.groupBox33.TabIndex = 58;
             this.groupBox33.TabStop = false;
-            this.groupBox33.Text = "波形队列，队列以100毫秒为单位，依次执行。拖拽调整位置，左键双击复制，右键双击删除";
+            this.groupBox33.Text = "波形队列，队列以100毫秒为单位，依次执行。拖拽调整位置，左键双击删除";
             // 
             // button29
             // 
@@ -2404,15 +2557,6 @@
             this.button29.UseVisualStyleBackColor = false;
             this.button29.Click += new System.EventHandler(this.button29_Click);
             // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(524, 471);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(74, 29);
-            this.button23.TabIndex = 61;
-            this.button23.Text = "重命名";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
             // groupBox35
             // 
             this.groupBox35.Controls.Add(this.textBox9波形队列名称);
@@ -2421,7 +2565,7 @@
             this.groupBox35.Size = new System.Drawing.Size(170, 48);
             this.groupBox35.TabIndex = 48;
             this.groupBox35.TabStop = false;
-            this.groupBox35.Text = "队列命名（唯一）(重命名)";
+            this.groupBox35.Text = "队列命名（唯一）";
             // 
             // textBox9波形队列名称
             // 
@@ -2453,12 +2597,13 @@
             // 
             // button22
             // 
-            this.button22.Location = new System.Drawing.Point(620, 534);
+            this.button22.Location = new System.Drawing.Point(620, 508);
             this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(74, 26);
+            this.button22.Size = new System.Drawing.Size(74, 52);
             this.button22.TabIndex = 60;
             this.button22.Text = "删除队列";
             this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // button以以上名字新建队列
             // 
@@ -2522,12 +2667,11 @@
             // groupBox53
             // 
             this.groupBox53.Controls.Add(this.groupBox54);
-            this.groupBox53.Controls.Add(this.button28);
             this.groupBox53.Controls.Add(this.groupBox55);
             this.groupBox53.Controls.Add(this.groupBox56);
             this.groupBox53.Location = new System.Drawing.Point(6, 339);
             this.groupBox53.Name = "groupBox53";
-            this.groupBox53.Size = new System.Drawing.Size(977, 74);
+            this.groupBox53.Size = new System.Drawing.Size(878, 74);
             this.groupBox53.TabIndex = 38;
             this.groupBox53.TabStop = false;
             this.groupBox53.Text = "配置5";
@@ -2559,21 +2703,12 @@
             this.comboBox配置条件5.Size = new System.Drawing.Size(180, 20);
             this.comboBox配置条件5.TabIndex = 0;
             this.comboBox配置条件5.Text = "true/1执行";
-            // 
-            // button28
-            // 
-            this.button28.Location = new System.Drawing.Point(877, 20);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(93, 46);
-            this.button28.TabIndex = 37;
-            this.button28.Text = "测试3秒";
-            this.button28.UseVisualStyleBackColor = true;
-            this.button28.Visible = false;
+            this.comboBox配置条件5.TextChanged += new System.EventHandler(this.comboBox配置条件5_TextChanged);
             // 
             // groupBox55
             // 
+            this.groupBox55.Controls.Add(this.textBox配置名5C);
             this.groupBox55.Controls.Add(this.textBox触发值5);
-            this.groupBox55.Controls.Add(this.textBox配置名5);
             this.groupBox55.Location = new System.Drawing.Point(6, 19);
             this.groupBox55.Name = "groupBox55";
             this.groupBox55.Size = new System.Drawing.Size(268, 47);
@@ -2581,19 +2716,22 @@
             this.groupBox55.TabStop = false;
             this.groupBox55.Text = "指定触发参数名";
             // 
+            // textBox配置名5C
+            // 
+            this.textBox配置名5C.FormattingEnabled = true;
+            this.textBox配置名5C.Location = new System.Drawing.Point(6, 20);
+            this.textBox配置名5C.Name = "textBox配置名5C";
+            this.textBox配置名5C.Size = new System.Drawing.Size(120, 20);
+            this.textBox配置名5C.TabIndex = 77;
+            this.textBox配置名5C.Text = "CTR_Angle";
+            this.textBox配置名5C.TextChanged += new System.EventHandler(this.textBox配置名5C_TextChanged);
+            // 
             // textBox触发值5
             // 
             this.textBox触发值5.Location = new System.Drawing.Point(207, 15);
             this.textBox触发值5.Name = "textBox触发值5";
             this.textBox触发值5.Size = new System.Drawing.Size(55, 21);
             this.textBox触发值5.TabIndex = 40;
-            // 
-            // textBox配置名5
-            // 
-            this.textBox配置名5.Location = new System.Drawing.Point(6, 20);
-            this.textBox配置名5.Name = "textBox配置名5";
-            this.textBox配置名5.Size = new System.Drawing.Size(120, 21);
-            this.textBox配置名5.TabIndex = 34;
             // 
             // groupBox56
             // 
@@ -2616,12 +2754,11 @@
             // groupBox48
             // 
             this.groupBox48.Controls.Add(this.groupBox49);
-            this.groupBox48.Controls.Add(this.button27);
             this.groupBox48.Controls.Add(this.groupBox50);
             this.groupBox48.Controls.Add(this.groupBox51);
             this.groupBox48.Location = new System.Drawing.Point(6, 260);
             this.groupBox48.Name = "groupBox48";
-            this.groupBox48.Size = new System.Drawing.Size(977, 74);
+            this.groupBox48.Size = new System.Drawing.Size(878, 74);
             this.groupBox48.TabIndex = 38;
             this.groupBox48.TabStop = false;
             this.groupBox48.Text = "配置4";
@@ -2653,21 +2790,12 @@
             this.comboBox配置条件4.Size = new System.Drawing.Size(180, 20);
             this.comboBox配置条件4.TabIndex = 0;
             this.comboBox配置条件4.Text = "false/0执行 ";
-            // 
-            // button27
-            // 
-            this.button27.Location = new System.Drawing.Point(877, 20);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(93, 46);
-            this.button27.TabIndex = 37;
-            this.button27.Text = "测试3秒";
-            this.button27.UseVisualStyleBackColor = true;
-            this.button27.Visible = false;
+            this.comboBox配置条件4.TextChanged += new System.EventHandler(this.comboBox配置条件4_TextChanged);
             // 
             // groupBox50
             // 
             this.groupBox50.Controls.Add(this.textBox触发值4);
-            this.groupBox50.Controls.Add(this.textBox配置名4);
+            this.groupBox50.Controls.Add(this.textBox配置名4C);
             this.groupBox50.Location = new System.Drawing.Point(6, 19);
             this.groupBox50.Name = "groupBox50";
             this.groupBox50.Size = new System.Drawing.Size(268, 47);
@@ -2682,13 +2810,15 @@
             this.textBox触发值4.Size = new System.Drawing.Size(55, 21);
             this.textBox触发值4.TabIndex = 39;
             // 
-            // textBox配置名4
+            // textBox配置名4C
             // 
-            this.textBox配置名4.Location = new System.Drawing.Point(6, 20);
-            this.textBox配置名4.Name = "textBox配置名4";
-            this.textBox配置名4.Size = new System.Drawing.Size(120, 21);
-            this.textBox配置名4.TabIndex = 34;
-            this.textBox配置名4.Text = "Grounded";
+            this.textBox配置名4C.FormattingEnabled = true;
+            this.textBox配置名4C.Location = new System.Drawing.Point(6, 20);
+            this.textBox配置名4C.Name = "textBox配置名4C";
+            this.textBox配置名4C.Size = new System.Drawing.Size(120, 20);
+            this.textBox配置名4C.TabIndex = 76;
+            this.textBox配置名4C.Text = "Grounded";
+            this.textBox配置名4C.TextChanged += new System.EventHandler(this.textBox配置名4C_TextChanged);
             // 
             // groupBox51
             // 
@@ -2711,12 +2841,11 @@
             // groupBox44
             // 
             this.groupBox44.Controls.Add(this.groupBox45);
-            this.groupBox44.Controls.Add(this.button26);
             this.groupBox44.Controls.Add(this.groupBox46);
             this.groupBox44.Controls.Add(this.groupBox47);
             this.groupBox44.Location = new System.Drawing.Point(6, 180);
             this.groupBox44.Name = "groupBox44";
-            this.groupBox44.Size = new System.Drawing.Size(977, 74);
+            this.groupBox44.Size = new System.Drawing.Size(878, 74);
             this.groupBox44.TabIndex = 38;
             this.groupBox44.TabStop = false;
             this.groupBox44.Text = "配置3";
@@ -2747,22 +2876,13 @@
             this.comboBox配置条件3.Name = "comboBox配置条件3";
             this.comboBox配置条件3.Size = new System.Drawing.Size(180, 20);
             this.comboBox配置条件3.TabIndex = 0;
-            this.comboBox配置条件3.Text = "true/1执行";
-            // 
-            // button26
-            // 
-            this.button26.Location = new System.Drawing.Point(877, 20);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(93, 46);
-            this.button26.TabIndex = 37;
-            this.button26.Text = "测试3秒";
-            this.button26.UseVisualStyleBackColor = true;
-            this.button26.Visible = false;
+            this.comboBox配置条件3.Text = "大于0.25执行";
+            this.comboBox配置条件3.TextChanged += new System.EventHandler(this.comboBox配置条件3_TextChanged);
             // 
             // groupBox46
             // 
             this.groupBox46.Controls.Add(this.textBox触发值3);
-            this.groupBox46.Controls.Add(this.textBox配置名3);
+            this.groupBox46.Controls.Add(this.textBox配置名3C);
             this.groupBox46.Location = new System.Drawing.Point(6, 19);
             this.groupBox46.Name = "groupBox46";
             this.groupBox46.Size = new System.Drawing.Size(268, 47);
@@ -2777,13 +2897,15 @@
             this.textBox触发值3.Size = new System.Drawing.Size(55, 21);
             this.textBox触发值3.TabIndex = 38;
             // 
-            // textBox配置名3
+            // textBox配置名3C
             // 
-            this.textBox配置名3.Location = new System.Drawing.Point(6, 20);
-            this.textBox配置名3.Name = "textBox配置名3";
-            this.textBox配置名3.Size = new System.Drawing.Size(120, 21);
-            this.textBox配置名3.TabIndex = 34;
-            this.textBox配置名3.Text = "Voice";
+            this.textBox配置名3C.FormattingEnabled = true;
+            this.textBox配置名3C.Location = new System.Drawing.Point(6, 21);
+            this.textBox配置名3C.Name = "textBox配置名3C";
+            this.textBox配置名3C.Size = new System.Drawing.Size(120, 20);
+            this.textBox配置名3C.TabIndex = 75;
+            this.textBox配置名3C.Text = "Voice";
+            this.textBox配置名3C.TextChanged += new System.EventHandler(this.textBox配置名3C_TextChanged);
             // 
             // groupBox47
             // 
@@ -2806,12 +2928,11 @@
             // groupBox40
             // 
             this.groupBox40.Controls.Add(this.groupBox41);
-            this.groupBox40.Controls.Add(this.button25);
             this.groupBox40.Controls.Add(this.groupBox42);
             this.groupBox40.Controls.Add(this.groupBox43);
             this.groupBox40.Location = new System.Drawing.Point(6, 100);
             this.groupBox40.Name = "groupBox40";
-            this.groupBox40.Size = new System.Drawing.Size(977, 74);
+            this.groupBox40.Size = new System.Drawing.Size(878, 74);
             this.groupBox40.TabIndex = 38;
             this.groupBox40.TabStop = false;
             this.groupBox40.Text = "配置2";
@@ -2843,21 +2964,12 @@
             this.comboBox配置条件2.Size = new System.Drawing.Size(180, 20);
             this.comboBox配置条件2.TabIndex = 0;
             this.comboBox配置条件2.Text = "true/1执行";
-            // 
-            // button25
-            // 
-            this.button25.Location = new System.Drawing.Point(877, 20);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(93, 46);
-            this.button25.TabIndex = 37;
-            this.button25.Text = "测试3秒";
-            this.button25.UseVisualStyleBackColor = true;
-            this.button25.Visible = false;
+            this.comboBox配置条件2.TextChanged += new System.EventHandler(this.comboBox配置条件2_TextChanged);
             // 
             // groupBox42
             // 
             this.groupBox42.Controls.Add(this.textBox触发值2);
-            this.groupBox42.Controls.Add(this.textBox配置名2);
+            this.groupBox42.Controls.Add(this.textBox配置名2C);
             this.groupBox42.Location = new System.Drawing.Point(6, 19);
             this.groupBox42.Name = "groupBox42";
             this.groupBox42.Size = new System.Drawing.Size(268, 47);
@@ -2872,13 +2984,15 @@
             this.textBox触发值2.Size = new System.Drawing.Size(55, 21);
             this.textBox触发值2.TabIndex = 37;
             // 
-            // textBox配置名2
+            // textBox配置名2C
             // 
-            this.textBox配置名2.Location = new System.Drawing.Point(6, 20);
-            this.textBox配置名2.Name = "textBox配置名2";
-            this.textBox配置名2.Size = new System.Drawing.Size(120, 21);
-            this.textBox配置名2.TabIndex = 34;
-            this.textBox配置名2.Text = "Leach_IsGrabbed";
+            this.textBox配置名2C.FormattingEnabled = true;
+            this.textBox配置名2C.Location = new System.Drawing.Point(6, 21);
+            this.textBox配置名2C.Name = "textBox配置名2C";
+            this.textBox配置名2C.Size = new System.Drawing.Size(120, 20);
+            this.textBox配置名2C.TabIndex = 74;
+            this.textBox配置名2C.Text = "Leach_IsGrabbed";
+            this.textBox配置名2C.TextChanged += new System.EventHandler(this.textBox配置名2C_TextChanged);
             // 
             // groupBox43
             // 
@@ -2901,12 +3015,11 @@
             // groupBox37
             // 
             this.groupBox37.Controls.Add(this.groupBox52);
-            this.groupBox37.Controls.Add(this.button24);
             this.groupBox37.Controls.Add(this.groupBox39);
             this.groupBox37.Controls.Add(this.groupBox38);
             this.groupBox37.Location = new System.Drawing.Point(6, 20);
             this.groupBox37.Name = "groupBox37";
-            this.groupBox37.Size = new System.Drawing.Size(977, 74);
+            this.groupBox37.Size = new System.Drawing.Size(878, 74);
             this.groupBox37.TabIndex = 0;
             this.groupBox37.TabStop = false;
             this.groupBox37.Text = "配置1，最优先";
@@ -2938,21 +3051,12 @@
             this.comboBox配置条件1.Size = new System.Drawing.Size(180, 20);
             this.comboBox配置条件1.TabIndex = 0;
             this.comboBox配置条件1.Text = "大于0.25执行";
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(877, 20);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(93, 46);
-            this.button24.TabIndex = 37;
-            this.button24.Text = "测试3秒";
-            this.button24.UseVisualStyleBackColor = true;
-            this.button24.Visible = false;
+            this.comboBox配置条件1.TextChanged += new System.EventHandler(this.comboBox配置条件1_TextChanged);
             // 
             // groupBox39
             // 
+            this.groupBox39.Controls.Add(this.textBox配置名1C);
             this.groupBox39.Controls.Add(this.textBox触发值1);
-            this.groupBox39.Controls.Add(this.textBox配置名1);
             this.groupBox39.Location = new System.Drawing.Point(6, 19);
             this.groupBox39.Name = "groupBox39";
             this.groupBox39.Size = new System.Drawing.Size(268, 47);
@@ -2960,20 +3064,22 @@
             this.groupBox39.TabStop = false;
             this.groupBox39.Text = "指定触发参数名";
             // 
+            // textBox配置名1C
+            // 
+            this.textBox配置名1C.FormattingEnabled = true;
+            this.textBox配置名1C.Location = new System.Drawing.Point(6, 20);
+            this.textBox配置名1C.Name = "textBox配置名1C";
+            this.textBox配置名1C.Size = new System.Drawing.Size(120, 20);
+            this.textBox配置名1C.TabIndex = 73;
+            this.textBox配置名1C.Text = "CTR_Angle";
+            this.textBox配置名1C.TextChanged += new System.EventHandler(this.textBox配置名1C_TextChanged);
+            // 
             // textBox触发值1
             // 
             this.textBox触发值1.Location = new System.Drawing.Point(207, 15);
             this.textBox触发值1.Name = "textBox触发值1";
             this.textBox触发值1.Size = new System.Drawing.Size(55, 21);
             this.textBox触发值1.TabIndex = 36;
-            // 
-            // textBox配置名1
-            // 
-            this.textBox配置名1.Location = new System.Drawing.Point(6, 20);
-            this.textBox配置名1.Name = "textBox配置名1";
-            this.textBox配置名1.Size = new System.Drawing.Size(120, 21);
-            this.textBox配置名1.TabIndex = 34;
-            this.textBox配置名1.Text = "CTR_Angle";
             // 
             // groupBox38
             // 
@@ -3037,38 +3143,53 @@
             this.timerOSC.Enabled = true;
             this.timerOSC.Tick += new System.EventHandler(this.timerOSC_Tick);
             // 
-            // button36
+            // button12
             // 
-            this.button36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button36.Location = new System.Drawing.Point(552, 711);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(74, 48);
-            this.button36.TabIndex = 58;
-            this.button36.Text = "测试1次循环";
-            this.button36.UseVisualStyleBackColor = false;
-            this.button36.Click += new System.EventHandler(this.button36_Click);
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button12.Location = new System.Drawing.Point(494, 228);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(74, 87);
+            this.button12.TabIndex = 58;
+            this.button12.Text = "初次写入";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // button37
+            // trackBar3
             // 
-            this.button37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button37.Location = new System.Drawing.Point(552, 771);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(74, 48);
-            this.button37.TabIndex = 59;
-            this.button37.Text = "测试1次队列";
-            this.button37.UseVisualStyleBackColor = false;
-            this.button37.Click += new System.EventHandler(this.button37_Click);
+            this.trackBar3.Location = new System.Drawing.Point(400, 461);
+            this.trackBar3.Name = "trackBar3";
+            this.trackBar3.Size = new System.Drawing.Size(104, 45);
+            this.trackBar3.TabIndex = 59;
             // 
-            // button38
+            // button17
             // 
-            this.button38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button38.Location = new System.Drawing.Point(472, 772);
-            this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(74, 48);
-            this.button38.TabIndex = 60;
-            this.button38.Text = "停止";
-            this.button38.UseVisualStyleBackColor = false;
-            this.button38.Click += new System.EventHandler(this.button38_Click);
+            this.button17.Location = new System.Drawing.Point(448, 282);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(75, 23);
+            this.button17.TabIndex = 42;
+            this.button17.Text = "开启钩子";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click_1);
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(448, 364);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(75, 23);
+            this.button23.TabIndex = 43;
+            this.button23.Text = "放弃钩子";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(196, 458);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(78, 16);
+            this.checkBox4.TabIndex = 44;
+            this.checkBox4.Text = "checkBox4";
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -3087,36 +3208,37 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RSSI_trackBar)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.groupBox63.ResumeLayout(false);
-            this.groupBox63.PerformLayout();
+            this.groupBox60.ResumeLayout(false);
             this.groupBox58.ResumeLayout(false);
             this.groupBox58.PerformLayout();
+            this.groupBox67.ResumeLayout(false);
+            this.groupBox68.ResumeLayout(false);
+            this.groupBox68.PerformLayout();
+            this.groupBox69.ResumeLayout(false);
+            this.groupBox69.PerformLayout();
+            this.groupBox70.ResumeLayout(false);
+            this.groupBox70.PerformLayout();
+            this.groupBox71.ResumeLayout(false);
+            this.groupBox71.PerformLayout();
+            this.groupBox64.ResumeLayout(false);
+            this.groupBox66.ResumeLayout(false);
+            this.groupBox66.PerformLayout();
             this.groupBox62.ResumeLayout(false);
             this.groupBox62.PerformLayout();
-            this.groupBox61.ResumeLayout(false);
-            this.groupBox61.PerformLayout();
-            this.groupBox60.ResumeLayout(false);
-            this.groupBox60.PerformLayout();
+            this.groupBox65.ResumeLayout(false);
+            this.groupBox65.PerformLayout();
             this.groupBox59.ResumeLayout(false);
             this.groupBox59.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -3191,6 +3313,19 @@
             this.groupBox57.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.groupBox63.ResumeLayout(false);
+            this.groupBox63.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.groupBox32.ResumeLayout(false);
             this.groupBox32.PerformLayout();
             this.groupBox31.ResumeLayout(false);
@@ -3225,6 +3360,7 @@
             this.groupBox39.ResumeLayout(false);
             this.groupBox39.PerformLayout();
             this.groupBox38.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3260,8 +3396,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -3283,18 +3417,9 @@
         private System.Windows.Forms.TrackBar A软上限设置;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.TextBox textBox客户端服务IP地址;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.TextBox textbox客户端服务端口号;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.TextBox textBox服务器收到的消息;
-        private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.TextBox textBox7;
@@ -3370,9 +3495,7 @@
         private System.Windows.Forms.TextBox textBox8新建波形命名;
         private System.Windows.Forms.Button button9依照当前波形设置创建波形;
         private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button16;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
@@ -3390,7 +3513,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button 一键启动按钮;
         private System.Windows.Forms.Timer timer一键启动用;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19导出;
@@ -3399,7 +3522,6 @@
         private Manina.Windows.Forms.ImageListView imageListView1;
         private System.Windows.Forms.Button button以以上名字新建队列;
         private System.Windows.Forms.GroupBox groupBox34;
-        private System.Windows.Forms.Button button23;
         private System.Windows.Forms.GroupBox groupBox35;
         private System.Windows.Forms.TextBox textBox9波形队列名称;
         private System.Windows.Forms.ListBox listBox2;
@@ -3407,43 +3529,33 @@
         private System.Windows.Forms.GroupBox groupBox36;
         private System.Windows.Forms.GroupBox groupBox37;
         private System.Windows.Forms.GroupBox groupBox39;
-        private System.Windows.Forms.TextBox textBox配置名1;
         private System.Windows.Forms.GroupBox groupBox38;
         private System.Windows.Forms.ComboBox comboBox配置1;
         private System.Windows.Forms.GroupBox groupBox52;
         private System.Windows.Forms.ComboBox comboBox配置条件1;
-        private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button29;
         private System.Windows.Forms.GroupBox groupBox53;
         private System.Windows.Forms.GroupBox groupBox54;
         private System.Windows.Forms.ComboBox comboBox配置条件5;
-        private System.Windows.Forms.Button button28;
         private System.Windows.Forms.GroupBox groupBox55;
-        private System.Windows.Forms.TextBox textBox配置名5;
         private System.Windows.Forms.GroupBox groupBox56;
         private System.Windows.Forms.ComboBox comboBox配置5;
         private System.Windows.Forms.GroupBox groupBox48;
         private System.Windows.Forms.GroupBox groupBox49;
         private System.Windows.Forms.ComboBox comboBox配置条件4;
-        private System.Windows.Forms.Button button27;
         private System.Windows.Forms.GroupBox groupBox50;
-        private System.Windows.Forms.TextBox textBox配置名4;
         private System.Windows.Forms.GroupBox groupBox51;
         private System.Windows.Forms.ComboBox comboBox配置4;
         private System.Windows.Forms.GroupBox groupBox44;
         private System.Windows.Forms.GroupBox groupBox45;
         private System.Windows.Forms.ComboBox comboBox配置条件3;
-        private System.Windows.Forms.Button button26;
         private System.Windows.Forms.GroupBox groupBox46;
-        private System.Windows.Forms.TextBox textBox配置名3;
         private System.Windows.Forms.GroupBox groupBox47;
         private System.Windows.Forms.ComboBox comboBox配置3;
         private System.Windows.Forms.GroupBox groupBox40;
         private System.Windows.Forms.GroupBox groupBox41;
         private System.Windows.Forms.ComboBox comboBox配置条件2;
-        private System.Windows.Forms.Button button25;
         private System.Windows.Forms.GroupBox groupBox42;
-        private System.Windows.Forms.TextBox textBox配置名2;
         private System.Windows.Forms.GroupBox groupBox43;
         private System.Windows.Forms.ComboBox comboBox配置2;
         private System.Windows.Forms.Button button14;
@@ -3455,8 +3567,6 @@
         private System.Windows.Forms.TextBox textBox触发值3;
         private System.Windows.Forms.TextBox textBox触发值2;
         private System.Windows.Forms.TextBox textBox触发值1;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.TextBox textBox9;
@@ -3464,34 +3574,68 @@
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.GroupBox groupBox57;
         private System.Windows.Forms.Timer timerOSC;
-        private System.Windows.Forms.TextBox textBoxB通实时强度;
-        private System.Windows.Forms.TextBox textBoxA通实时强度;
+        private System.Windows.Forms.TextBox textBoxB通倍率;
+        private System.Windows.Forms.TextBox textBoxA通倍率;
         private System.Windows.Forms.Button button32;
         private System.Windows.Forms.Button button33;
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.TextBox textBoxB通强度参数;
-        private System.Windows.Forms.TextBox textBoxA通强度参数;
         private System.Windows.Forms.TextBox textBoxB通强度值;
         private System.Windows.Forms.TextBox textBoxA通强度值;
         private System.Windows.Forms.GroupBox groupBox58;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.GroupBox groupBox60;
         private System.Windows.Forms.GroupBox groupBox59;
         private System.Windows.Forms.GroupBox groupBox62;
         private System.Windows.Forms.TextBox textBoxA前;
-        private System.Windows.Forms.GroupBox groupBox61;
         private System.Windows.Forms.TextBox textBoxB前;
         private System.Windows.Forms.TextBox textBoxB后;
         private System.Windows.Forms.TextBox textBoxA后;
+        private System.Windows.Forms.Button button36;
+        private System.Windows.Forms.Button button37;
+        private System.Windows.Forms.Button button38;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button button35;
         private System.Windows.Forms.GroupBox groupBox63;
         private System.Windows.Forms.Button button34;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Button button35;
-        private System.Windows.Forms.Button button36;
-        private System.Windows.Forms.Button button37;
-        private System.Windows.Forms.Button button38;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.TextBox textBox客户端服务IP地址;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox textbox客户端服务端口号;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.GroupBox groupBox67;
+        private System.Windows.Forms.GroupBox groupBox68;
+        private System.Windows.Forms.GroupBox groupBox69;
+        private System.Windows.Forms.GroupBox groupBox70;
+        private System.Windows.Forms.GroupBox groupBox71;
+        private System.Windows.Forms.GroupBox groupBox64;
+        private System.Windows.Forms.GroupBox groupBox66;
+        private System.Windows.Forms.GroupBox groupBox65;
+        private System.Windows.Forms.ComboBox textBox配置名5C;
+        private System.Windows.Forms.ComboBox textBox配置名4C;
+        private System.Windows.Forms.ComboBox textBox配置名3C;
+        private System.Windows.Forms.ComboBox textBox配置名2C;
+        private System.Windows.Forms.ComboBox textBoxB通强度参数C;
+        private System.Windows.Forms.ComboBox textBoxA通强度参数C;
+        private System.Windows.Forms.ComboBox textBox配置名1C;
+        private System.Windows.Forms.GroupBox groupBox60;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.TrackBar trackBar3;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.CheckBox checkBox4;
     }
 }
 

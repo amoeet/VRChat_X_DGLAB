@@ -49,6 +49,15 @@
           }
         }
       },
+      "MouseKeyHook/5.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/net48/Gma.System.MouseKeyHook.dll": {}
+        },
+        "runtime": {
+          "lib/net48/Gma.System.MouseKeyHook.dll": {}
+        }
+      },
       "NAudio/2.2.1": {
         "type": "package",
         "dependencies": {
@@ -390,6 +399,15 @@
           }
         }
       },
+      "MouseKeyHook/5.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/net48/Gma.System.MouseKeyHook.dll": {}
+        },
+        "runtime": {
+          "lib/net48/Gma.System.MouseKeyHook.dll": {}
+        }
+      },
       "NAudio/2.2.1": {
         "type": "package",
         "dependencies": {
@@ -717,6 +735,15 @@
           "lib/net461/Microsoft.Win32.Registry.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MouseKeyHook/5.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/net48/Gma.System.MouseKeyHook.dll": {}
+        },
+        "runtime": {
+          "lib/net48/Gma.System.MouseKeyHook.dll": {}
         }
       },
       "NAudio/2.2.1": {
@@ -1048,6 +1075,15 @@
           }
         }
       },
+      "MouseKeyHook/5.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/net48/Gma.System.MouseKeyHook.dll": {}
+        },
+        "runtime": {
+          "lib/net48/Gma.System.MouseKeyHook.dll": {}
+        }
+      },
       "NAudio/2.2.1": {
         "type": "package",
         "dependencies": {
@@ -1375,6 +1411,15 @@
           "lib/net461/Microsoft.Win32.Registry.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MouseKeyHook/5.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/net48/Gma.System.MouseKeyHook.dll": {}
+        },
+        "runtime": {
+          "lib/net48/Gma.System.MouseKeyHook.dll": {}
         }
       },
       "NAudio/2.2.1": {
@@ -1732,6 +1777,22 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "MouseKeyHook/5.7.1": {
+      "sha512": "c0VhB6cbcOpMOcoCQmvPMVqxaH76S4IPHwpbCIY7XKUNimdj9+81rX+Evnu5O53xYgUvdD7g0qmlVeZP2wGCnA==",
+      "type": "package",
+      "path": "mousekeyhook/5.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/Gma.System.MouseKeyHook.dll",
+        "lib/net48/Gma.System.MouseKeyHook.dll",
+        "lib/net6.0-windows7.0/Gma.System.MouseKeyHook.dll",
+        "lib/net7.0-windows7.0/Gma.System.MouseKeyHook.dll",
+        "mouse-keyboard-hook-logo64x64.png",
+        "mousekeyhook.5.7.1.nupkg.sha512",
+        "mousekeyhook.nuspec"
       ]
     },
     "NAudio/2.2.1": {
@@ -2224,6 +2285,7 @@
       "ImageListView >= 1.0.0",
       "LibAudioVisualizerNetFW48 >= 1.0.0",
       "LibDynamicsNetFW48 >= 1.0.0",
+      "MouseKeyHook >= 5.7.1",
       "NAudio >= 2.2.1",
       "System.Runtime.WindowsRuntime >= 4.7.0",
       "我的多功能类库 >= 1.0.0"
@@ -2286,6 +2348,10 @@
     "frameworks": {
       "net48": {
         "dependencies": {
+          "MouseKeyHook": {
+            "target": "Package",
+            "version": "[5.7.1, )"
+          },
           "NAudio": {
             "target": "Package",
             "version": "[2.2.1, )"

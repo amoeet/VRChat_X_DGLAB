@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "YhYMaWmeP+YyFzWR0H6jPxjtQjS7Q6b5SJ7osEElYMh8tJd0KKGDZUtFzH8CuQkGCiy0d6o0w02CyHvtwVhVYw==",
+  "dgSpecHash": "b81NhWkSRmaVQUlO5+qZ5QtZ+QESnWUX4rSJ4wrnZx6pn4VhXek/1yvj/1UUiZwI1O69bTRrxCBQ+BUyOT22JA==",
   "success": true,
   "projectFilePath": "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\郊狼蓝牙测试.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emita\\.nuget\\packages\\fftsharp\\2.1.0\\fftsharp.2.1.0.nupkg.sha512",
     "C:\\Users\\Emita\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\Emita\\.nuget\\packages\\mousekeyhook\\5.7.1\\mousekeyhook.5.7.1.nupkg.sha512",
     "C:\\Users\\Emita\\.nuget\\packages\\naudio\\2.2.1\\naudio.2.2.1.nupkg.sha512",
     "C:\\Users\\Emita\\.nuget\\packages\\naudio.asio\\2.2.1\\naudio.asio.2.2.1.nupkg.sha512",
     "C:\\Users\\Emita\\.nuget\\packages\\naudio.core\\2.2.1\\naudio.core.2.2.1.nupkg.sha512",

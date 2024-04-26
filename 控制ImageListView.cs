@@ -99,25 +99,27 @@ namespace AI绘图法典tag纠错
 
         private void Tag栏位列表ImageListView_ItemDoubleClick(object sender, ItemClickEventArgs e)
         {
-            if (e.Item.Text.Contains("::"))
-                return;
+           // if (e.Item.Text.Contains("::"))
+            //    return;
             if (e.Buttons == MouseButtons.Left)
             {
+
+                ImageListView aaa = sender as ImageListView;
+
+                aaa.Items.Remove(e.Item);
                 //鼠标左键双击
                 //增加权重 
-                e.Item.User包含全部格式的英文Tag = 单个Tag.逐一设置标签权重(e.Item.User包含全部格式的英文Tag, 0.1f, 0, 0, 0);
-                //单个词条 aa = new 单个词条(e.Item.User单一词条的string);
-               // e.Item.Text = e.Item.User包含全部格式的英文Tag.Replace(aa.英文tag, aa.中文翻译);
-                e.Item.Text = 单个Tag.翻转冒号前后(e.Item.Text);
+                //e.Item.User包含全部格式的英文Tag = 单个Tag.逐一设置标签权重(e.Item.User包含全部格式的英文Tag, 0.1f, 0, 0, 0);
+              
             }
             else if (e.Buttons == MouseButtons.Right)
             {
                 // 鼠标右键双击
                 //减少权重 
-                e.Item.User包含全部格式的英文Tag = 单个Tag.逐一设置标签权重(e.Item.User包含全部格式的英文Tag, -0.1f, 0, 0, 0);
+                //e.Item.User包含全部格式的英文Tag = 单个Tag.逐一设置标签权重(e.Item.User包含全部格式的英文Tag, -0.1f, 0, 0, 0);
                 //单个词条 aa = new 单个词条(e.Item.User单一词条的string);
               // e.Item.Text = e.Item.User包含全部格式的英文Tag.Replace(aa.英文tag, aa.中文翻译);
-                e.Item.Text = 单个Tag.翻转冒号前后(e.Item.Text);
+                //e.Item.Text = 单个Tag.翻转冒号前后(e.Item.Text);
 
             }
             刷新选中tag缩略图(e.Item);

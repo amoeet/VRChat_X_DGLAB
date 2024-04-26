@@ -30,6 +30,10 @@ using Windows.Storage.Streams;
 using Thread = System.Threading.Thread;
 using 我的多功能类库;
 using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Drawing.Drawing2D;
+using Gma.System.MouseKeyHook;
+
 
 
 namespace 郊狼蓝牙测试
@@ -60,13 +64,13 @@ namespace 郊狼蓝牙测试
             for (int i = 0; i < s.Length; i += 2)
             {
 
-                string bb=s.Substring(i, 2);    
+                string bb = s.Substring(i, 2);
 
                 buffer[i / 2] = (byte)Convert.ToByte(bb, 16);
             }
             return buffer;
         }
-        
+
         public byte[] HexStringToByteArray(string s)
         {
 
@@ -113,13 +117,13 @@ namespace 郊狼蓝牙测试
             byte[] buffer = new byte[20];
 
             string b = "B0";
-           
-            if (b== "B0")
-            { 
+
+            if (b == "B0")
+            {
                 string[] aa = s.Split(' ');
 
-                
-                buffer[0]= (byte)Convert.ToByte("0xB0", 16);
+
+                buffer[0] = (byte)Convert.ToByte("0xB0", 16);
                 buffer[1] = (byte)Convert.ToByte("00050100", 2);
                 buffer[2] = Convert.ToByte(18);
                 buffer[3] = Convert.ToByte(0);
@@ -187,25 +191,33 @@ namespace 郊狼蓝牙测试
 
         public Form1()
         {
-            
+
             InitializeComponent();
             this.FormClosed += Form1_FormClosed;
             this.FormClosing += Form1_FormClosing;
             CheckForIllegalCrossThreadCalls = false;
-            drawAudio = new DrawAudio(panel1, drawingTimer, dataTimer,textBox6);
+            drawAudio = new DrawAudio(panel1, drawingTimer, dataTimer, textBox6);
             初始化波形队列();
         }
 
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            drawAudio.MainWindow_FormClosed(sender,e);
+            drawAudio.MainWindow_FormClosed(sender, e);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             关闭所有网络服务();//与 uOSC  Unity通信
-           
+
+
+            string aaa = System.Environment.CurrentDirectory.ToString() + "/测试.DGLab";
+
+
+            序列化保存读取.序列化保存<郊狼存档>(a郊狼存档, aaa);
+
+
+
         }
 
 
@@ -276,7 +288,7 @@ namespace 郊狼蓝牙测试
                 服务端监听.DataReceiveEventLog += 服务端监听_DataReceiveEventLog;
                 服务端监听.ServerStartEventLog += 服务端监听_ServerStartEventLog;
                 服务端监听.ServerStopEventLog += 服务端监听_ServerStopEventLog;
-                
+
             }
 
             if (服务端监听.isStarted_)
@@ -286,8 +298,19 @@ namespace 郊狼蓝牙测试
             else
             {
                 服务端监听.StartServer();
-                
+
             }
+
+
+            DG启用Vrc = true;
+            timer波形连续输出.Enabled = true;
+            groupBox36.Visible = true;
+
+            button1.Visible = false;
+            button3.Visible = false;
+
+
+
         }
         private void 开启客户端发送消息服务button_Click(object sender, EventArgs e)
         {
@@ -310,7 +333,11 @@ namespace 郊狼蓝牙测试
         private void 停止服务器接收消息button4_Click(object sender, EventArgs e)
         {
             服务端监听.StopServer();
-            
+            button1.Visible = true;
+            button3.Visible = false;
+            groupBox36.Visible = false;
+            DG启用Vrc = false;
+            timer波形连续输出.Enabled = false;
         }
 
         private void 服务端监听_ServerStopEventLog(int e)
@@ -361,27 +388,27 @@ namespace 郊狼蓝牙测试
                 //      msg += value.GetString() + " ";
                 //  }
 
-                 
 
-                if (!监听服务器.关闭&&e.address !=null&&e.values !=null)
+
+                if (!监听服务器.关闭 && e.address != null && e.values != null)
                 {
                     if (data.Keys.Contains(e.address))
                     {
                         data[e.address] = e.values[0].ToString();
-                     
-                    } 
+
+                    }
                     else
                     {
                         data.Add(e.address, e.values[0].ToString());
                         dataKeys.Add(e.address);
                     }
-                       
+
                 }
                 // 更新服务器message包文本框(e.address, e.values[0].ToString ());
                 //Thread.Sleep(sleeptime);
             }
 
-        } 
+        }
 
         private void 客户端发送_ClientStopEventLog(string ip, int p)
         {
@@ -436,7 +463,8 @@ namespace 郊狼蓝牙测试
 
         }
 
-        void 更新服务器message包文本框(string a)
+
+        void 更新服务器message包文本框(string a, string b)
         {
             try
             {
@@ -446,37 +474,8 @@ namespace 郊狼蓝牙测试
                     {
 
 
-                        识别参数并更新到参数列表(a);
+                        识别参数并更新到参数列表(a, b);
 
-
-
-
-
-                    }
-                ), null);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message+ "textBox8Add(string a)");
-            }
-
-
-
-        }
-        void 更新服务器message包文本框(string a,string b)
-        {
-            try
-            {
-                if (监听服务器 != null && !监听服务器.关闭 && textBox服务器收到的消息.IsHandleCreated)
-                {
-                    textBox服务器收到的消息.Invoke((Action)(() =>
-                    {
-
-
-                        识别参数并更新到参数列表(a,b);
-                         
 
                     }
                 ), null);
@@ -494,69 +493,12 @@ namespace 郊狼蓝牙测试
         string parameters = "";
         string value = "";
 
-        Match m ;
+        Match m;
         string assd = "";
-                   
-
-        Dictionary <string ,string> vrc参数= new Dictionary<string ,string>();
-        private void 识别参数并更新到参数列表(string a)
-        { 
-
-            if (
-                a.Contains("VelocityX") || 
-                a.Contains("VelocityZ") || 
-                a.Contains("VelocityY") || 
-                a.Contains("AngularY") || 
-                a.Contains("AngularX") || 
-                a.Contains("AngularZ")
-                )
-            {
-                return ;    
-            }
 
 
-            // 限制文本框最大行数(textBox服务器收到的消息, 50, a);
+        Dictionary<string, string> vrc参数 = new Dictionary<string, string>();
 
-            //osc vrchat参数 VelocityX
-
-            // / avatar / parameters / ClothesSwitch: (1900 / 1 / 1 8:00:00) 0
-            // / avatar / parameters / ClothesSwitch: (1900 / 1 / 1 8:00:00) 1
-            // / avatar / parameters / BreastsBig: (1900 / 1 / 1 8:00:00) 0
-            // / avatar / parameters / BreastsBig: (1900 / 1 / 1 8:00:00) 0.005928122
-
-
-            m = Regex.Match(a, "[/][ a-zA-Z0-9_]*[:]");
-            assd = a.Replace("/avatar/parameters/", "").Replace(": (1900/1/1 8:00:00)", "|");
-            parameters = assd.Split('|')[0];
-            value= assd.Split('|')[1];
-            
- 
-            if(parameters!=""&& value!=""&&vrc参数.Count >0)
-            {
-                if (vrc参数.Keys .Contains <string >(parameters))
-                {
-                    vrc参数[parameters] = value;
-                }
-                else
-                {
-                    vrc参数.Add (parameters, value);  
-                }
-
-            } 
-            else
-            {
-                vrc参数.Add(parameters, value);
-            }
-
-
-            textBox5 .Clear (); 
-            foreach (string aaa in vrc参数.Keys )
-            {
-                textBox5.AppendText (aaa+":"+ vrc参数[aaa]+"\r\n");
-                获得参数变更(aaa, vrc参数[aaa]);
-            }
-
-        }
         private void 识别参数并更新到参数列表(string a, string b)
         {
             if (
@@ -570,9 +512,9 @@ namespace 郊狼蓝牙测试
             {
                 return;
             }
-               
 
-            
+
+
 
 
             // 限制文本框最大行数(textBox服务器收到的消息, 50, a);
@@ -584,9 +526,9 @@ namespace 郊狼蓝牙测试
             // / avatar / parameters / BreastsBig: (1900 / 1 / 1 8:00:00) 0
             // / avatar / parameters / BreastsBig: (1900 / 1 / 1 8:00:00) 0.005928122
 
-             
+
             parameters = a.Replace("/avatar/parameters/", "");
-           
+
             value = b;
 
 
@@ -612,6 +554,8 @@ namespace 郊狼蓝牙测试
             foreach (string aaa in vrc参数.Keys)
             {
                 textBox5.AppendText(aaa + ":" + vrc参数[aaa] + "\r\n");
+
+
                 获得参数变更(aaa, vrc参数[aaa]);
             }
 
@@ -773,16 +717,16 @@ namespace 郊狼蓝牙测试
             string str = CurrentCharacteristicList[index].Uuid.ToString() + " Tx:\r\n" + BitConverter.ToString(data) + "\r\n";
             Log_textBox.AppendText(str);
             string[] hexs = BitConverter.ToString(data).Split('-');
-            foreach (string a in hexs )
+            foreach (string a in hexs)
             {
-                textBox1.AppendText(int.Parse(a, System.Globalization.NumberStyles.HexNumber).ToString () + " ");
+                textBox1.AppendText(int.Parse(a, System.Globalization.NumberStyles.HexNumber).ToString() + " ");
             }
             textBox1.AppendText("\r\n");
 
 
             foreach (byte aa in data)
-            { 
-                textBox2.AppendText(aa.ToString() + " "); 
+            {
+                textBox2.AppendText(aa.ToString() + " ");
             }
 
             textBox2.AppendText("\r\n");
@@ -790,11 +734,11 @@ namespace 郊狼蓝牙测试
             蓝牙消息识别(data);
 
         }
-         
+
         void 蓝牙消息识别(byte[] data)
         {
-            string a = Convert.ToString(data[0], 16).ToLower ();
-           
+            string a = Convert.ToString(data[0], 16).ToLower();
+
 
             /*
             序列号
@@ -813,11 +757,11 @@ namespace 郊狼蓝牙测试
             0b11->代表对应通道强度绝对变化，若A通道强度设定值为32，那么A通道强度设置为32
 
             */
-          
 
-            if (a=="b0")
+
+            if (a == "b0")
             {
-                textBox7.AppendText(a + "B0指令 长度："+data.Length.ToString ()+"\r\n" );
+                textBox7.AppendText(a + "B0指令 长度：" + data.Length.ToString() + "\r\n");
                 // 0 0xB0(1byte指令HEAD) + 0xB0
                 // 1    序列号(4bits) +0000 
                 // 1    强度值解读方式(4bits) +0000
@@ -844,7 +788,7 @@ namespace 郊狼蓝牙测试
             }
             else if (a == "b1")
             {
-                textBox7.AppendText("序列号："+Convert.ToString(data[1], 2)+ "A强度：" + Convert.ToString(data[2], 10)+ "B强度：" + Convert.ToString(data[3], 10) + "\r\n");
+                textBox7.AppendText("序列号：" + Convert.ToString(data[1], 2) + "A强度：" + Convert.ToString(data[2], 10) + "B强度：" + Convert.ToString(data[3], 10) + "\r\n");
                 textBox7.AppendText(a + "B1指令 长度：" + data.Length.ToString() + "\r\n");
                 // B1消息
                 //  当脉冲主机强度发生变化时，会立刻通过B1消息返回当前的强度值。如果是由于B0指令导致的强度变化，返回B1指令中序列号将会与引起此变化的命令所包含的序列号相同，否则序列号为0。
@@ -857,7 +801,7 @@ namespace 郊狼蓝牙测试
             }
             else if (a == "be")
             {
-                 textBox7.AppendText(a + "BE指令 长度：" + data.Length.ToString() + "\r\n");
+                textBox7.AppendText(a + "BE指令 长度：" + data.Length.ToString() + "\r\n");
                 //BE消息返回BF输入的对应设置后脉冲主机当前的AB通道强度软上限 + AB通道波形频率平衡参数 + AB通道波形强度平衡参数。
                 //  0xBE(1byte指令HEAD) + 
                 //  AB两通道强度软上限(2bytes) +
@@ -887,7 +831,7 @@ namespace 郊狼蓝牙测试
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+
             Watcher = new BluetoothLEAdvertisementWatcher
             {
                 ScanningMode = BluetoothLEScanningMode.Active
@@ -973,7 +917,7 @@ namespace 郊狼蓝牙测试
             string[] hexs = str.Split(' ');
             foreach (string a in hexs)
             {
-                textBox1.AppendText(int.Parse(a, System.Globalization.NumberStyles.HexNumber).ToString()+" ");
+                textBox1.AppendText(int.Parse(a, System.Globalization.NumberStyles.HexNumber).ToString() + " ");
             }
 
             textBox1.AppendText("\r\n");
@@ -982,7 +926,7 @@ namespace 郊狼蓝牙测试
             foreach (byte aa in data)
             {
 
-                textBox2.AppendText(aa.ToString()+" ");
+                textBox2.AppendText(aa.ToString() + " ");
 
             }
 
@@ -1035,7 +979,7 @@ namespace 郊狼蓝牙测试
             {
                 data = HexStringToByteArray(Send_textBox.Text);
 
-            } 
+            }
             else
             {
                 data = System.Text.Encoding.UTF8.GetBytes(Send_textBox.Text);
@@ -1045,11 +989,11 @@ namespace 郊狼蓝牙测试
 
         private void button5B1_Click(object sender, EventArgs e)
         {
-            byte[] buffer = new byte[20]; 
+            byte[] buffer = new byte[20];
 
             buffer[0] = (byte)Convert.ToByte(B0指令头.Text, 16);
-            buffer[1] = (byte)Convert.ToByte(B0序列号.Text+A强.Text .Split('|')[1]+ B强.Text.Split('|')[1], 2);
-            buffer[2] = Convert.ToByte(A值.Value );
+            buffer[1] = (byte)Convert.ToByte(B0序列号.Text + A强.Text.Split('|')[1] + B强.Text.Split('|')[1], 2);
+            buffer[2] = Convert.ToByte(A值.Value);
             buffer[3] = Convert.ToByte(B值.Value);
 
             buffer[4] = Convert.ToByte(A1_1.Value);
@@ -1109,7 +1053,7 @@ namespace 郊狼蓝牙测试
             buffer[3] = Convert.ToByte(A频率平衡.Value);
             buffer[4] = Convert.ToByte(B频率平衡.Value);
             buffer[5] = Convert.ToByte(A强度平衡.Value);
-            buffer[6] = Convert.ToByte(B强度平衡.Value); 
+            buffer[6] = Convert.ToByte(B强度平衡.Value);
 
 
             write(buffer);
@@ -1198,7 +1142,7 @@ namespace 郊狼蓝牙测试
 
         private void trackBar8_Scroll(object sender, EventArgs e)
         {
-            label12.Text = A值.Value .ToString(); 
+            label12.Text = A值.Value.ToString();
         }
 
         private void trackBar5_Scroll(object sender, EventArgs e)
@@ -1218,12 +1162,12 @@ namespace 郊狼蓝牙测试
 
         private void A软上限设置_Scroll(object sender, EventArgs e)
         {
-            label6.Text = A软上限设置.Value.ToString(); 
+            label6.Text = A软上限设置.Value.ToString();
         }
 
         private void B软上限设置_Scroll(object sender, EventArgs e)
         {
-            label7.Text = B软上限设置.Value.ToString(); 
+            label7.Text = B软上限设置.Value.ToString();
         }
 
         private void A频率平衡_Scroll(object sender, EventArgs e)
@@ -1243,26 +1187,26 @@ namespace 郊狼蓝牙测试
 
         private void B强度平衡_Scroll(object sender, EventArgs e)
         {
-            label17.Text = B频率平衡.Value.ToString();
-             
+            label17.Text = B强度平衡.Value.ToString();
+
         }
 
         private void dataTimer_Tick(object sender, EventArgs e)
         {
-            drawAudio.DataTimer_Tick(sender, e);    
+            drawAudio.DataTimer_Tick(sender, e);
         }
 
         private void drawingTimer_Tick(object sender, EventArgs e)
         {
             drawAudio.倍率 = trackBar1.Value;
             drawAudio.微调倍率 = trackBar2.Value;
-            drawAudio.DrawingTimer_Tick(sender, e); 
+            drawAudio.DrawingTimer_Tick(sender, e);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             BLE_Scan_Start_Btn_Click(sender, e);
-        
+
 
 
         }
@@ -1280,14 +1224,14 @@ namespace 郊狼蓝牙测试
 
         int 测试时间 = 0;
         int 最大测试时间 = 30;
-        bool 开始测试=false;
-      
+        bool 开始测试 = false;
+
 
         byte[] 测试波形 = null;
 
 
 
-        bool DG启用Vrc执行完毕=true ;
+        bool DG启用Vrc执行完毕 = true;
         string DG启用Vrc名字 = "";
         DateTime timeA = DateTime.Now;
         DateTime timeB = DateTime.Now;
@@ -1302,7 +1246,7 @@ namespace 郊狼蓝牙测试
                 if (DG启用Vrc名字 != "" && DG启用Vrc名字 != "停止" && listBox2.Items.Contains(DG启用Vrc名字))
                 {
 
-                    if (待执行波形列表.Count ==0)
+                    if (待执行波形列表.Count == 0)
                     {
                         byte[] datago;
                         for (int i = 0; i < a郊狼存档.DG波形队列[DG启用Vrc名字].波形队列User包含全部格式的英文Tag.Count; i++)
@@ -1326,7 +1270,7 @@ namespace 郊狼蓝牙测试
 
 
                     }
-                   
+
 
                 }
 
@@ -1412,7 +1356,7 @@ namespace 郊狼蓝牙测试
 
             }
 
-           
+
         }
 
 
@@ -1441,10 +1385,10 @@ namespace 郊狼蓝牙测试
         {
             if (符合触发条件(comboBox配置条件1, textBox触发值1))
             {
-                
-                return comboBox配置1.Text ;
+
+                return comboBox配置1.Text;
             }
-           else if (符合触发条件(comboBox配置条件2, textBox触发值2))
+            else if (符合触发条件(comboBox配置条件2, textBox触发值2))
             {
                 return comboBox配置2.Text;
             }
@@ -1465,7 +1409,7 @@ namespace 郊狼蓝牙测试
 
         }
 
-        private bool 符合触发条件(ComboBox comboBox配置条件1,TextBox 触发值)
+        private bool 符合触发条件(ComboBox comboBox配置条件1, TextBox 触发值)
         {
             float cc = 0.0f;
             switch (comboBox配置条件1.Text.Trim())
@@ -1630,42 +1574,42 @@ namespace 郊狼蓝牙测试
         {
 
             string a = textBox6.Text;//提取音量最高的波形前4后3 强度波形一致
-            int maxindex=0;
+            int maxindex = 0;
             int count = 0;
             int max = 0;
             foreach (char c in a)
             {
-                
+
                 if (int.Parse(c.ToString()) > max)
-                { 
+                {
                     max = int.Parse(c.ToString());
-                    maxindex = count; 
+                    maxindex = count;
                 }
                 count++;
             }
 
-            
+
             int v1 = 0;
-            int v2=0;   
-            int v3=0;   
-            int v4=0;   
+            int v2 = 0;
+            int v3 = 0;
+            int v4 = 0;
             //0~200<0~9
-            if (maxindex<4)
+            if (maxindex < 4)
             {
-                v1 = int.Parse(a[maxindex ].ToString());
-                v2 = int.Parse(a[maxindex +1].ToString());
+                v1 = int.Parse(a[maxindex].ToString());
+                v2 = int.Parse(a[maxindex + 1].ToString());
                 v3 = int.Parse(a[maxindex + 2].ToString());
                 v4 = int.Parse(a[maxindex + 3].ToString());
             }
             else
             {
-                v1 = int.Parse(a[maxindex-1].ToString());
-                v2 = int.Parse(a[maxindex ].ToString());
+                v1 = int.Parse(a[maxindex - 1].ToString());
+                v2 = int.Parse(a[maxindex].ToString());
                 v3 = int.Parse(a[maxindex + 1].ToString());
                 v4 = int.Parse(a[maxindex + 2].ToString());
             }
 
-            int v12 = 限制频率范围(v1*18);
+            int v12 = 限制频率范围(v1 * 18);
             int v22 = 限制频率范围(v2 * 18);
             int v32 = 限制频率范围(v3 * 18);
             int v42 = 限制频率范围(v4 * 18);
@@ -1678,13 +1622,13 @@ namespace 郊狼蓝牙测试
             buffer[3] = Convert.ToByte(B值.Value);
 
             buffer[4] = Convert.ToByte(v12);
-            buffer[5] = Convert.ToByte(v22 );
-            buffer[6] = Convert.ToByte(v32 );
-            buffer[7] = Convert.ToByte(v42 );
+            buffer[5] = Convert.ToByte(v22);
+            buffer[6] = Convert.ToByte(v32);
+            buffer[7] = Convert.ToByte(v42);
 
-          
 
-            v12= 限制强度范围(v1 * 6);
+
+            v12 = 限制强度范围(v1 * 6);
             v22 = 限制强度范围(v2 * 6);
             v32 = 限制强度范围(v3 * 6);
             v42 = 限制强度范围(v4 * 6);
@@ -1692,9 +1636,9 @@ namespace 郊狼蓝牙测试
 
 
             buffer[8] = Convert.ToByte(v12);
-            buffer[9] = Convert.ToByte(v22 );
-            buffer[10] = Convert.ToByte(v32 );
-            buffer[11] = Convert.ToByte(v42 );
+            buffer[9] = Convert.ToByte(v22);
+            buffer[10] = Convert.ToByte(v32);
+            buffer[11] = Convert.ToByte(v42);
 
             buffer[12] = Convert.ToByte(B1_1.Value);
             buffer[13] = Convert.ToByte(B1_2.Value);
@@ -1704,9 +1648,9 @@ namespace 郊狼蓝牙测试
             buffer[16] = Convert.ToByte(B2_1.Value);
             buffer[17] = Convert.ToByte(B2_2.Value);
             buffer[18] = Convert.ToByte(B2_3.Value);
-            buffer[19] = Convert.ToByte(B2_4.Value); 
+            buffer[19] = Convert.ToByte(B2_4.Value);
 
-            write(buffer); 
+            write(buffer);
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -1781,7 +1725,7 @@ namespace 郊狼蓝牙测试
         private void B2_1_Scroll(object sender, EventArgs e)
         {
             label34.Text = B2_1.Value.ToString();
-        } 
+        }
         private void B2_2_Scroll(object sender, EventArgs e)
         {
             label33.Text = B2_2.Value.ToString();
@@ -1802,11 +1746,11 @@ namespace 郊狼蓝牙测试
             设置测试波形();
             测试时间 = 0;
             最大测试时间 = 30;
-            开始测试=true;
+            开始测试 = true;
             timer波形连续输出.Enabled = true;
         }
 
-       
+
         void 设置测试波形()
         {
             byte[] buffer = new byte[20];
@@ -1837,12 +1781,12 @@ namespace 郊狼蓝牙测试
             buffer[19] = Convert.ToByte(B2_4.Value);
 
 
-            测试波形 = buffer; 
+            测试波形 = buffer;
 
 
         }
-        int 第二阶段=0;
-       
+        int 第二阶段 = 0;
+
         private void button17_Click(object sender, EventArgs e)
         {
             BLE_Scan_Start_Btn_Click(sender, e);
@@ -1937,7 +1881,7 @@ namespace 郊狼蓝牙测试
 
 
 
-                         
+
                     }
 
                 }
@@ -1950,8 +1894,8 @@ namespace 郊狼蓝牙测试
 
                 foreach (TreeNode tn in Gatt_treeView.Nodes)
 
-                { 
-                  
+                {
+
                     tnRet = FindNode(tn, "特性:0000150a-0000-1000-8000-00805f9b34fb (WriteWithoutResponse)");
                     // tnRet = FindNode(tn, "服务:0000180c-0000-1000-8000-00805f9b34fb");
 
@@ -1964,7 +1908,59 @@ namespace 郊狼蓝牙测试
                     Gatt_treeView.SelectedNode = tnRet;
 
                     timer一键启动用.Enabled = false;
-                    return ;    
+                    tabControl1.SelectedIndex = 1;
+
+
+                    //测试.DGLab
+
+                    string pathss = System.Environment.CurrentDirectory.ToString() + "/测试.DGLab";
+
+
+                    a郊狼存档 = 序列化保存读取.序列化读取<郊狼存档>(pathss);
+
+                    listBox1.Items.Clear();
+                    foreach (string a in a郊狼存档.DG波形列表.Keys)
+                    {
+                        listBox1.Items.Add(a);
+                    }
+                    listBox2.Items.Clear();
+                    foreach (string a in a郊狼存档.DG波形队列.Keys)
+                    {
+                        listBox2.Items.Add(a);
+                    }
+
+
+                    textBox配置名1C.Text = a郊狼存档.textBox配置名1C;
+                    textBox配置名2C.Text = a郊狼存档.textBox配置名2C;
+                    textBox配置名3C.Text = a郊狼存档.textBox配置名3C;
+                    textBox配置名4C.Text = a郊狼存档.textBox配置名4C;
+                    textBox配置名5C.Text = a郊狼存档.textBox配置名5C;
+
+
+
+
+                    comboBox配置条件1.Text = a郊狼存档.textBox配置条件1C;
+                    comboBox配置条件2.Text = a郊狼存档.textBox配置条件2C;
+                    comboBox配置条件3.Text = a郊狼存档.textBox配置条件3C;
+                    comboBox配置条件4.Text = a郊狼存档.textBox配置条件4C;
+                    comboBox配置条件5.Text = a郊狼存档.textBox配置条件5C;
+
+
+
+                    textBoxA通强度参数C.Text = a郊狼存档.textBoxA通强度参数C;
+                    textBoxB通强度参数C.Text = a郊狼存档.textBoxB通强度参数C;
+
+                    textBoxA通倍率.Text = a郊狼存档.textBoxA通倍率C;
+                    textBoxB通倍率.Text = a郊狼存档.textBoxB通倍率C;
+
+                    填充vrc配置();
+
+
+                    一键启动按钮.Enabled = false;
+
+
+
+                    return;
 
                 }
 
@@ -2007,17 +2003,17 @@ namespace 郊狼蓝牙测试
 
         private void button18_Click(object sender, EventArgs e)
         {
-            if (listBox1 .SelectedItems .Count <=0)
+            if (listBox1.SelectedItems.Count <= 0)
             {
                 MessageBox.Show("请选择一个波形");
                 return;
             }
 
-           
+
 
             Random ss = new Random();
             string bb = ss.Next(0, 9999).ToString();
-            ImageListViewItem a = new ImageListViewItem( "不使用" + vv.tag栏位列表ImageListView.Items.Count.ToString() + bb, listBox1.SelectedItem.ToString()+ vv.tag栏位列表ImageListView.Items .Count.ToString () + bb, a郊狼存档.DG波形列表[listBox1.SelectedItem.ToString()], "不使用");
+            ImageListViewItem a = new ImageListViewItem("不使用" + vv.tag栏位列表ImageListView.Items.Count.ToString() + bb, listBox1.SelectedItem.ToString() + vv.tag栏位列表ImageListView.Items.Count.ToString() + bb, a郊狼存档.DG波形列表[listBox1.SelectedItem.ToString()], "不使用");
             vv.tag栏位列表ImageListView.Items.Add(a);
         }
 
@@ -2026,24 +2022,24 @@ namespace 郊狼蓝牙测试
 
 
 
-       
+
         private void button9依照当前波形设置创建波形_Click(object sender, EventArgs e)
         {
-            if(textBox8新建波形命名.Text .Trim ()=="")
+            if (textBox8新建波形命名.Text.Trim() == "")
             {
                 MessageBox.Show("请填写波形名称");
-                return; 
-            }  
-            if (a郊狼存档.DG波形列表.Keys .Contains (textBox8新建波形命名.Text.Trim()))
+                return;
+            }
+            if (a郊狼存档.DG波形列表.Keys.Contains(textBox8新建波形命名.Text.Trim()))
             {
                 MessageBox.Show("波形名称已存在，请更换一个");
                 return;
             }
-            a郊狼存档.DG波形列表.Add(textBox8新建波形命名.Text.Trim(), byte波形转string(获取波形设置()));  
-            listBox1 .Items .Clear();   
-            foreach (string a in a郊狼存档.DG波形列表.Keys )
+            a郊狼存档.DG波形列表.Add(textBox8新建波形命名.Text.Trim(), byte波形转string(获取波形设置()));
+            listBox1.Items.Clear();
+            foreach (string a in a郊狼存档.DG波形列表.Keys)
             {
-                listBox1.Items.Add (a); 
+                listBox1.Items.Add(a);
             }
         }
 
@@ -2083,19 +2079,19 @@ namespace 郊狼蓝牙测试
 
         }
 
-        
+
 
         string byte波形转string(byte[] a)
         {
-            string returnss="";
+            string returnss = "";
             foreach (byte b in a)
             {
-                returnss += b.ToString()+ " ";
+                returnss += b.ToString() + " ";
             }
-            return returnss.Trim ();
+            return returnss.Trim();
         }
         byte[] string转byte波形(string a)
-        { 
+        {
             string[] b = a.Split(' ');
             byte[] bytes = new byte[b.Length];
             int i = 0;
@@ -2110,7 +2106,7 @@ namespace 郊狼蓝牙测试
 
 
 
-        郊狼存档 a郊狼存档=new 郊狼存档 ();
+        郊狼存档 a郊狼存档 = new 郊狼存档();
 
         private void button以以上名字新建队列_Click(object sender, EventArgs e)
         {
@@ -2125,7 +2121,7 @@ namespace 郊狼蓝牙测试
                 return;
             }
 
-            a郊狼存档. DG波形队列.Add(textBox9波形队列名称.Text.Trim(), new 波形队列序列化(vv));
+            a郊狼存档.DG波形队列.Add(textBox9波形队列名称.Text.Trim(), new 波形队列序列化(vv));
             listBox2.Items.Clear();
             foreach (string a in a郊狼存档.DG波形队列.Keys)
             {
@@ -2198,7 +2194,7 @@ namespace 郊狼蓝牙测试
 
         void 填充vrc配置()
         {
-            comboBox配置1.Items .Clear();
+            comboBox配置1.Items.Clear();
             comboBox配置2.Items.Clear();
             comboBox配置3.Items.Clear();
             comboBox配置4.Items.Clear();
@@ -2211,11 +2207,11 @@ namespace 郊狼蓝牙测试
                 comboBox配置3.Items.Add(a);
                 comboBox配置4.Items.Add(a);
                 comboBox配置5.Items.Add(a);
-            }  
+            }
 
-            if (!comboBox配置1.Items.Contains (comboBox配置1.Text) )
+            if (!comboBox配置1.Items.Contains(comboBox配置1.Text))
             {
-                comboBox配置1.Text = comboBox配置1.Items[0].ToString ();
+                comboBox配置1.Text = comboBox配置1.Items[0].ToString();
             }
             if (!comboBox配置2.Items.Contains(comboBox配置2.Text))
             {
@@ -2236,37 +2232,37 @@ namespace 郊狼蓝牙测试
         }
         byte[] 实时更新强度(byte[] buffer, float A强度百分比, float B强度百分比)
         {
-            byte[] bufferout= new byte[buffer.Length];
+            byte[] bufferout = new byte[buffer.Length];
 
-             for (int i=0;i< buffer.Length;i++)
+            for (int i = 0; i < buffer.Length; i++)
             {
-                if (i==2)
+                if (i == 2)
                 {//A通强度
-                    textBoxA前.Text = Convert.ToInt32(buffer[2]).ToString ();
-                    textBoxA后.Text = ((float)Convert.ToInt32(buffer[2]) * A强度百分比 * float.Parse(textBoxA通实时强度.Text)).ToString();
+                    textBoxA前.Text = Convert.ToInt32(buffer[2]).ToString();
+                    textBoxA后.Text = ((float)Convert.ToInt32(buffer[2]) * A强度百分比 * float.Parse(textBoxA通倍率.Text)).ToString();
 
 
-                    bufferout[2] = Convert.ToByte((int)((float)Convert.ToInt32(buffer[2]) * A强度百分比 * float.Parse(textBoxA通实时强度.Text)));
+                    bufferout[2] = Convert.ToByte((int)((float)Convert.ToInt32(buffer[2]) * A强度百分比 * float.Parse(textBoxA通倍率.Text)));
 
-                    
+
 
                 }
                 else if (i == 3)
                 {//B通强度
                     textBoxB前.Text = Convert.ToInt32(buffer[3]).ToString();
-                    textBoxB后.Text = ((float)Convert.ToInt32(buffer[3]) * A强度百分比 * float.Parse(textBoxB通实时强度.Text)).ToString();
+                    textBoxB后.Text = ((float)Convert.ToInt32(buffer[3]) * A强度百分比 * float.Parse(textBoxB通倍率.Text)).ToString();
 
-                    bufferout[3] = Convert.ToByte((int)((float)Convert.ToInt32(buffer[3]) * B强度百分比 * float.Parse(textBoxB通实时强度.Text)));
+                    bufferout[3] = Convert.ToByte((int)((float)Convert.ToInt32(buffer[3]) * B强度百分比 * float.Parse(textBoxB通倍率.Text)));
 
                 }
                 else
-                     bufferout[i] = buffer[i];   
+                    bufferout[i] = buffer[i];
             }
 
 
-             return bufferout;  
-            
- 
+            return bufferout;
+
+
 
         }
 
@@ -2277,32 +2273,35 @@ namespace 郊狼蓝牙测试
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (listBox1 .SelectedItems!=null&& listBox1.SelectedIndex>=0)
+            if (listBox1.Items.Count > 0 && listBox1.SelectedItem != null)
             {
 
-                timer波形连续输出.Enabled = true;
-                DG播放波形 = true;
-
+                待执行波形列表.Add(string转byte波形(a郊狼存档.DG波形列表[listBox1.SelectedItem.ToString()]));
+                波形循环触发测试();
             }
 
-
-            
         }
 
         private void button29_Click(object sender, EventArgs e)
         {
-
-
-            if (listBox2.SelectedItems != null && listBox2.SelectedIndex >= 0)
+            if (listBox2.Items.Count > 0 && listBox2.SelectedItem != null)
             {
-                timer波形连续输出.Enabled = true;
-                DG播放队列 = true;
+
+
+                for (int i = 0; i < a郊狼存档.DG波形队列[listBox2.SelectedItem.ToString()].波形队列User包含全部格式的英文Tag.Count; i++)
+                {
+                    待执行波形列表.Add(string转byte波形(
+                       a郊狼存档.DG波形队列[listBox2.SelectedItem.ToString()].波形队列User包含全部格式的英文Tag[i]
+                       ));
+                }
+
+                波形循环触发测试();
             }
         }
 
         private void button19导出_Click(object sender, EventArgs e)
         {
-           
+
 
             System.Windows.Forms.SaveFileDialog dialog = new System.Windows.Forms.SaveFileDialog();
             dialog.InitialDirectory = System.Environment.CurrentDirectory.ToString();
@@ -2314,13 +2313,13 @@ namespace 郊狼蓝牙测试
 
                 序列化保存读取.序列化保存<郊狼存档>(a郊狼存档, dialog.FileName);
             }
-  
 
-           
+
+
         }
 
         private void button20导入_Click(object sender, EventArgs e)
-        { 
+        {
             System.Windows.Forms.OpenFileDialog dialog = new System.Windows.Forms.OpenFileDialog();
             dialog.InitialDirectory = System.Environment.CurrentDirectory.ToString();
             dialog.Filter = "郊狼存档|*.DGLab";
@@ -2335,12 +2334,40 @@ namespace 郊狼蓝牙测试
                 foreach (string a in a郊狼存档.DG波形列表.Keys)
                 {
                     listBox1.Items.Add(a);
-                } 
+                }
                 listBox2.Items.Clear();
                 foreach (string a in a郊狼存档.DG波形队列.Keys)
                 {
                     listBox2.Items.Add(a);
-                } 
+                }
+
+
+
+                textBox配置名1C.Text = a郊狼存档.textBox配置名1C;
+                textBox配置名2C.Text = a郊狼存档.textBox配置名2C;
+                textBox配置名3C.Text = a郊狼存档.textBox配置名3C;
+                textBox配置名4C.Text = a郊狼存档.textBox配置名4C;
+                textBox配置名5C.Text = a郊狼存档.textBox配置名5C;
+
+
+
+
+                comboBox配置条件1.Text = a郊狼存档.textBox配置条件1C;
+                comboBox配置条件2.Text = a郊狼存档.textBox配置条件2C;
+                comboBox配置条件3.Text = a郊狼存档.textBox配置条件3C;
+                comboBox配置条件4.Text = a郊狼存档.textBox配置条件4C;
+                comboBox配置条件5.Text = a郊狼存档.textBox配置条件5C;
+
+
+
+                textBoxA通强度参数C.Text = a郊狼存档.textBoxA通强度参数C;
+                textBoxB通强度参数C.Text = a郊狼存档.textBoxB通强度参数C;
+
+                textBoxA通倍率.Text = a郊狼存档.textBoxA通倍率C;
+                textBoxB通倍率.Text = a郊狼存档.textBoxB通倍率C;
+
+
+
                 填充vrc配置();
 
             }
@@ -2349,15 +2376,18 @@ namespace 郊狼蓝牙测试
 
 
         }
-        bool DG启用Vrc=false;
+        bool DG启用Vrc = false;
         private void button15_Click(object sender, EventArgs e)
         {
             DG启用Vrc = true;
+
+            timer波形连续输出.Enabled = true;
+
+
             groupBox36.Visible = true;
-            
+
             button19.Visible = true;
             button15.Visible = false;
-            timer波形连续输出.Enabled = true;
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -2369,38 +2399,73 @@ namespace 郊狼蓝牙测试
             button15.Visible = true;
         }
 
-        private void button20_Click(object sender, EventArgs e)
+
+
+        void 尝试追加参数名(ComboBox a, string 参数名)
         {
-            获得参数变更(textBox3.Text, textBox8.Text);
+            if (!a.Items.Contains(参数名))
+            {
+                a.Items.Add(参数名);
+            }
         }
+
 
         void 获得参数变更(string 参数名, string 值)
         {
-            if (textBox配置名1.Text.Trim() == 参数名.Trim())
+            //更新列表和所有combobox
+
+            if (!listBox5.Items.Contains(参数名))
+            {
+                listBox5.Items.Add(参数名);
+            }
+
+
+            尝试追加参数名(textBox配置名1C, 参数名);
+            尝试追加参数名(textBox配置名2C, 参数名);
+            尝试追加参数名(textBox配置名3C, 参数名);
+            尝试追加参数名(textBox配置名4C, 参数名);
+            尝试追加参数名(textBox配置名5C, 参数名);
+            尝试追加参数名(textBoxA通强度参数C, 参数名);
+            尝试追加参数名(textBoxB通强度参数C, 参数名);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if (textBox配置名1C.Text.Trim() == 参数名.Trim())
             {
                 textBox触发值1.Text = 值.Trim();
             }
-            else if (textBox配置名2.Text.Trim() == 参数名.Trim())
+            else if (textBox配置名2C.Text.Trim() == 参数名.Trim())
             {
                 textBox触发值2.Text = 值.Trim();
             }
-            else if (textBox配置名3.Text.Trim() == 参数名.Trim())
+            else if (textBox配置名3C.Text.Trim() == 参数名.Trim())
             {
                 textBox触发值3.Text = 值.Trim();
             }
-            else if (textBox配置名4.Text.Trim() == 参数名.Trim())
+            else if (textBox配置名4C.Text.Trim() == 参数名.Trim())
             {
                 textBox触发值4.Text = 值.Trim();
             }
-            else if (textBox配置名5.Text.Trim() == 参数名.Trim())
+            else if (textBox配置名5C.Text.Trim() == 参数名.Trim())
             {
                 textBox触发值5.Text = 值.Trim();
             }
-            else if (textBoxA通强度参数.Text.Trim() == 参数名.Trim())
+            else if (textBoxA通强度参数C.Text.Trim() == 参数名.Trim())
             {
                 textBoxA通强度值.Text = 值.Trim();
             }
-            else if (textBoxB通强度参数.Text.Trim() == 参数名.Trim())
+            else if (textBoxB通强度参数C.Text.Trim() == 参数名.Trim())
             {
                 textBoxB通强度值.Text = 值.Trim();
             }
@@ -2412,7 +2477,15 @@ namespace 郊狼蓝牙测试
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             //恢复
-            a郊狼存档.DG波形队列[listBox2.SelectedItem.ToString()].重设控制ImageListView(ref vv);
+
+            if (listBox2.SelectedItem != null)
+            {
+                a郊狼存档.DG波形队列[listBox2.SelectedItem.ToString()].重设控制ImageListView(ref vv);
+            }
+            else if (listBox2.Items.Count > 0)
+            {
+                a郊狼存档.DG波形队列[listBox2.Items[0].ToString()].重设控制ImageListView(ref vv);
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -2422,13 +2495,14 @@ namespace 郊狼蓝牙测试
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {//将设置还原回去
-            if (listBox1.SelectedItem!=null)
+            if (listBox1.SelectedItem != null)
             {
                 byte[] A = string转byte波形(a郊狼存档.DG波形列表[listBox1.SelectedItem.ToString()]);
                 填充波形设置(A);
 
             }
-           
+
+
 
         }
 
@@ -2439,21 +2513,21 @@ namespace 郊狼蓝牙测试
         int sleeptime = 0;
         string changedata = "";
         private void timerOSC_Tick(object sender, EventArgs e)
-        { 　 
-            if (data.Count >0)
+        {
+            if (data.Count > 0)
             {
                 changedata = "";
                 for (int i = 0; i < data.Count; i++)
                 {
 
-                    
 
 
-                    string a= dataKeys[i].Replace("/avatar/parameters/", "");
-                    string b= data[dataKeys[i]];
+
+                    string a = dataKeys[i].Replace("/avatar/parameters/", "");
+                    string b = data[dataKeys[i]];
 
 
-                    changedata +=(a + ":" + b + "\r\n");
+                    changedata += (a + ":" + b + "\r\n");
                     获得参数变更(a, b);
                 }
 
@@ -2485,50 +2559,54 @@ Grounded:True
 
         private void button30_Click(object sender, EventArgs e)
         {
-            float bb = float.Parse(textBoxA通实时强度.Text) - 0.1f;
+            float bb = float.Parse(textBoxA通倍率.Text) - 0.1f;
             if (bb < 0.1f)
             {
                 bb = 0.1f;
             }
-            textBoxA通实时强度.Text= bb.ToString (); 
+            textBoxA通倍率.Text = bb.ToString();
         }
 
         private void button33_Click(object sender, EventArgs e)
         {
-            float bb = float.Parse(textBoxA通实时强度.Text) + 0.1f;
+            float bb = float.Parse(textBoxA通倍率.Text) + 0.1f;
             if (bb > 5f)
             {
                 bb = 5f;
             }
-            textBoxA通实时强度.Text = bb.ToString();
+            textBoxA通倍率.Text = bb.ToString();
         }
 
         private void button31_Click(object sender, EventArgs e)
         {
-            float bb = float.Parse(textBoxB通实时强度.Text) - 0.1f;
+            float bb = float.Parse(textBoxB通倍率.Text) - 0.1f;
             if (bb < 0.1f)
             {
                 bb = 0.1f;
             }
-            textBoxB通实时强度.Text = bb.ToString();
+            textBoxB通倍率.Text = bb.ToString();
         }
 
         private void button32_Click(object sender, EventArgs e)
         {
-            float bb = float.Parse(textBoxB通实时强度.Text) + 0.1f;
+            float bb = float.Parse(textBoxB通倍率.Text) + 0.1f;
             if (bb > 5f)
             {
                 bb = 5f;
             }
-            textBoxB通实时强度.Text = bb.ToString();
+            textBoxB通倍率.Text = bb.ToString();
         }
 
         private void textBoxA通强度值_TextChanged(object sender, EventArgs e)
         {
-            float bb = float.Parse(textBoxA通强度值.Text) ;
+            float bb = float.Parse(textBoxA通强度值.Text);
             if (bb < 0.1f)
             {
                 bb = 0.1f;
+            }
+            if (bb > 5f)
+            {
+                bb = 5f;
             }
             textBoxA通强度值.Text = bb.ToString();
         }
@@ -2540,11 +2618,15 @@ Grounded:True
             {
                 bb = 0.1f;
             }
+            if (bb > 5f)
+            {
+                bb = 5f;
+            }
             textBoxB通强度值.Text = bb.ToString();
         }
 
         private void button34_Click(object sender, EventArgs e)
-        {  
+        {
             if (data.Keys.Contains(textBox11.Text))
                 data[textBox11.Text] = textBox10.Text;
             else
@@ -2553,23 +2635,23 @@ Grounded:True
                 dataKeys.Add(textBox11.Text);
 
             }
-               
+
         }
 
         private void button35_Click(object sender, EventArgs e)
         {
-            data.Clear ();  
+            data.Clear();
         }
 
         private void button36_Click(object sender, EventArgs e)
         {
-            if(listBox1.Items.Count  >0&& listBox1.SelectedItem!=null)
-            { 
-                
-                待执行波形列表.Add (string转byte波形(a郊狼存档.DG波形列表[listBox1.SelectedItem.ToString()]));
+            if (listBox1.Items.Count > 0 && listBox1.SelectedItem != null)
+            {
+
+                待执行波形列表.Add(string转byte波形(a郊狼存档.DG波形列表[listBox1.SelectedItem.ToString()]));
                 波形循环触发测试();
             }
-           
+
 
         }
 
@@ -2580,17 +2662,17 @@ Grounded:True
         List<byte[]> 待执行波形列表 = new List<byte[]>();
 
 
- 
+
 
         void 波形循环触发测试()
         {
-            if (待执行波形列表.Count >0)
+            if (待执行波形列表.Count > 0)
             {
                 write(待执行波形列表[0]);
-                
-                    待执行波形列表.RemoveAt(0);   
+
+                待执行波形列表.RemoveAt(0);
             }
-           
+
         }
 
         private void button37_Click(object sender, EventArgs e)
@@ -2600,12 +2682,12 @@ Grounded:True
 
 
                 for (int i = 0; i < a郊狼存档.DG波形队列[listBox2.SelectedItem.ToString()].波形队列User包含全部格式的英文Tag.Count; i++)
-                { 
+                {
                     待执行波形列表.Add(string转byte波形(
                        a郊狼存档.DG波形队列[listBox2.SelectedItem.ToString()].波形队列User包含全部格式的英文Tag[i]
                        ));
-                } 
- 
+                }
+
                 波形循环触发测试();
             }
         }
@@ -2614,5 +2696,196 @@ Grounded:True
         {
             待执行波形列表.Clear();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+            if (listBox1.SelectedItem != null)
+            {
+                a郊狼存档.DG波形列表.Remove(listBox1.SelectedItem.ToString());
+
+                listBox1.Items.Remove(listBox1.SelectedItem);
+
+            }
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+
+
+            if (listBox2.SelectedItem != null)
+            {
+                a郊狼存档.DG波形队列.Remove(listBox2.SelectedItem.ToString());
+
+                listBox2.Items.Remove(listBox2.SelectedItem);
+
+            }
+
+
+
+
+        }
+
+        private void textBox配置名1C_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBox配置名1C = textBox配置名1C.Text;
+        }
+
+        private void textBox配置名2C_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBox配置名2C = textBox配置名2C.Text;
+        }
+
+        private void textBox配置名3C_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBox配置名3C = textBox配置名3C.Text;
+        }
+
+        private void textBox配置名4C_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBox配置名4C = textBox配置名4C.Text;
+        }
+
+        private void textBox配置名5C_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBox配置名5C = textBox配置名5C.Text;
+        }
+
+        private void comboBox配置条件1_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBox配置条件1C = comboBox配置条件1.Text;
+        }
+
+        private void comboBox配置条件2_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBox配置条件2C = comboBox配置条件2.Text;
+        }
+
+        private void comboBox配置条件3_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBox配置条件3C = comboBox配置条件3.Text;
+        }
+
+        private void comboBox配置条件4_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBox配置条件4C = comboBox配置条件4.Text;
+        }
+
+        private void comboBox配置条件5_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBox配置条件5C = comboBox配置条件5.Text;
+        }
+
+        private void textBoxA通强度参数C_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBoxA通强度参数C = textBoxA通强度参数C.Text;
+        }
+
+        private void textBoxB通强度参数C_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBoxB通强度参数C = textBoxB通强度参数C.Text;
+        }
+
+        private void textBoxA通倍率_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBoxA通倍率C = textBoxA通倍率.Text;
+        }
+
+        private void textBoxB通倍率_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.textBoxB通倍率C = textBoxB通倍率.Text;
+        }
+        void 初次写入()
+        {
+            a郊狼存档.textBox配置名1C = textBox配置名1C.Text;
+            a郊狼存档.textBox配置名2C = textBox配置名2C.Text;
+            a郊狼存档.textBox配置名3C = textBox配置名3C.Text;
+            a郊狼存档.textBox配置名4C = textBox配置名4C.Text;
+            a郊狼存档.textBox配置名5C = textBox配置名5C.Text;
+            a郊狼存档.textBox配置条件1C = comboBox配置条件1.Text;
+            a郊狼存档.textBox配置条件2C = comboBox配置条件2.Text;
+            a郊狼存档.textBox配置条件3C = comboBox配置条件3.Text;
+            a郊狼存档.textBox配置条件4C = comboBox配置条件4.Text;
+            a郊狼存档.textBox配置条件5C = comboBox配置条件5.Text;
+            a郊狼存档.textBoxA通强度参数C = textBoxA通强度参数C.Text;
+            a郊狼存档.textBoxB通强度参数C = textBoxB通强度参数C.Text;
+            a郊狼存档.textBoxA通倍率C = textBoxA通倍率.Text;
+            a郊狼存档.textBoxB通倍率C = textBoxB通倍率.Text;
+
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            初次写入();
+            System.Windows.Forms.SaveFileDialog dialog = new System.Windows.Forms.SaveFileDialog();
+            dialog.InitialDirectory = System.Environment.CurrentDirectory.ToString();
+            dialog.Filter = "郊狼存档|*.DGLab";
+            System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                string newFilepath = dialog.FileName;
+
+                序列化保存读取.序列化保存<郊狼存档>(a郊狼存档, dialog.FileName);
+            }
+        }
+
+     
+        int mousex = 0;
+        int mousey = 0;
+        private void GetMousePose()
+        {
+            System.Drawing.Point mp = System.Windows.Forms.Control.MousePosition;
+            mousex = mp.X;  //鼠标当前X坐标
+            mousey = mp.Y;  //鼠标当前Y坐标
+        }
+
+        private void A1_1_MouseEnter(object sender, EventArgs e)
+        {
+            GetMousePose();
+            if (checkBox4 .Checked )
+            {
+                A1_1.Value = mousex;
+            }
+
+        }
+        IKeyboardMouseEvents gmouse;
+
+        private void button17_Click_1(object sender, EventArgs e)
+        {
+            gmouse = Hook.GlobalEvents();
+            gmouse.MouseDownExt += Gmouse_MouseDownExt;
+            gmouse.MouseUpExt += Gmouse_MouseUpExt;
+        }
+
+        bool mousedown = false;
+        private void Gmouse_MouseUpExt(object sender, MouseEventExtArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                mousedown = false;
+                checkBox4.Checked = false;
+            }
+        }
+
+        private void Gmouse_MouseDownExt(object sender, MouseEventExtArgs e)
+        {
+            if (e.Button ==MouseButtons.Left)
+            {
+                mousedown = true;
+                checkBox4.Checked = true;
+            }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            gmouse.MouseUpExt -= Gmouse_MouseDownExt;
+            gmouse.MouseDownExt -= Gmouse_MouseDownExt;
+            gmouse.Dispose ();  
+        }
     }
+
+ 
+ 
 }
+

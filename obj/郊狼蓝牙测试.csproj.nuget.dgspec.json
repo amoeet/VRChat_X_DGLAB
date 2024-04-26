@@ -168,6 +168,10 @@
       "frameworks": {
         "net48": {
           "dependencies": {
+            "MouseKeyHook": {
+              "target": "Package",
+              "version": "[5.7.1, )"
+            },
             "NAudio": {
               "target": "Package",
               "version": "[2.2.1, )"
