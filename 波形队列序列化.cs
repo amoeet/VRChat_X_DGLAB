@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace 郊狼蓝牙测试
+namespace VRChatX郊狼
 {
     [Serializable]
     public class 波形队列序列化
@@ -86,7 +86,7 @@ namespace 郊狼蓝牙测试
             textBox配置名4C = "";
             textBox配置名5C = "";
             textBoxA通强度参数C = "";
-            textBoxB通强度参数C = ""; 
+            textBoxB通强度参数C = "";
             textBox配置条件1C = "";
             textBox配置条件2C = "";
             textBox配置条件3C = "";
@@ -94,6 +94,14 @@ namespace 郊狼蓝牙测试
             textBox配置条件5C = "";
             textBoxA通倍率C = "";
             textBoxB通倍率C = "";
+
+            comboBox配置1C = "";
+            comboBox配置2C = "";
+            comboBox配置3C = "";
+            comboBox配置4C = "";
+            comboBox配置5C = "";
+
+
         }
 
 
@@ -119,7 +127,11 @@ namespace 郊狼蓝牙测试
         public string textBoxA通倍率C;
         public string textBoxB通倍率C;
 
-
+        public string comboBox配置1C;
+        public string comboBox配置2C;
+        public string comboBox配置3C;
+        public string comboBox配置4C;
+        public string comboBox配置5C;
 
 
 

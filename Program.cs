@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace 郊狼蓝牙测试
+namespace VRChatX郊狼
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace 郊狼蓝牙测试
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new VRChatXDGLAB());
             //Application.Run(new MainWindow());
           
         }

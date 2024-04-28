@@ -8,7 +8,7 @@ using System.Linq;
 using System.Numerics;
 using System.Windows.Forms;
 
-namespace 郊狼蓝牙测试
+namespace VRChatX郊狼
 {
     internal class DrawAudio
     {

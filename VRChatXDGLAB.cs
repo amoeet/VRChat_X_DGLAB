@@ -36,12 +36,14 @@ using Gma.System.MouseKeyHook;
 using Point = System.Drawing.Point;
 using System.Numerics;
 using Panel = System.Windows.Forms.Panel;
+using Windows.Storage;
+using System.Runtime.CompilerServices;
 
 
 
-namespace 郊狼蓝牙测试
+namespace VRChatX郊狼
 {
-    public partial class Form1 : Form
+    public partial class VRChatXDGLAB : Form
     {
         DrawAudio drawAudio;
         private BluetoothLEAdvertisementWatcher Watcher = null;
@@ -58,6 +60,10 @@ namespace 郊狼蓝牙测试
 
         int listview_index = 0;
         Dictionary<ulong, int> listview_indexs = new Dictionary<ulong, int>();
+
+
+
+
 
 
         public byte[] HexStringToByteArray2(string s)
@@ -192,7 +198,7 @@ namespace 郊狼蓝牙测试
 
 
 
-        public Form1()
+        public VRChatXDGLAB()
         {
 
             InitializeComponent();
@@ -206,13 +212,95 @@ namespace 郊狼蓝牙测试
 
             //测试.DGLab
 
-            string pathss = System.Environment.CurrentDirectory.ToString() + "/测试.DGLab";
-
-            if(checkBox3.Checked )
-               导入(pathss);
+            string pathss = System.Environment.CurrentDirectory.ToString() + "/初始化波形.DGLab";
 
 
+            导入(pathss);
 
+            this.Size = new System.Drawing.Size(311, 693);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            Watcher = new BluetoothLEAdvertisementWatcher
+            {
+                ScanningMode = BluetoothLEScanningMode.Active
+            };
+            Watcher.SignalStrengthFilter.InRangeThresholdInDBm = -100;
+            Watcher.SignalStrengthFilter.OutOfRangeThresholdInDBm = -100;
+            Watcher.Received += OnAdvertisementReceived;
+
+            // wait 5 seconds to make sure the device is really out of range
+            Watcher.SignalStrengthFilter.OutOfRangeTimeout = TimeSpan.FromMilliseconds(5000);
+            Watcher.SignalStrengthFilter.SamplingInterval = TimeSpan.FromMilliseconds(2000);
+            drawAudio.MainWindow_Load(sender, e);
+
+
+            MessageBox.Show("本软件基于DG-LAB 郊狼3 开源的蓝牙协议制作，软件尚处于测试阶段，可能存在意外风险，请遵守DG-LAB 郊狼3的使用手册，不要将保护上限调到自己无法承受的程度！保护好自己的身体，愉快玩耍！", "警告！");
+
+            加载本地目录下的玩法();
+            高亮显示重要按钮();
+
+            //更改界面和文字颜色(this, Color.FromArgb(18,18,18), Color.FromArgb(255,233,157));
+
+
+        }
+
+
+        void 高亮显示重要按钮()
+        {
+
+            Color a = Color.FromArgb(255, 233, 157);
+            button50.BackColor = a;
+            一键启动按钮.BackColor = a;
+            button1.BackColor = a;
+            button50.BackColor = a;
+            button50.BackColor = a;
+            button50.BackColor = a;
+            button50.BackColor = a;
+
+
+
+        }
+
+
+
+
+        void 更改界面和文字颜色(Control a, Color 背景色, Color 文字色)
+        {
+            a.BackColor = 背景色;
+            a.ForeColor = 文字色;
+
+            if (a.Controls.Count > 0)
+                foreach (Control ass in a.Controls)
+                {
+                    更改界面和文字颜色(ass, 背景色, 文字色);
+                }
+
+            if (a is GroupBox)
+            {
+                (a as GroupBox).Paint += groupBox_Paint;
+
+            }
+
+        }
+
+        void groupBox_Paint(object sender, PaintEventArgs e)
+        {
+            GroupBox gBox = (GroupBox)sender;
+            Pen PenColor = new Pen(gBox.ForeColor);
+            Brush BrushColor = new SolidBrush(gBox.ForeColor);
+
+            e.Graphics.Clear(gBox.BackColor);
+            e.Graphics.DrawString(gBox.Text, gBox.Font, BrushColor, 10, 1);
+            var vSize = e.Graphics.MeasureString(gBox.Text, gBox.Font);
+            e.Graphics.DrawLine(PenColor, 1, vSize.Height / 2, 8, vSize.Height / 2);
+            e.Graphics.DrawLine(PenColor, vSize.Width + 8, vSize.Height / 2, gBox.Width - 2, vSize.Height / 2);
+            e.Graphics.DrawLine(PenColor, 1, vSize.Height / 2, 1, gBox.Height - 2);
+            e.Graphics.DrawLine(PenColor, 1, gBox.Height - 2, gBox.Width - 2, gBox.Height - 2);
+            e.Graphics.DrawLine(PenColor, gBox.Width - 2, vSize.Height / 2, gBox.Width - 2, gBox.Height - 2);
         }
 
 
@@ -224,16 +312,73 @@ namespace 郊狼蓝牙测试
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             关闭所有网络服务();//与 uOSC  Unity通信
+            string aaa = System.Environment.CurrentDirectory.ToString() + "/" + DateTime.Now.ToString("yyyy_MM_dd_HH：mm：ss：ffff") + "自动存档.DGLab";
+            if (checkBox3.Checked)
+                序列化保存读取.序列化保存<郊狼存档>(a郊狼存档, aaa);
+        }
 
 
-            string aaa = System.Environment.CurrentDirectory.ToString() + "/测试.DGLab";
 
-            if (checkBox3.Checked )
-            序列化保存读取.序列化保存<郊狼存档>(a郊狼存档, aaa);
+
+
+        void 加载本地目录下的玩法()
+        {
+            listBox13.Items.Clear();
+            listBox14.Items.Clear();
+            DirectoryInfo aaa = new DirectoryInfo(System.Environment.CurrentDirectory.ToString());
+            FileInfo[] bbb = aaa.GetFiles("*.DGLab");
+            foreach (FileInfo f in bbb)
+            {
+                listBox13.Items.Add(f.Name);
+                listBox14.Items.Add(f.Name);
+            }
+
+        }
+        private void button52切换为选中玩法_Click(object sender, EventArgs e)
+        {
+            if (listBox14.Items.Count > 0 && listBox14.SelectedItem != null)
+            {
+                string aaa = System.Environment.CurrentDirectory.ToString() + "/" + listBox14.SelectedItem.ToString();
+
+                导入(aaa);
+            }
+            else
+            {
+                MessageBox.Show("请选择一个玩法");
+                return;
+            }
+            待执行波形列表.Clear();
+
+        }
+        private void button50_Click(object sender, EventArgs e)
+        {//同步数据
+            if (listBox13.Items.Count > 0 && listBox13.SelectedItem != null)
+            {
+                listBox14.SelectedItem = listBox13.SelectedItem;
+
+                string aaa = System.Environment.CurrentDirectory.ToString() + "/" + listBox14.SelectedItem.ToString();
+
+                导入(aaa);
+            }
+            else
+            {
+                MessageBox.Show("请选择一个玩法");
+                return;
+            }
+            tabControl1.SelectedIndex = 1;
+
+            button17_Click(sender, e);
+
+            开启服务器接收消息button1_Click(sender, e);
+
 
 
 
         }
+
+
+
+
 
 
 
@@ -322,8 +467,8 @@ namespace 郊狼蓝牙测试
             groupBox36.Visible = true;
 
             button1.Visible = false;
-            button3.Visible = false;
-
+            button3.Visible = true;
+            timer写入蓝牙.Enabled = true;
 
 
         }
@@ -353,6 +498,8 @@ namespace 郊狼蓝牙测试
             groupBox36.Visible = false;
             DG启用Vrc = false;
             timer波形连续输出.Enabled = false;
+            待执行波形列表.Clear();
+            timer写入蓝牙.Enabled = true;
         }
 
         private void 服务端监听_ServerStopEventLog(int e)
@@ -597,7 +744,7 @@ namespace 郊狼蓝牙测试
 
         #endregion
 
-
+        #region 蓝牙于郊狼通讯
         private void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
         {
             Int16 rssi = eventArgs.RawSignalStrengthInDBm;
@@ -811,7 +958,9 @@ namespace 郊狼蓝牙测试
                 // 序列号(1byte) + 
                 // A通道当前实际强度(1byte) + 
                 //  B通道当前实际强度(1byte)
-                波形循环触发测试();
+
+                if (!DG启用Vrc)
+                   波形循环触发测试();
 
             }
             else if (a == "be")
@@ -841,36 +990,9 @@ namespace 郊狼蓝牙测试
         }
 
 
+        #endregion
 
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-            Watcher = new BluetoothLEAdvertisementWatcher
-            {
-                ScanningMode = BluetoothLEScanningMode.Active
-            };
-            Watcher.SignalStrengthFilter.InRangeThresholdInDBm = -100;
-            Watcher.SignalStrengthFilter.OutOfRangeThresholdInDBm = -100;
-            Watcher.Received += OnAdvertisementReceived;
-
-            // wait 5 seconds to make sure the device is really out of range
-            Watcher.SignalStrengthFilter.OutOfRangeTimeout = TimeSpan.FromMilliseconds(5000);
-            Watcher.SignalStrengthFilter.SamplingInterval = TimeSpan.FromMilliseconds(2000);
-            drawAudio.MainWindow_Load(sender, e);
-
-
-
-
-
-
-            MessageBox.Show("本软件基于DG-LAB 郊狼3 开源的蓝牙协议制作，软件尚处于测试阶段，可能存在意外风险，请遵守DG-LAB 郊狼3的使用手册，不要将保护上限调到自己无法承受的程度！保护好自己的身体，愉快玩耍！", "警告！");
-
-
-
-        }
-
+        #region 蓝牙郊狼方法
 
 
         private void BLE_Scan_Start_Btn_Click(object sender, EventArgs e)
@@ -949,7 +1071,6 @@ namespace 郊狼蓝牙测试
             蓝牙消息识别(data);
 
         }
-
 
         private void Notify_Btn_Click(object sender, EventArgs e)
         {
@@ -1074,13 +1195,6 @@ namespace 郊狼蓝牙测试
             write(buffer);
         }
 
-
-
-
-
-
-
-
         private void Clear_Log_Btn_Click(object sender, EventArgs e)
         {
             Log_textBox.Clear();
@@ -1155,6 +1269,11 @@ namespace 郊狼蓝牙测试
             Connect_Btn.Enabled = true;
         }
 
+
+        #endregion
+
+        #region 波形设置  滑块控制
+
         private void trackBar8_Scroll(object sender, EventArgs e)
         {
             label12.Text = A值.Value.ToString();
@@ -1206,6 +1325,175 @@ namespace 郊狼蓝牙测试
 
         }
 
+
+
+        private void A1_1_Scroll(object sender, EventArgs e)
+        {
+            label19.Text = A1_1.Value.ToString();
+        }
+
+        private void A1_2_Scroll(object sender, EventArgs e)
+        {
+            label20.Text = A1_2.Value.ToString();
+        }
+
+        private void A1_3_Scroll(object sender, EventArgs e)
+        {
+            label21.Text = A1_3.Value.ToString();
+        }
+
+        private void A1_4_Scroll(object sender, EventArgs e)
+        {
+            label22.Text = A1_4.Value.ToString();
+        }
+
+        private void A2_1_Scroll(object sender, EventArgs e)
+        {
+            label26.Text = A2_1.Value.ToString();
+        }
+
+        private void A2_2_Scroll(object sender, EventArgs e)
+        {
+            label25.Text = A2_2.Value.ToString();
+        }
+
+        private void A2_3_Scroll(object sender, EventArgs e)
+        {
+            label24.Text = A2_3.Value.ToString();
+        }
+
+        private void A2_4_Scroll(object sender, EventArgs e)
+        {
+            label23.Text = A2_4.Value.ToString();
+        }
+
+        private void B1_1_Scroll(object sender, EventArgs e)
+        {
+            label30.Text = B1_1.Value.ToString();
+        }
+
+        private void B1_2_Scroll(object sender, EventArgs e)
+        {
+            label29.Text = B1_2.Value.ToString();
+        }
+
+        private void B1_3_Scroll(object sender, EventArgs e)
+        {
+            label28.Text = B1_3.Value.ToString();
+        }
+
+        private void B1_4_Scroll(object sender, EventArgs e)
+        {
+            label27.Text = B1_4.Value.ToString();
+        }
+
+        private void B2_1_Scroll(object sender, EventArgs e)
+        {
+            label34.Text = B2_1.Value.ToString();
+        }
+        private void B2_2_Scroll(object sender, EventArgs e)
+        {
+            label33.Text = B2_2.Value.ToString();
+        }
+
+        private void B2_3_Scroll(object sender, EventArgs e)
+        {
+            label32.Text = B2_3.Value.ToString();
+        }
+
+        private void B2_4_Scroll(object sender, EventArgs e)
+        {
+            label31.Text = B2_4.Value.ToString();
+        }
+        #endregion
+
+        #region 绘制音乐图谱
+
+
+        private void 发送音乐波形()
+        {
+
+            string a = textBox6.Text;//提取音量最高的波形前4后3 强度波形一致
+            int maxindex = 0;
+            int count = 0;
+            int max = 0;
+            foreach (char c in a)
+            {
+
+                if (int.Parse(c.ToString()) > max)
+                {
+                    max = int.Parse(c.ToString());
+                    maxindex = count;
+                }
+                count++;
+            }
+
+
+            int v1 = 0;
+            int v2 = 0;
+            int v3 = 0;
+            int v4 = 0;
+            //0~200<0~9
+            if (maxindex < 4)
+            {
+                v1 = int.Parse(a[maxindex].ToString());
+                v2 = int.Parse(a[maxindex + 1].ToString());
+                v3 = int.Parse(a[maxindex + 2].ToString());
+                v4 = int.Parse(a[maxindex + 3].ToString());
+            }
+            else
+            {
+                v1 = int.Parse(a[maxindex - 1].ToString());
+                v2 = int.Parse(a[maxindex].ToString());
+                v3 = int.Parse(a[maxindex + 1].ToString());
+                v4 = int.Parse(a[maxindex + 2].ToString());
+            }
+
+            int v12 = 限制频率范围(v1 * 18);
+            int v22 = 限制频率范围(v2 * 18);
+            int v32 = 限制频率范围(v3 * 18);
+            int v42 = 限制频率范围(v4 * 18);
+
+            byte[] buffer = new byte[20];
+
+            buffer[0] = (byte)Convert.ToByte(B0指令头.Text, 16);
+            buffer[1] = (byte)Convert.ToByte(B0序列号.Text + A强.Text.Split('|')[1] + B强.Text.Split('|')[1], 2);
+            buffer[2] = Convert.ToByte(A值.Value);
+            buffer[3] = Convert.ToByte(B值.Value);
+
+            buffer[4] = Convert.ToByte(v12);
+            buffer[5] = Convert.ToByte(v22);
+            buffer[6] = Convert.ToByte(v32);
+            buffer[7] = Convert.ToByte(v42);
+
+
+
+            v12 = 限制强度范围(v1 * 6);
+            v22 = 限制强度范围(v2 * 6);
+            v32 = 限制强度范围(v3 * 6);
+            v42 = 限制强度范围(v4 * 6);
+
+
+
+            buffer[8] = Convert.ToByte(v12);
+            buffer[9] = Convert.ToByte(v22);
+            buffer[10] = Convert.ToByte(v32);
+            buffer[11] = Convert.ToByte(v42);
+
+            buffer[12] = Convert.ToByte(B1_1.Value);
+            buffer[13] = Convert.ToByte(B1_2.Value);
+            buffer[14] = Convert.ToByte(B1_3.Value);
+            buffer[15] = Convert.ToByte(B1_4.Value);
+
+            buffer[16] = Convert.ToByte(B2_1.Value);
+            buffer[17] = Convert.ToByte(B2_2.Value);
+            buffer[18] = Convert.ToByte(B2_3.Value);
+            buffer[19] = Convert.ToByte(B2_4.Value);
+
+            write(buffer);
+        }
+
+
         private void dataTimer_Tick(object sender, EventArgs e)
         {
             drawAudio.DataTimer_Tick(sender, e);
@@ -1235,7 +1523,7 @@ namespace 郊狼蓝牙测试
 
 
         }
-
+        #endregion
 
         int 测试时间 = 0;
         int 最大测试时间 = 30;
@@ -1254,6 +1542,12 @@ namespace 郊狼蓝牙测试
         {
             if (DG启用Vrc)
             {   //vrc启用中不可测试
+
+                if(待执行波形列表.Count >200)
+                {//防止过多命令堆积
+                    待执行波形列表.RemoveRange(0,160); 
+                }
+                 
 
                 DG启用Vrc名字 = 依次获取DG启用Vrc名字();//每轮更新
 
@@ -1374,9 +1668,6 @@ namespace 郊狼蓝牙测试
 
         }
 
-
-
-
         public static string GetTime(DateTime timeA)
         {
             //timeA 表示需要计算
@@ -1386,37 +1677,40 @@ namespace 郊狼蓝牙测试
             return time;
         }
 
-
-
-
-
-
-
-
-
-
-
         private string 依次获取DG启用Vrc名字()
         {
+            //玩法触发参数预览
+            //首先全部清除，依照触发再切
+            checkBox配1.Checked = false;
+            checkBox配2.Checked = false;
+            checkBox配3.Checked = false;
+            checkBox配4.Checked = false;
+            checkBox配5.Checked = false;
+
+
             if (符合触发条件(comboBox配置条件1, textBox触发值1))
             {
-
+                checkBox配1.Checked = true;
                 return comboBox配置1.Text;
             }
             else if (符合触发条件(comboBox配置条件2, textBox触发值2))
             {
+                checkBox配2.Checked = true;
                 return comboBox配置2.Text;
             }
             else if (符合触发条件(comboBox配置条件3, textBox触发值3))
             {
+                checkBox配3.Checked = true;
                 return comboBox配置3.Text;
             }
             else if (符合触发条件(comboBox配置条件4, textBox触发值4))
             {
+                checkBox配4.Checked = true;
                 return comboBox配置4.Text;
             }
             else if (符合触发条件(comboBox配置条件5, textBox触发值5))
             {
+                checkBox配5.Checked = true;
                 return comboBox配置5.Text;
             }
 
@@ -1585,185 +1879,13 @@ namespace 郊狼蓝牙测试
 
         }
 
-        private void 发送音乐波形()
-        {
-
-            string a = textBox6.Text;//提取音量最高的波形前4后3 强度波形一致
-            int maxindex = 0;
-            int count = 0;
-            int max = 0;
-            foreach (char c in a)
-            {
-
-                if (int.Parse(c.ToString()) > max)
-                {
-                    max = int.Parse(c.ToString());
-                    maxindex = count;
-                }
-                count++;
-            }
-
-
-            int v1 = 0;
-            int v2 = 0;
-            int v3 = 0;
-            int v4 = 0;
-            //0~200<0~9
-            if (maxindex < 4)
-            {
-                v1 = int.Parse(a[maxindex].ToString());
-                v2 = int.Parse(a[maxindex + 1].ToString());
-                v3 = int.Parse(a[maxindex + 2].ToString());
-                v4 = int.Parse(a[maxindex + 3].ToString());
-            }
-            else
-            {
-                v1 = int.Parse(a[maxindex - 1].ToString());
-                v2 = int.Parse(a[maxindex].ToString());
-                v3 = int.Parse(a[maxindex + 1].ToString());
-                v4 = int.Parse(a[maxindex + 2].ToString());
-            }
-
-            int v12 = 限制频率范围(v1 * 18);
-            int v22 = 限制频率范围(v2 * 18);
-            int v32 = 限制频率范围(v3 * 18);
-            int v42 = 限制频率范围(v4 * 18);
-
-            byte[] buffer = new byte[20];
-
-            buffer[0] = (byte)Convert.ToByte(B0指令头.Text, 16);
-            buffer[1] = (byte)Convert.ToByte(B0序列号.Text + A强.Text.Split('|')[1] + B强.Text.Split('|')[1], 2);
-            buffer[2] = Convert.ToByte(A值.Value);
-            buffer[3] = Convert.ToByte(B值.Value);
-
-            buffer[4] = Convert.ToByte(v12);
-            buffer[5] = Convert.ToByte(v22);
-            buffer[6] = Convert.ToByte(v32);
-            buffer[7] = Convert.ToByte(v42);
-
-
-
-            v12 = 限制强度范围(v1 * 6);
-            v22 = 限制强度范围(v2 * 6);
-            v32 = 限制强度范围(v3 * 6);
-            v42 = 限制强度范围(v4 * 6);
-
-
-
-            buffer[8] = Convert.ToByte(v12);
-            buffer[9] = Convert.ToByte(v22);
-            buffer[10] = Convert.ToByte(v32);
-            buffer[11] = Convert.ToByte(v42);
-
-            buffer[12] = Convert.ToByte(B1_1.Value);
-            buffer[13] = Convert.ToByte(B1_2.Value);
-            buffer[14] = Convert.ToByte(B1_3.Value);
-            buffer[15] = Convert.ToByte(B1_4.Value);
-
-            buffer[16] = Convert.ToByte(B2_1.Value);
-            buffer[17] = Convert.ToByte(B2_2.Value);
-            buffer[18] = Convert.ToByte(B2_3.Value);
-            buffer[19] = Convert.ToByte(B2_4.Value);
-
-            write(buffer);
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
-            {
-                button1.BackColor = colorDialog1.Color;
-            }
-        }
-
-        private void A1_1_Scroll(object sender, EventArgs e)
-        {
-            label19.Text = A1_1.Value.ToString();
-        }
-
-        private void A1_2_Scroll(object sender, EventArgs e)
-        {
-            label20.Text = A1_2.Value.ToString();
-        }
-
-        private void A1_3_Scroll(object sender, EventArgs e)
-        {
-            label21.Text = A1_3.Value.ToString();
-        }
-
-        private void A1_4_Scroll(object sender, EventArgs e)
-        {
-            label22.Text = A1_4.Value.ToString();
-        }
-
-        private void A2_1_Scroll(object sender, EventArgs e)
-        {
-            label26.Text = A2_1.Value.ToString();
-        }
-
-        private void A2_2_Scroll(object sender, EventArgs e)
-        {
-            label25.Text = A2_2.Value.ToString();
-        }
-
-        private void A2_3_Scroll(object sender, EventArgs e)
-        {
-            label24.Text = A2_3.Value.ToString();
-        }
-
-        private void A2_4_Scroll(object sender, EventArgs e)
-        {
-            label23.Text = A2_4.Value.ToString();
-        }
-
-        private void B1_1_Scroll(object sender, EventArgs e)
-        {
-            label30.Text = B1_1.Value.ToString();
-        }
-
-        private void B1_2_Scroll(object sender, EventArgs e)
-        {
-            label29.Text = B1_2.Value.ToString();
-        }
-
-        private void B1_3_Scroll(object sender, EventArgs e)
-        {
-            label28.Text = B1_3.Value.ToString();
-        }
-
-        private void B1_4_Scroll(object sender, EventArgs e)
-        {
-            label27.Text = B1_4.Value.ToString();
-        }
-
-        private void B2_1_Scroll(object sender, EventArgs e)
-        {
-            label34.Text = B2_1.Value.ToString();
-        }
-        private void B2_2_Scroll(object sender, EventArgs e)
-        {
-            label33.Text = B2_2.Value.ToString();
-        }
-
-        private void B2_3_Scroll(object sender, EventArgs e)
-        {
-            label32.Text = B2_3.Value.ToString();
-        }
-
-        private void B2_4_Scroll(object sender, EventArgs e)
-        {
-            label31.Text = B2_4.Value.ToString();
-        }
-
         private void button13_Click(object sender, EventArgs e)
         {
-            设置测试波形();   
- 
+            设置测试波形();
+
             待执行波形列表.Add(测试波形);
             波形循环触发测试();
-           
-              
+
 
         }
 
@@ -1806,6 +1928,7 @@ namespace 郊狼蓝牙测试
 
         private void button17_Click(object sender, EventArgs e)
         {
+            一键启动按钮.Visible = false;
             BLE_Scan_Start_Btn_Click(sender, e);
             timer一键启动用.Enabled = true;
 
@@ -1925,17 +2048,18 @@ namespace 郊狼蓝牙测试
                     Gatt_treeView.SelectedNode = tnRet;
 
                     timer一键启动用.Enabled = false;
-                    tabControl1.SelectedIndex = 1;
+                    tabControl1.SelectedIndex = 2;
 
 
                     //测试.DGLab
 
-                    string pathss = System.Environment.CurrentDirectory.ToString() + "/测试.DGLab";
-                    if (checkBox3.Checked)
-                        导入(pathss);
+                    // string pathss = System.Environment.CurrentDirectory.ToString() + "/测试.DGLab";
 
+                    //导入(pathss);
+                    一键启动设置上限();
+                    刷新最大值最小值();
                     一键启动按钮.Enabled = false;
-
+                    richTextBox1.Text = "链接成功！";
 
 
                     return;
@@ -1950,17 +2074,54 @@ namespace 郊狼蓝牙测试
 
 
         }
-        
-        
-        void 确认非空(ComboBox a ,string b)
+        void 一键启动设置上限()
         {
-            if (b!=null&&b.Trim ()!="")
+            byte[] buffer = new byte[7];
+            //0xBF(1byte指令HEAD) + 
+            // AB两通道强度软上限(2bytes) + 
+            //AB两通道波形频率平衡参数(2btyes) + 
+            // AB两通道波形强度平衡参数(2bytes)
+            //  通道强度软上限
+            //  通道强度软上限可以限制脉冲主机通道强度能达到的最大值，并且该设置断电保存，值范围(0~200)，
+            //  输入范围外的值则不会修改软上限。 假设设置AB通道软上限为150和30，
+            //  那么通过拨动滚轮或B0指令无论如何修改强度，
+            //  A通道的通道强度只会在范围(0 ~150),
+            //  B通道的通道强度只会在范围(0 ~30)，
+            //  脉冲主机的通道强度一定不会超过软上限。
+
+            //   频率平衡参数1
+            //   波形频率平衡参数会调整波形高低频的感受，并且该设置断电保存，值范围(0 ~255)
+            //   本参数控制固定通道强度下，不同频率波形的相对体感强度。值越大，低频波形冲击感越强。
+
+            //   频率平衡参数2
+            //   波形强度平衡参数会调整波形脉冲宽度，并且该设置断电保存，值范围(0 ~255)
+            //   本参数控制固定通道强度下，不同频率波形的相对体感强度。值越大，低频波形刺激越强。
+
+            buffer[0] = (byte)Convert.ToByte("0xBF", 16);
+            buffer[1] = Convert.ToByte(int.Parse(textBoxA软上限.Text));
+
+            labelA通软上限.Text = textBoxA软上限.Text;
+
+            buffer[2] = Convert.ToByte(int.Parse(textBoxB软上限.Text));
+
+            labelB通软上限.Text = textBoxB软上限.Text;
+
+            buffer[3] = Convert.ToByte(int.Parse(textBoxA频率平衡参数.Text));
+            buffer[4] = Convert.ToByte(int.Parse(textBoxB频率平衡参数.Text));
+            buffer[5] = Convert.ToByte(int.Parse(textBoxA强度平衡参数.Text));
+            buffer[6] = Convert.ToByte(int.Parse(textBoxB强度平衡参数.Text));
+            write(buffer);
+        }
+
+        void 确认非空(ComboBox a, string b)
+        {
+            if (b != null && b.Trim() != "")
             {
                 a.Text = b;
             }
         }
 
-        void 确认非空(TextBox  a, string b)
+        void 确认非空(TextBox a, string b)
         {
             if (b != null && b.Trim() != "")
             {
@@ -1970,57 +2131,8 @@ namespace 郊狼蓝牙测试
 
 
 
-        void 导入(string pathss)
-        {
-
-           
 
 
-            a郊狼存档 = 序列化保存读取.序列化读取<郊狼存档>(pathss);
-
-            listBox1.Items.Clear();
-            foreach (string a in a郊狼存档.DG波形列表.Keys)
-            {
-                listBox1.Items.Add(a);
-            }
-            listBox2.Items.Clear();
-            foreach (string a in a郊狼存档.DG波形队列.Keys)
-            {
-                listBox2.Items.Add(a);
-            }
-
-
-            确认非空( textBox配置名1C,a郊狼存档.textBox配置名1C);
-            确认非空(textBox配置名2C, a郊狼存档.textBox配置名2C);
-            确认非空(textBox配置名3C,a郊狼存档.textBox配置名3C);
-            确认非空(textBox配置名4C,a郊狼存档.textBox配置名4C);
-            确认非空(textBox配置名5C,a郊狼存档.textBox配置名5C);
-
-
-
-
-            确认非空(comboBox配置条件1,a郊狼存档.textBox配置条件1C);
-            确认非空(comboBox配置条件2,a郊狼存档.textBox配置条件2C);
-            确认非空(comboBox配置条件3,a郊狼存档.textBox配置条件3C);
-            确认非空(comboBox配置条件4,a郊狼存档.textBox配置条件4C);
-            确认非空(comboBox配置条件5,a郊狼存档.textBox配置条件5C);
-
-
-
-            确认非空(textBoxA通强度参数C,a郊狼存档.textBoxA通强度参数C);
-            确认非空(textBoxB通强度参数C,a郊狼存档.textBoxB通强度参数C);
-
-            确认非空(textBoxA通倍率,a郊狼存档.textBoxA通倍率C);
-            确认非空(textBoxB通倍率,a郊狼存档.textBoxB通倍率C);
-
-            填充vrc配置();
-
-        }
-        
-        
-        
-        
-        
         控制ImageListView vv;
 
 
@@ -2180,11 +2292,10 @@ namespace 郊狼蓝牙测试
 
 
 
-            填充vrc配置();
+            填充vrc波形配置(true);
 
 
         }
-
 
         void 填充波形设置(byte[] buffer)
         {
@@ -2199,7 +2310,7 @@ namespace 郊狼蓝牙测试
             for (int i = 0; i < A强.Items.Count; i++)
             {
 
-                if (A强.Items.Contains(tstA))
+                if (A强.Items[i].ToString().Contains(tstA))
                 {
                     A强.Text = A强.Items[i].ToString();
                 }
@@ -2209,7 +2320,7 @@ namespace 郊狼蓝牙测试
 
             for (int i = 0; i < B强.Items.Count; i++)
             {
-                if (B强.Items.Contains(tstB))
+                if (B强.Items[i].ToString().Contains(tstB))
                 {
                     B强.Text = B强.Items[i].ToString();
                 }
@@ -2240,8 +2351,7 @@ namespace 郊狼蓝牙测试
             B2_4.Value = Convert.ToInt32(buffer[19]);//   
 
         }
-
-        void 填充vrc配置()
+        void 填充vrc波形配置(bool 仅填充波形列表)
         {
             comboBox配置1.Items.Clear();
             comboBox配置2.Items.Clear();
@@ -2249,16 +2359,23 @@ namespace 郊狼蓝牙测试
             comboBox配置4.Items.Clear();
             comboBox配置5.Items.Clear();
 
-            foreach (string a in listBox2.Items)
+            if (listBox2.Items.Count > 0)
             {
-                comboBox配置1.Items.Add(a);
-                comboBox配置2.Items.Add(a);
-                comboBox配置3.Items.Add(a);
-                comboBox配置4.Items.Add(a);
-                comboBox配置5.Items.Add(a);
+                foreach (string a in listBox2.Items)
+                {
+                    comboBox配置1.Items.Add(a);
+                    comboBox配置2.Items.Add(a);
+                    comboBox配置3.Items.Add(a);
+                    comboBox配置4.Items.Add(a);
+                    comboBox配置5.Items.Add(a);
+                }
             }
 
-            if (!comboBox配置1.Items.Contains(comboBox配置1.Text)&& comboBox配置1.Items.Count >0)
+
+            if (仅填充波形列表)
+                return;
+
+            if (!comboBox配置1.Items.Contains(comboBox配置1.Text) && comboBox配置1.Items.Count > 0)
             {
                 comboBox配置1.Text = comboBox配置1.Items[0].ToString();
             }
@@ -2279,6 +2396,7 @@ namespace 郊狼蓝牙测试
                 comboBox配置5.Text = comboBox配置5.Items[0].ToString();
             }
         }
+
         byte[] 实时更新强度(byte[] buffer, float A强度百分比, float B强度百分比)
         {
             byte[] bufferout = new byte[buffer.Length];
@@ -2288,10 +2406,16 @@ namespace 郊狼蓝牙测试
                 if (i == 2)
                 {//A通强度
                     textBoxA前.Text = Convert.ToInt32(buffer[2]).ToString();
-                    textBoxA后.Text = ((float)Convert.ToInt32(buffer[2]) * A强度百分比 * float.Parse(textBoxA通倍率.Text)).ToString();
 
+                    int gg = (int)((float)Convert.ToInt32(buffer[2]) * A强度百分比 * float.Parse(textBoxA通倍率.Text));
 
-                    bufferout[2] = Convert.ToByte((int)((float)Convert.ToInt32(buffer[2]) * A强度百分比 * float.Parse(textBoxA通倍率.Text)));
+                    if (gg > int.Parse(labelA通软上限.Text))
+                    {
+                        gg = int.Parse(labelA通软上限.Text);
+                    }
+                    textBoxA后.Text = gg.ToString();
+
+                    bufferout[2] = Convert.ToByte(gg);
 
 
 
@@ -2299,9 +2423,15 @@ namespace 郊狼蓝牙测试
                 else if (i == 3)
                 {//B通强度
                     textBoxB前.Text = Convert.ToInt32(buffer[3]).ToString();
-                    textBoxB后.Text = ((float)Convert.ToInt32(buffer[3]) * A强度百分比 * float.Parse(textBoxB通倍率.Text)).ToString();
+                    int gg = (int)((float)Convert.ToInt32(buffer[3]) * B强度百分比 * float.Parse(textBoxB通倍率.Text));
 
-                    bufferout[3] = Convert.ToByte((int)((float)Convert.ToInt32(buffer[3]) * B强度百分比 * float.Parse(textBoxB通倍率.Text)));
+                    if (gg > int.Parse(labelB通软上限.Text))
+                    {
+                        gg = int.Parse(labelB通软上限.Text);
+                    }
+
+                    textBoxB后.Text = gg.ToString();
+                    bufferout[3] = Convert.ToByte(gg);
 
                 }
                 else
@@ -2348,9 +2478,9 @@ namespace 郊狼蓝牙测试
             }
         }
 
-        private void button19导出_Click(object sender, EventArgs e)
+        private void button19全部导出_Click(object sender, EventArgs e)
         {
-
+            初次写入();
 
             System.Windows.Forms.SaveFileDialog dialog = new System.Windows.Forms.SaveFileDialog();
             dialog.InitialDirectory = System.Environment.CurrentDirectory.ToString();
@@ -2363,20 +2493,20 @@ namespace 郊狼蓝牙测试
                 序列化保存读取.序列化保存<郊狼存档>(a郊狼存档, dialog.FileName);
             }
 
-
+            加载本地目录下的玩法();
 
         }
 
-        private void button20导入_Click(object sender, EventArgs e)
+        private void button20仅导入波形设置_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.OpenFileDialog dialog = new System.Windows.Forms.OpenFileDialog();
             dialog.InitialDirectory = System.Environment.CurrentDirectory.ToString();
             dialog.Filter = "郊狼存档|*.DGLab";
             System.Windows.Forms.DialogResult result = dialog.ShowDialog();
             if (result == System.Windows.Forms.DialogResult.OK)
-            { 
+            {
 
-                导入(dialog.FileName);
+                仅导入波形(dialog.FileName);
 
             }
 
@@ -2384,6 +2514,159 @@ namespace 郊狼蓝牙测试
 
 
         }
+
+        private void button9仅导入VRChat玩法_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.OpenFileDialog dialog = new System.Windows.Forms.OpenFileDialog();
+            dialog.InitialDirectory = System.Environment.CurrentDirectory.ToString();
+            dialog.Filter = "郊狼存档|*.DGLab";
+            System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+
+                仅导入玩法(dialog.FileName);
+
+            }
+
+        }
+
+        void 导入(string pathss)
+        {
+
+            if (!File.Exists(pathss))
+            {
+                return;
+            }
+
+
+            a郊狼存档 = 序列化保存读取.序列化读取<郊狼存档>(pathss);
+
+            listBox1.Items.Clear();
+            foreach (string a in a郊狼存档.DG波形列表.Keys)
+            {
+                listBox1.Items.Add(a);
+            }
+            listBox2.Items.Clear();
+            foreach (string a in a郊狼存档.DG波形队列.Keys)
+            {
+                listBox2.Items.Add(a);
+            }
+
+
+            确认非空(textBox配置名1C, a郊狼存档.textBox配置名1C);
+            确认非空(textBox配置名2C, a郊狼存档.textBox配置名2C);
+            确认非空(textBox配置名3C, a郊狼存档.textBox配置名3C);
+            确认非空(textBox配置名4C, a郊狼存档.textBox配置名4C);
+            确认非空(textBox配置名5C, a郊狼存档.textBox配置名5C);
+
+
+
+
+            确认非空(comboBox配置条件1, a郊狼存档.textBox配置条件1C);
+            确认非空(comboBox配置条件2, a郊狼存档.textBox配置条件2C);
+            确认非空(comboBox配置条件3, a郊狼存档.textBox配置条件3C);
+            确认非空(comboBox配置条件4, a郊狼存档.textBox配置条件4C);
+            确认非空(comboBox配置条件5, a郊狼存档.textBox配置条件5C);
+
+
+
+            确认非空(textBoxA通强度参数C, a郊狼存档.textBoxA通强度参数C);
+            确认非空(textBoxB通强度参数C, a郊狼存档.textBoxB通强度参数C);
+
+            确认非空(textBoxA通倍率, a郊狼存档.textBoxA通倍率C);
+            确认非空(textBoxB通倍率, a郊狼存档.textBoxB通倍率C);
+
+            填充vrc波形配置(false);
+
+        }
+
+
+        void 仅导入玩法(string pathss)
+        {
+
+           if (!File .Exists (pathss))
+            {
+                return;
+            }
+
+
+            a郊狼存档 = 序列化保存读取.序列化读取<郊狼存档>(pathss);
+
+
+
+
+            确认非空(textBox配置名1C, a郊狼存档.textBox配置名1C);
+            确认非空(textBox配置名2C, a郊狼存档.textBox配置名2C);
+            确认非空(textBox配置名3C, a郊狼存档.textBox配置名3C);
+            确认非空(textBox配置名4C, a郊狼存档.textBox配置名4C);
+            确认非空(textBox配置名5C, a郊狼存档.textBox配置名5C);
+
+
+
+
+            确认非空(comboBox配置条件1, a郊狼存档.textBox配置条件1C);
+            确认非空(comboBox配置条件2, a郊狼存档.textBox配置条件2C);
+            确认非空(comboBox配置条件3, a郊狼存档.textBox配置条件3C);
+            确认非空(comboBox配置条件4, a郊狼存档.textBox配置条件4C);
+            确认非空(comboBox配置条件5, a郊狼存档.textBox配置条件5C);
+
+
+
+            确认非空(textBoxA通强度参数C, a郊狼存档.textBoxA通强度参数C);
+            确认非空(textBoxB通强度参数C, a郊狼存档.textBoxB通强度参数C);
+
+            确认非空(textBoxA通倍率, a郊狼存档.textBoxA通倍率C);
+            确认非空(textBoxB通倍率, a郊狼存档.textBoxB通倍率C);
+
+
+            确认非空(comboBox配置1, a郊狼存档.comboBox配置1C);
+            确认非空(comboBox配置2, a郊狼存档.comboBox配置2C);
+            确认非空(comboBox配置3, a郊狼存档.comboBox配置3C);
+            确认非空(comboBox配置4, a郊狼存档.comboBox配置4C);
+            确认非空(comboBox配置5, a郊狼存档.comboBox配置5C);
+
+
+
+
+
+            填充vrc波形配置(false);
+
+        }
+
+        void 仅导入波形(string pathss)
+        {
+
+            if (!File.Exists(pathss))
+            {
+                return;
+            }
+
+
+            a郊狼存档 = 序列化保存读取.序列化读取<郊狼存档>(pathss);
+
+            listBox1.Items.Clear();
+            foreach (string a in a郊狼存档.DG波形列表.Keys)
+            {
+                listBox1.Items.Add(a);
+            }
+            listBox2.Items.Clear();
+            foreach (string a in a郊狼存档.DG波形队列.Keys)
+            {
+                listBox2.Items.Add(a);
+            }
+
+
+            填充vrc波形配置(true);
+
+        }
+
+
+
+
+
+
+
+
         bool DG启用Vrc = false;
         private void button15_Click(object sender, EventArgs e)
         {
@@ -2425,6 +2708,12 @@ namespace 郊狼蓝牙测试
             if (!listBox5.Items.Contains(参数名))
             {
                 listBox5.Items.Add(参数名);
+                listBox3.Items.Add(值);
+
+            }
+            else
+            {
+                listBox3.Items[listBox5.Items.IndexOf(参数名)] = 值;
             }
 
 
@@ -2496,10 +2785,6 @@ namespace 郊狼蓝牙测试
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://space.bilibili.com/89856");
-        }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {//将设置还原回去
@@ -2514,10 +2799,6 @@ namespace 郊狼蓝牙测试
 
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://t.me/VRChatDGLAB");
-        }
         int sleeptime = 0;
         string changedata = "";
         private void timerOSC_Tick(object sender, EventArgs e)
@@ -2568,7 +2849,7 @@ Grounded:True
         private void button30_Click(object sender, EventArgs e)
         {
             float bb = float.Parse(textBoxA通倍率.Text) - 0.1f;
-            if (bb < 0.1f)
+            if (bb < 0.1)
             {
                 bb = 0.1f;
             }
@@ -2578,9 +2859,9 @@ Grounded:True
         private void button33_Click(object sender, EventArgs e)
         {
             float bb = float.Parse(textBoxA通倍率.Text) + 0.1f;
-            if (bb > 5f)
+            if (bb > 5)
             {
-                bb = 5f;
+                bb = 5;
             }
             textBoxA通倍率.Text = bb.ToString();
         }
@@ -2588,7 +2869,7 @@ Grounded:True
         private void button31_Click(object sender, EventArgs e)
         {
             float bb = float.Parse(textBoxB通倍率.Text) - 0.1f;
-            if (bb < 0.1f)
+            if (bb < 0.1)
             {
                 bb = 0.1f;
             }
@@ -2598,9 +2879,9 @@ Grounded:True
         private void button32_Click(object sender, EventArgs e)
         {
             float bb = float.Parse(textBoxB通倍率.Text) + 0.1f;
-            if (bb > 5f)
+            if (bb > 5)
             {
-                bb = 5f;
+                bb = 5;
             }
             textBoxB通倍率.Text = bb.ToString();
         }
@@ -2608,29 +2889,31 @@ Grounded:True
         private void textBoxA通强度值_TextChanged(object sender, EventArgs e)
         {
             float bb = float.Parse(textBoxA通强度值.Text);
-            if (bb < 0.1f)
+            if (bb < set数值最小值)
             {
-                bb = 0.1f;
+                bb = set数值最小值;
             }
-            if (bb > 5f)
+            if (bb > set数值最大值)
             {
-                bb = 5f;
+                bb = set数值最大值;
             }
             textBoxA通强度值.Text = bb.ToString();
+            textBoxA参.Text = bb.ToString();
         }
 
         private void textBoxB通强度值_TextChanged(object sender, EventArgs e)
         {
             float bb = float.Parse(textBoxB通强度值.Text);
-            if (bb < 0.1f)
+            if (bb < set数值最小值)
             {
-                bb = 0.1f;
+                bb = set数值最小值;
             }
-            if (bb > 5f)
+            if (bb > set数值最大值)
             {
-                bb = 5f;
+                bb = set数值最大值;
             }
             textBoxB通强度值.Text = bb.ToString();
+            textBoxB参.Text = bb.ToString();
         }
 
         private void button34_Click(object sender, EventArgs e)
@@ -2671,13 +2954,14 @@ Grounded:True
 
 
 
-
+        int 毫秒消息延迟 = 0;
         void 波形循环触发测试()
         {
+             
             if (待执行波形列表.Count > 0)
             {
-                write(待执行波形列表[0]);
-
+                //write(待执行波形列表[0]);
+                写入蓝牙列表.Add(待执行波形列表[0]);
                 待执行波形列表.RemoveAt(0);
             }
 
@@ -2737,26 +3021,32 @@ Grounded:True
         private void textBox配置名1C_TextChanged(object sender, EventArgs e)
         {
             a郊狼存档.textBox配置名1C = textBox配置名1C.Text;
+            groupBox配1.Text = textBox配置名1C.Text;
         }
 
         private void textBox配置名2C_TextChanged(object sender, EventArgs e)
         {
             a郊狼存档.textBox配置名2C = textBox配置名2C.Text;
+            groupBox配2.Text = textBox配置名2C.Text;
         }
 
         private void textBox配置名3C_TextChanged(object sender, EventArgs e)
         {
             a郊狼存档.textBox配置名3C = textBox配置名3C.Text;
+            groupBox配3.Text = textBox配置名3C.Text;
         }
+
 
         private void textBox配置名4C_TextChanged(object sender, EventArgs e)
         {
             a郊狼存档.textBox配置名4C = textBox配置名4C.Text;
+            groupBox配4.Text = textBox配置名4C.Text;
         }
 
         private void textBox配置名5C_TextChanged(object sender, EventArgs e)
         {
             a郊狼存档.textBox配置名5C = textBox配置名5C.Text;
+            groupBox配5.Text = textBox配置名5C.Text;
         }
 
         private void comboBox配置条件1_TextChanged(object sender, EventArgs e)
@@ -2787,21 +3077,47 @@ Grounded:True
         private void textBoxA通强度参数C_TextChanged(object sender, EventArgs e)
         {
             a郊狼存档.textBoxA通强度参数C = textBoxA通强度参数C.Text;
+
+            groupBoxA强.Text = textBoxA通强度参数C.Text;
         }
 
         private void textBoxB通强度参数C_TextChanged(object sender, EventArgs e)
         {
             a郊狼存档.textBoxB通强度参数C = textBoxB通强度参数C.Text;
+
+            groupBoxB强.Text = textBoxB通强度参数C.Text;
         }
 
         private void textBoxA通倍率_TextChanged(object sender, EventArgs e)
         {
+            float bb = float.Parse(textBoxA通倍率.Text);
+            if (bb < 0.1)
+            {
+                bb = 0.1f;
+            }
+            if (bb > 5)
+            {
+                bb = 5;
+            }
+            textBoxA通倍率.Text = bb.ToString();
             a郊狼存档.textBoxA通倍率C = textBoxA通倍率.Text;
+            刷新最大值最小值();
         }
 
         private void textBoxB通倍率_TextChanged(object sender, EventArgs e)
         {
+            float bb = float.Parse(textBoxB通倍率.Text);
+            if (bb < 0.1)
+            {
+                bb = 0.1f;
+            }
+            if (bb > 5)
+            {
+                bb = 5;
+            }
+            textBoxB通倍率.Text = bb.ToString();
             a郊狼存档.textBoxB通倍率C = textBoxB通倍率.Text;
+            刷新最大值最小值();
         }
         void 初次写入()
         {
@@ -2838,7 +3154,7 @@ Grounded:True
             }
         }
 
-     
+
         int mousex = 0;
         int mousey = 0;
         private void GetMousePose()
@@ -2851,7 +3167,7 @@ Grounded:True
         private void A1_1_MouseEnter(object sender, EventArgs e)
         {
             GetMousePose();
-            if (checkBox4 .Checked )
+            if (checkBox4.Checked)
             {
                 A1_1.Value = mousex;
             }
@@ -2878,7 +3194,7 @@ Grounded:True
 
         private void Gmouse_MouseDownExt(object sender, MouseEventExtArgs e)
         {
-            if (e.Button ==MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
                 mousedown = true;
                 checkBox4.Checked = true;
@@ -2889,7 +3205,7 @@ Grounded:True
         {
             gmouse.MouseUpExt -= Gmouse_MouseDownExt;
             gmouse.MouseDownExt -= Gmouse_MouseDownExt;
-            gmouse.Dispose ();  
+            gmouse.Dispose();
         }
 
 
@@ -2904,13 +3220,61 @@ Grounded:True
 
         bool G_MouseFlag;
         Pen pen = new Pen(Color.Black);
+        Pen pen2 = new Pen(Color.Gray);
         Point lastPoint;
+
+
+
+        void 控制滑块(int 每层高度, int width, int X, int Y, TrackBar a, TrackBar b, TrackBar c, TrackBar d)
+        {
+
+
+            // 303, 179
+
+
+            int aa = (int)((float)a.Maximum * ((float)X / (float)width));
+            if (aa > a.Maximum)
+            {
+                aa = a.Maximum;
+            }
+
+            if (aa < a.Minimum)
+            {
+                aa = a.Minimum;
+            }
+
+            if (Math.Abs(Y - 每层高度) < 10)
+            {
+                a.Value = aa;
+            }
+            else if (Math.Abs(Y - 每层高度 * 2) < 10)
+            {
+                b.Value = aa;
+            }
+            else if (Math.Abs(Y - 每层高度 * 3) < 10)
+            {
+                c.Value = aa;
+            }
+            else if (Math.Abs(Y - 每层高度 * 4) < 10)
+            {
+                d.Value = aa;
+            }
+
+        }
+
+
         private void _018_MouseMove(object sender, MouseEventArgs e)
         {
             label36.Text = e.X.ToString();
             label37.Text = e.Y.ToString();
             Panel aa = sender as Panel;
-            Graphics graphics =  aa.CreateGraphics();
+            Graphics graphics = aa.CreateGraphics();
+
+
+            int 每层高度 = (int)((float)aa.Height / 5f);
+
+
+
             if (lastPoint.Equals(Point.Empty))//判断绘图开始点是否为空
             {
                 lastPoint = new Point(e.X, e.Y);//记录鼠标当前位置
@@ -2919,7 +3283,41 @@ Grounded:True
             {
                 Point currentPoint = new Point(e.X, e.Y);//获取鼠标当前位置
                 graphics.DrawLine(pen, currentPoint, lastPoint);//绘图
+
+
+                if (aa.Name == "panel3")
+                    控制滑块(每层高度, aa.Width, e.X, e.Y, A1_1, A1_2, A1_3, A1_4);
+                if (aa.Name == "panel4")
+                    控制滑块(每层高度, aa.Width, e.X, e.Y, B1_1, B1_2, B1_3, B1_4);
+                if (aa.Name == "panel5")
+                    控制滑块(每层高度, aa.Width, e.X, e.Y, A2_1, A2_2, A2_3, A2_4);
+                if (aa.Name == "panel6")
+                    控制滑块(每层高度, aa.Width, e.X, e.Y, B2_1, B2_2, B2_3, B2_4);
+
+
             }
+
+
+
+            Point S01A = new Point(0, 每层高度);
+            Point S01B = new Point(aa.Width, 每层高度);
+            Point S02A = new Point(0, 每层高度 * 2);
+            Point S02B = new Point(aa.Width, 每层高度 * 2);
+            Point S03A = new Point(0, 每层高度 * 3);
+            Point S03B = new Point(aa.Width, 每层高度 * 3);
+            Point S04A = new Point(0, 每层高度 * 4);
+            Point S04B = new Point(aa.Width, 每层高度 * 4);
+
+
+
+            graphics.DrawLine(pen2, S01A, S01B);//绘图
+            graphics.DrawLine(pen2, S02A, S02B);//绘图
+            graphics.DrawLine(pen2, S03A, S03B);//绘图
+            graphics.DrawLine(pen2, S04A, S04B);//绘图
+
+
+
+
             lastPoint = new Point(e.X, e.Y);//记录鼠标当前位置
         }
 
@@ -2937,13 +3335,247 @@ Grounded:True
 
 
             G_MouseFlag = true;//开始绘图标识设置为true
-            
+
         }
 
         private void _018_MouseUp(object sender, MouseEventArgs e)
         {
             G_MouseFlag = false;//开始绘图标识设置为false
         }
+
+
+
+
+
+        List<Point> pp = new List<Point>();
+
+        List<int> ppA通频率 = new List<int>();
+        List<int> ppA通强度 = new List<int>();
+        List<int> ppB通频率 = new List<int>();
+        List<int> ppB通强度 = new List<int>();
+        int 每段宽度 = 0;
+        private void _018_MouseMove队列(object sender, MouseEventArgs e)
+        {
+            label36.Text = e.X.ToString();
+            label37.Text = e.Y.ToString();
+
+
+            label39.Text = e.X.ToString();
+            label40.Text = e.Y.ToString();
+
+
+            Panel aa = sender as Panel;
+            Graphics graphics = aa.CreateGraphics();
+            if (lastPoint.Equals(Point.Empty))//判断绘图开始点是否为空
+            {
+                lastPoint = new Point(e.X, e.Y);//记录鼠标当前位置
+            }
+            if (G_MouseFlag)//开始绘图
+            {
+                Point currentPoint = new Point(e.X, e.Y);//获取鼠标当前位置
+                graphics.DrawLine(pen, currentPoint, lastPoint);//绘图
+            }
+
+            //依照切分数量划线
+            //依照切分判定获取点位。？直接获取值
+
+            int a = 4;
+            if (int.TryParse(textBox14.Text, out a))
+            {
+                每段宽度 = (int)((float)aa.Width / (float)(a + 1));
+
+                if (ppA通频率.Count < a)
+                {
+
+                    ppA通频率.Clear();
+                    ppA通强度.Clear();
+                    ppB通频率.Clear();
+                    ppB通强度.Clear();
+
+                    for (int i = 0; i <= a; i++)
+                    {
+                        ppA通频率.Add(0);
+                        ppA通强度.Add(0);
+                        ppB通频率.Add(0);
+                        ppB通强度.Add(0);
+
+                    }
+                }
+
+
+                //549, 120
+
+                for (int i = 1; i <= a; i++)
+                {
+                    if (Math.Abs(e.X - 每段宽度 * i) < (549f / (float)a))
+                    {
+                        if (aa.Name == "panel7")
+                            ppA通频率[i] = e.Y;
+                        if (aa.Name == "panel8")
+                            ppA通强度[i] = e.Y;
+                        if (aa.Name == "panel9")
+                            ppB通频率[i] = e.Y;
+                        if (aa.Name == "panel10")
+                            ppB通强度[i] = e.Y;
+                    }
+
+
+
+
+                }
+                for (int i = 1; i <= a + 1; i++)
+                {
+                    Point S01A = new Point(每段宽度 * i, 0);
+                    Point S01B = new Point(每段宽度 * i, aa.Height);
+                    graphics.DrawLine(pen2, S01A, S01B);//绘图
+
+                }
+            }
+
+
+
+            lastPoint = new Point(e.X, e.Y);//记录鼠标当前位置
+        }
+
+        private void _018_MouseDown队列(object sender, MouseEventArgs e)
+        {
+            label36.Text = e.X.ToString();
+            label37.Text = e.Y.ToString();
+
+            if (!G_MouseFlag)
+            {
+                Panel aa = sender as Panel;
+                Graphics graphics = aa.CreateGraphics();
+                graphics.Clear(Color.White);
+            }
+
+
+            G_MouseFlag = true;//开始绘图标识设置为true
+
+        }
+
+        private void _018_MouseUp队列(object sender, MouseEventArgs e)
+        {
+            // 549, 120
+            Panel aa = sender as Panel;
+            G_MouseFlag = false;//开始绘图标识设置为false 
+
+            if (aa.Name == "panel7")
+            {
+                listBox15.Items.Clear();
+                foreach (int a in ppA通频率)
+                {
+                    int aaa = (int)((float)241 * ((float)a / (float)aa.Height));
+                    if (aaa > 240)
+                    {
+                        aaa = 240;
+                    }
+
+                    if (aaa < 10)
+                    {
+                        aaa = 10;
+                    }
+
+                    listBox15.Items.Add(aaa);
+                }
+                listBox15.Items.RemoveAt(0);
+            }
+            else if (aa.Name == "panel8")
+            {
+
+                listBox16.Items.Clear();
+                foreach (int a in ppA通强度)
+                {
+                    int aaa = (int)((float)101 * ((float)a / (float)aa.Height));
+                    aaa = 101 - aaa;
+
+                    if (aaa > 100)
+                    {
+                        aaa = 100;
+                    }
+
+                    if (aaa < 0)
+                    {
+                        aaa = 0;
+                    }
+
+
+                    listBox16.Items.Add(aaa);
+                }
+
+                listBox16.Items.RemoveAt(0);
+            }
+            else if (aa.Name == "panel9")
+            {
+                listBox17.Items.Clear();
+                foreach (int a in ppB通频率)
+                {
+                    int aaa = (int)((float)241 * ((float)a / (float)aa.Height));
+
+                    if (aaa > 240)
+                    {
+                        aaa = 240;
+                    }
+
+                    if (aaa < 10)
+                    {
+                        aaa = 10;
+                    }
+
+                    listBox17.Items.Add(aaa);
+                }
+                listBox17.Items.RemoveAt(0);
+
+            }
+            else if (aa.Name == "panel10")
+            {
+                listBox18.Items.Clear();
+                foreach (int a in ppB通强度)
+                {
+                    int aaa = (int)((float)101 * ((float)a / (float)aa.Height));
+                    aaa = 101 - aaa;
+
+                    if (aaa > 100)
+                    {
+                        aaa = 100;
+                    }
+
+                    if (aaa < 0)
+                    {
+                        aaa = 0;
+                    }
+
+                    listBox18.Items.Add(aaa);
+                }
+                listBox18.Items.RemoveAt(0);
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //画圆
         private void button1_Click(object sender, EventArgs e)
         {
@@ -2952,15 +3584,473 @@ Grounded:True
             graphics.DrawEllipse(pen, gle);
         }
 
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkBox = (CheckBox)sender;
+
+
+
+            Debug蓝牙链接.Visible = checkBox.Checked;
+            DebugVRChat.Visible = checkBox.Checked;
+
+            checkBox5.Checked = checkBox.Checked;
+            checkBox6.Checked = checkBox.Checked;
+
+
+
+            //1749, 1047
+            if (checkBox6.Checked)
+            {
+                this.Size = new System.Drawing.Size(1749, 1047);
+            }
+            else
+            {
+                this.Size = new System.Drawing.Size(311, 693);
+
+            }
+
+            // 1749, 1047  专家模式
+            // 314, 625    简单模式
+
+
+
+        }
+
+
+
+        void 刷新最大值最小值()
+        {
+            //A通
+            float A通软上限 = float.Parse(labelA通软上限.Text);
+
+            float A通倍率 = float.Parse(textBoxA通倍率.Text);
+
+            float A通最小值 = set数值最小值 * 1f * (float)A通倍率;
+            labelA通最小值.Text = A通最小值.ToString("0.0");
+
+            float A通波形预设强度 = float.Parse(textBoxA前.Text);
+
+
+            float A通最大值 = set数值最大值 * A通波形预设强度 * (float)A通倍率;
+
+
+            labelA通最大值.Text = A通最大值.ToString("0.0") + "(软上限" + labelA通软上限.Text + ")";
+
+
+            //B通
+            float B通软上限 = float.Parse(labelB通软上限.Text);
+            float B通倍率 = float.Parse(textBoxB通倍率.Text);
+            float B通最小值 = set数值最小值 * 1f * (float)B通倍率;
+            labelB通最小值.Text = B通最小值.ToString("0.0");
+
+            float B通波形预设强度 = float.Parse(textBoxB前.Text);
+
+
+
+            float B通最大值 = set数值最大值 * B通波形预设强度 * (float)B通倍率;
+            labelB通最大值.Text = B通最大值.ToString("0.0") + "(软上限" + labelB通软上限.Text + ")";
+
+        }
+
+
+
+        #region 超链接打开
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            System.Diagnostics.Process.Start("  https://github.com/amoeet/VRChat_X_DGLAB");
+
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://t.me/VRChatDGLAB");
+        }
+
+
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://space.bilibili.com/89856");
+        }
+
+
+
+        #endregion
+
+
+
+        float set数值最小值 = 0.1f;
+        float set数值最大值 = 1;
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {//最小值设置
+            float tt = 0;
+            if (float.TryParse(textBox12.Text, out tt))
+            {
+
+                set数值最小值 = tt;
+            }
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {//最大值设置
+            float tt = 0;
+            if (float.TryParse(textBox13.Text, out tt))
+            {
+
+                set数值最大值 = tt;
+            }
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            byte[] buffer = new byte[7];
+            //0xBF(1byte指令HEAD) + 
+            // AB两通道强度软上限(2bytes) + 
+            //AB两通道波形频率平衡参数(2btyes) + 
+            // AB两通道波形强度平衡参数(2bytes)
+            //  通道强度软上限
+            //  通道强度软上限可以限制脉冲主机通道强度能达到的最大值，并且该设置断电保存，值范围(0~200)，
+            //  输入范围外的值则不会修改软上限。 假设设置AB通道软上限为150和30，
+            //  那么通过拨动滚轮或B0指令无论如何修改强度，
+            //  A通道的通道强度只会在范围(0 ~150),
+            //  B通道的通道强度只会在范围(0 ~30)，
+            //  脉冲主机的通道强度一定不会超过软上限。
+
+            //   频率平衡参数1
+            //   波形频率平衡参数会调整波形高低频的感受，并且该设置断电保存，值范围(0 ~255)
+            //   本参数控制固定通道强度下，不同频率波形的相对体感强度。值越大，低频波形冲击感越强。
+
+            //   频率平衡参数2
+            //   波形强度平衡参数会调整波形脉冲宽度，并且该设置断电保存，值范围(0 ~255)
+            //   本参数控制固定通道强度下，不同频率波形的相对体感强度。值越大，低频波形刺激越强。
+
+            buffer[0] = (byte)Convert.ToByte("0xBF", 16);
+            buffer[1] = Convert.ToByte(A软上限设置.Value);
+            buffer[2] = Convert.ToByte(B软上限设置.Value);
+            buffer[3] = Convert.ToByte(A频率平衡.Value);
+            buffer[4] = Convert.ToByte(B频率平衡.Value);
+            buffer[5] = Convert.ToByte(A强度平衡.Value);
+            buffer[6] = Convert.ToByte(B强度平衡.Value);
+
+
+            write(buffer);
+        }
+
+        private void button51_Click(object sender, EventArgs e)
+        {
+            一键启动设置上限();
+        }
+
+        private void textBoxA前_TextChanged(object sender, EventArgs e)
+        {
+            刷新最大值最小值();
+        }
+
+        private void textBoxB前_TextChanged(object sender, EventArgs e)
+        {
+            刷新最大值最小值();
+        }
+        private void 禁止非数字_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
 
 
 
 
 
 
-    }
 
- 
- 
+        byte[] 按照参数组合(int A值, int B值, int[] A1, int[] A2, int[] B1, int[] B2, int 开始点, int 获取数量)
+        {
+            byte[] buffer = new byte[20];
+
+            buffer[0] = (byte)Convert.ToByte("0xB0", 16);
+            buffer[1] = (byte)Convert.ToByte("01011111", 2);
+            buffer[2] = Convert.ToByte(A值);
+            buffer[3] = Convert.ToByte(B值);
+
+            buffer[4] = Convert.ToByte(A1[开始点 * 获取数量 + 0]);
+            buffer[5] = Convert.ToByte(A1[开始点 * 获取数量 + 1]);
+            buffer[6] = Convert.ToByte(A1[开始点 * 获取数量 + 2]);
+            buffer[7] = Convert.ToByte(A1[开始点 * 获取数量 + 3]);
+
+            buffer[8] = Convert.ToByte(A2[开始点 * 获取数量 + 0]);
+            buffer[9] = Convert.ToByte(A2[开始点 * 获取数量 + 1]);
+            buffer[10] = Convert.ToByte(A2[开始点 * 获取数量 + 2]);
+            buffer[11] = Convert.ToByte(A2[开始点 * 获取数量 + 3]);
+
+            buffer[12] = Convert.ToByte(B1[开始点 * 获取数量 + 0]);
+            buffer[13] = Convert.ToByte(B1[开始点 * 获取数量 + 1]);
+            buffer[14] = Convert.ToByte(B1[开始点 * 获取数量 + 2]);
+            buffer[15] = Convert.ToByte(B1[开始点 * 获取数量 + 3]);
+
+            buffer[16] = Convert.ToByte(B2[开始点 * 获取数量 + 0]);
+            buffer[17] = Convert.ToByte(B2[开始点 * 获取数量 + 1]);
+            buffer[18] = Convert.ToByte(B2[开始点 * 获取数量 + 2]);
+            buffer[19] = Convert.ToByte(B2[开始点 * 获取数量 + 3]);
+
+            return buffer;
+        }
+
+
+        bool 检查listBox(ListBox a, int 切分数量)
+        {
+            if (a.Items.Count > 0 && a.Items.Count == 切分数量)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            int 切分段数 = int.Parse(textBox14.Text);
+
+
+
+            //获取切分的值，并进行组合
+            if (!检查listBox(listBox15, 切分段数))
+            {
+                MessageBox.Show("A通 频率未绘制或绘制错误，缺少点");
+                return;
+            }
+            if (!检查listBox(listBox16, 切分段数))
+            {
+                MessageBox.Show("A通 强度未绘制或绘制错误，缺少点");
+                return;
+            }
+            if (!检查listBox(listBox17, 切分段数))
+            {
+                MessageBox.Show("B通 频率未绘制或绘制错误，缺少点");
+                return;
+            }
+            if (!检查listBox(listBox18, 切分段数))
+            {
+                MessageBox.Show("B通 强度未绘制或绘制错误，缺少点");
+                return;
+            }
+
+            //切分并追加
+            int[] A1 = new int[listBox15.Items.Count];
+            int[] A2 = new int[listBox16.Items.Count];
+            int[] B1 = new int[listBox17.Items.Count];
+            int[] B2 = new int[listBox18.Items.Count];
+
+
+            for (int i = 0; i < listBox15.Items.Count; i++)
+            {
+                A1[i] = int.Parse(listBox15.Items[i].ToString());
+            }
+            for (int i = 0; i < listBox16.Items.Count; i++)
+            {
+                A2[i] = int.Parse(listBox16.Items[i].ToString());
+            }
+            for (int i = 0; i < listBox17.Items.Count; i++)
+            {
+                B1[i] = int.Parse(listBox17.Items[i].ToString());
+            }
+            for (int i = 0; i < listBox18.Items.Count; i++)
+            {
+                B2[i] = int.Parse(listBox18.Items[i].ToString());
+            }
+            Random ss = new Random();
+            vv.tag栏位列表ImageListView.Items.Clear();
+            for (int 计数器 = 0; 计数器 < listBox18.Items.Count / 4; 计数器++)
+            {
+                string bb = ss.Next(0, 9999).ToString();
+                string cc = byte波形转string(按照参数组合(int.Parse(textBox15.Text), int.Parse(textBox16.Text), A1, A2, B1, B2, 计数器, 4));
+                ImageListViewItem a = new ImageListViewItem("不使用" + 计数器.ToString() + "个" + bb, "自绘制第" + 计数器.ToString() + "个" + bb, cc, "不使用");
+                vv.tag栏位列表ImageListView.Items.Add(a);
+
+
+            }
+
+
+
+
+            //队列操控UI追加方法：
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+        private void textBoxA后_TextChanged(object sender, EventArgs e)
+        {
+            textBoxA强.Text = textBoxA后.Text;
+        }
+
+        private void textBoxB后_TextChanged(object sender, EventArgs e)
+        {
+            textBoxB强.Text = textBoxB后.Text;
+        }
+
+        private void button53_Click(object sender, EventArgs e)
+        {
+
+            int 切分段数 = int.Parse(textBox14.Text);
+
+
+
+            //获取切分的值，并进行组合
+            if (!检查listBox(listBox15, 切分段数))
+            {
+                MessageBox.Show("A通 频率未绘制或绘制错误，缺少点");
+                return;
+            }
+            if (!检查listBox(listBox16, 切分段数))
+            {
+                MessageBox.Show("A通 强度未绘制或绘制错误，缺少点");
+                return;
+            }
+            if (!检查listBox(listBox17, 切分段数))
+            {
+                MessageBox.Show("B通 频率未绘制或绘制错误，缺少点");
+                return;
+            }
+            if (!检查listBox(listBox18, 切分段数))
+            {
+                MessageBox.Show("B通 强度未绘制或绘制错误，缺少点");
+                return;
+            }
+
+            //切分并追加
+            int[] A1 = new int[listBox15.Items.Count];
+            int[] A2 = new int[listBox16.Items.Count];
+            int[] B1 = new int[listBox17.Items.Count];
+            int[] B2 = new int[listBox18.Items.Count];
+
+
+            for (int i = 0; i < listBox15.Items.Count; i++)
+            {
+                A1[i] = int.Parse(listBox15.Items[i].ToString());
+            }
+            for (int i = 0; i < listBox16.Items.Count; i++)
+            {
+                A2[i] = int.Parse(listBox16.Items[i].ToString());
+            }
+            for (int i = 0; i < listBox17.Items.Count; i++)
+            {
+                B1[i] = int.Parse(listBox17.Items[i].ToString());
+            }
+            for (int i = 0; i < listBox18.Items.Count; i++)
+            {
+                B2[i] = int.Parse(listBox18.Items[i].ToString());
+            }
+            Random ss = new Random();
+            for (int 计数器 = 0; 计数器 < listBox18.Items.Count / 4; 计数器++)
+            {
+                待执行波形列表.Add(按照参数组合(int.Parse(textBox15.Text), int.Parse(textBox16.Text), A1, A2, B1, B2, 计数器, 4));
+            }
+
+
+            //队列操控UI追加方法： 
+
+            波形循环触发测试();
+
+        }
+
+        private void button54_Click(object sender, EventArgs e)
+        {
+
+            if (textBox9波形队列名称.Text.Trim() == "")
+            {
+                MessageBox.Show("请填写波形队列名称");
+                return;
+            }
+            if (a郊狼存档.DG波形队列.Keys.Contains(textBox9波形队列名称.Text.Trim()))
+            {
+                MessageBox.Show("波形队列名称已存在，请更换一个");
+                return;
+            } 
+
+            
+
+
+            if (listBox2.Items.Count > 0 && listBox2.SelectedItem != null)
+            {
+                string 待改名 = listBox2.SelectedItem.ToString ();
+                string 新名 = textBox9波形队列名称.Text.Trim();
+                波形队列序列化 档案 = a郊狼存档.DG波形队列[listBox2.SelectedItem.ToString()]; 
+                a郊狼存档.DG波形队列.Remove(待改名); 
+                a郊狼存档.DG波形队列.Add(新名, new 波形队列序列化(vv));
+                listBox2.Items.Clear();
+                foreach (string a in a郊狼存档.DG波形队列.Keys)
+                {
+                    listBox2.Items.Add(a);
+                } 
+            }
+            else
+            {
+                MessageBox.Show("请选择一个需要重命名的项目");
+                return;
+
+            }
+
+
+        }
+
+
+        List<byte[]> 写入蓝牙列表=new List<byte[]>();
+
+        private void timer写入蓝牙_Tick(object sender, EventArgs e)
+        {
+            if ( !DG启用Vrc)
+            {
+                if (写入蓝牙列表.Count > 500)
+                {
+                    写入蓝牙列表.RemoveRange(0, 400);
+                } 
+            }
+            else
+            {
+                if (写入蓝牙列表.Count > 5)
+                {
+                    写入蓝牙列表.RemoveRange(0, 4);
+                } 
+            }
+
+           
+
+
+
+            if (写入蓝牙列表.Count > 0)
+            {
+                write(写入蓝牙列表[0]);
+
+                写入蓝牙列表.RemoveAt(0);
+            }
+
+
+        }
+
+        private void timer新定义波形输出控制_Tick(object sender, EventArgs e)
+        {
+            //负责检测参数是否触发。
+
+
+
+
+        }
+
+        private void timer新定义写入蓝牙_Tick(object sender, EventArgs e)
+        {
+            //负责依照固定频率将数据发送给蓝牙
+
+        }
+    } 
 }
 

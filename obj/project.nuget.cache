@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b81NhWkSRmaVQUlO5+qZ5QtZ+QESnWUX4rSJ4wrnZx6pn4VhXek/1yvj/1UUiZwI1O69bTRrxCBQ+BUyOT22JA==",
+  "dgSpecHash": "cv/lc8SHV9xxcRVKRUqKOVqSSWrHxQO/t8bK0soijUoVp0hx12drEabrHS+wMui/dVv6BWarvezxNfjLlhXeXQ==",
   "success": true,
-  "projectFilePath": "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\郊狼蓝牙测试.csproj",
+  "projectFilePath": "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\VRChatX郊狼.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emita\\.nuget\\packages\\fftsharp\\2.1.0\\fftsharp.2.1.0.nupkg.sha512",
     "C:\\Users\\Emita\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

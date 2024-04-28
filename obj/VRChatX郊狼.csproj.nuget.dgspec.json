@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\郊狼蓝牙测试.csproj": {}
+    "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\VRChatX郊狼.csproj": {}
   },
   "projects": {
     "D:\\VS\\AmoeetAllPrograms\\AAP\\FFmpeg\\我的多功能类库.csproj": {
@@ -115,12 +115,12 @@
         "net48": {}
       }
     },
-    "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\郊狼蓝牙测试.csproj": {
+    "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\VRChatX郊狼.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\郊狼蓝牙测试.csproj",
+        "projectUniqueName": "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\VRChatX郊狼.csproj",
         "projectName": "VRChatX郊狼",
-        "projectPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\郊狼蓝牙测试.csproj",
+        "projectPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\VRChatX郊狼.csproj",
         "packagesPath": "C:\\Users\\Emita\\.nuget\\packages\\",
         "outputPath": "D:\\VS\\AmoeetAllPrograms\\AAP\\郊狼蓝牙测试\\obj\\",
         "projectStyle": "PackageReference",
