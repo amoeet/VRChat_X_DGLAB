@@ -463,8 +463,10 @@ namespace VRChatX郊狼
 
 
             DG启用Vrc = true;
-            timer波形连续输出.Enabled = true;
+          //  timer波形连续输出.Enabled = true;
+            timer新定义波形输出控制.Enabled = true;
             groupBox36.Visible = true;
+            groupBox107.Visible = true;
 
             button1.Visible = false;
             button3.Visible = true;
@@ -496,8 +498,11 @@ namespace VRChatX郊狼
             button1.Visible = true;
             button3.Visible = false;
             groupBox36.Visible = false;
+            groupBox107.Visible = false;
             DG启用Vrc = false;
-            timer波形连续输出.Enabled = false;
+            //timer波形连续输出.Enabled = false;
+
+            timer新定义波形输出控制.Enabled = false;
             待执行波形列表.Clear();
             timer写入蓝牙.Enabled = true;
         }
@@ -958,7 +963,8 @@ namespace VRChatX郊狼
                 // 序列号(1byte) + 
                 // A通道当前实际强度(1byte) + 
                 //  B通道当前实际强度(1byte)
-
+                if(DG启用Vrc)
+                   收到单次回应 = true;
                 if (!DG启用Vrc)
                    波形循环触发测试();
 
@@ -1516,8 +1522,8 @@ namespace VRChatX郊狼
         bool 使用音乐波形 = false;
         private void button8_Click(object sender, EventArgs e)
         {
-            timer波形连续输出.Enabled = true;
-
+           //timer波形连续输出.Enabled = true;
+            timer新定义波形输出控制.Enabled = true;
             使用音乐波形 = true;
 
 
@@ -1536,6 +1542,11 @@ namespace VRChatX郊狼
 
         bool DG启用Vrc执行完毕 = true;
         string DG启用Vrc名字 = "";
+        string DG启用Vrc名字2 = "";
+
+
+
+
         DateTime timeA = DateTime.Now;
         DateTime timeB = DateTime.Now;
         private void timer波形连续输出_Tick(object sender, EventArgs e)
@@ -1717,6 +1728,49 @@ namespace VRChatX郊狼
             return "";
 
         }
+
+        private string 依次获取DG启用Vrc名字2()
+        {
+            //玩法触发参数预览
+            //首先全部清除，依照触发再切
+            checkBox配12.Checked = false;
+            checkBox配22.Checked = false;
+            checkBox配32.Checked = false;
+            checkBox配42.Checked = false;
+            checkBox配52.Checked = false;
+
+
+            if (符合触发条件(comboBox配置条件12, textBox触发值12))
+            {
+                checkBox配12.Checked = true;
+                return comboBox配置12.Text;
+            }
+            else if (符合触发条件(comboBox配置条件22, textBox触发值22))
+            {
+                checkBox配22.Checked = true;
+                return comboBox配置22.Text;
+            }
+            else if (符合触发条件(comboBox配置条件32, textBox触发值32))
+            {
+                checkBox配32.Checked = true;
+                return comboBox配置32.Text;
+            }
+            else if (符合触发条件(comboBox配置条件42, textBox触发值42))
+            {
+                checkBox配42.Checked = true;
+                return comboBox配置42.Text;
+            }
+            else if (符合触发条件(comboBox配置条件52, textBox触发值52))
+            {
+                checkBox配52.Checked = true;
+                return comboBox配置52.Text;
+            }
+
+            return "";
+
+        }
+
+
 
         private bool 符合触发条件(ComboBox comboBox配置条件1, TextBox 触发值)
         {
@@ -2264,6 +2318,115 @@ namespace VRChatX郊狼
             return bytes;
 
         }
+        byte[] string转byte波形AB(string a,string b, float A强度百分比, float B强度百分比)
+        {
+
+            if (a=="")
+            {
+                 
+                string[] bb = b.Split(' ');
+                byte[] bytesb = new byte[bb.Length];
+                int ib = 0;
+                foreach (string bbb in bb)
+                {
+                    bytesb[ib] = Convert.ToByte(bbb);
+                    ib++;
+                }
+                bytesb[2] = Convert.ToByte(0);
+                bytesb[3] = 同步强度B(bytesb[3], B强度百分比);
+                bytesb[7] = Convert.ToByte(241);
+                bytesb[8] = Convert.ToByte(101);
+                 
+
+                return bytesb;
+
+
+            }
+            else if (b== "")
+            {
+
+              
+                string[] aa = a.Split(' ');
+                byte[] bytes = new byte[aa.Length];
+                int i = 0;
+                foreach (string aaa in aa)
+                {
+                    bytes[i] = Convert.ToByte(aaa);
+                    i++;
+                }
+                bytes[2] = 同步强度A(bytes[2], A强度百分比);
+                bytes[3] = Convert.ToByte(0);
+                bytes[15] = Convert.ToByte(241);
+                bytes[16] = Convert.ToByte(101);  
+                return bytes;
+
+
+
+            }
+            else
+            {
+                string[] aa = a.Split(' ');
+                byte[] bytes = new byte[aa.Length];
+                int i = 0;
+                foreach (string aaa in aa)
+                {
+                    bytes[i] = Convert.ToByte(aaa);
+                    i++;
+                }
+
+
+                string[] bb = b.Split(' ');
+                byte[] bytesb = new byte[bb.Length];
+                int ib = 0;
+                foreach (string bbb in bb)
+                {
+                    bytesb[ib] = Convert.ToByte(bbb);
+                    ib++;
+                }
+                bytes[2]= 同步强度A(bytes[2], A强度百分比);
+                bytes[3] = 同步强度B(bytesb[3], B强度百分比);
+
+                for (int iii = 12; iii < 20; iii++)
+                {
+                    bytes[iii] = bytesb[iii];
+                }
+                return bytes;
+            }
+ 
+
+        }
+
+
+        byte 同步强度A(byte a, float A强度百分比)
+        {
+            textBoxA前.Text = Convert.ToInt32(a).ToString();
+
+            int gg = (int)((float)Convert.ToInt32(a) * A强度百分比 * float.Parse(textBoxA通倍率.Text));
+
+            if (gg > int.Parse(labelA通软上限.Text))
+            {
+                gg = int.Parse(labelA通软上限.Text);
+            }
+            textBoxA后.Text = gg.ToString();
+
+            return Convert.ToByte(gg);
+
+        }
+        byte 同步强度B(byte b, float  B强度百分比)
+        {
+            textBoxB前.Text = Convert.ToInt32(b).ToString();
+            int gg = (int)((float)Convert.ToInt32(b) * B强度百分比 * float.Parse(textBoxB通倍率.Text));
+
+            if (gg > int.Parse(labelB通软上限.Text))
+            {
+                gg = int.Parse(labelB通软上限.Text);
+            }
+
+            textBoxB后.Text = gg.ToString();
+            return Convert.ToByte(gg);
+
+        }
+
 
 
 
@@ -2370,6 +2533,26 @@ namespace VRChatX郊狼
                     comboBox配置5.Items.Add(a);
                 }
             }
+            comboBox配置12.Items.Clear();
+            comboBox配置22.Items.Clear();
+            comboBox配置32.Items.Clear();
+            comboBox配置42.Items.Clear();
+            comboBox配置52.Items.Clear();
+
+            if (listBox2.Items.Count > 0)
+            {
+                foreach (string a in listBox2.Items)
+                {
+                    comboBox配置12.Items.Add(a);
+                    comboBox配置22.Items.Add(a);
+                    comboBox配置32.Items.Add(a);
+                    comboBox配置42.Items.Add(a);
+                    comboBox配置52.Items.Add(a);
+                }
+            }
+
+
+
 
 
             if (仅填充波形列表)
@@ -2445,7 +2628,7 @@ namespace VRChatX郊狼
 
         }
 
-
+       
 
         bool DG播放队列 = false;
         bool DG播放波形 = false;
@@ -2454,9 +2637,7 @@ namespace VRChatX郊狼
         {
             if (listBox1.Items.Count > 0 && listBox1.SelectedItem != null)
             {
-
-                待执行波形列表.Add(string转byte波形(a郊狼存档.DG波形列表[listBox1.SelectedItem.ToString()]));
-                波形循环触发测试();
+                write(string转byte波形(a郊狼存档.DG波形列表[listBox1.SelectedItem.ToString()])); 
             }
 
         }
@@ -2465,7 +2646,7 @@ namespace VRChatX郊狼
         {
             if (listBox2.Items.Count > 0 && listBox2.SelectedItem != null)
             {
-
+                待执行波形列表.Clear();
 
                 for (int i = 0; i < a郊狼存档.DG波形队列[listBox2.SelectedItem.ToString()].波形队列User包含全部格式的英文Tag.Count; i++)
                 {
@@ -2473,8 +2654,7 @@ namespace VRChatX郊狼
                        a郊狼存档.DG波形队列[listBox2.SelectedItem.ToString()].波形队列User包含全部格式的英文Tag[i]
                        ));
                 }
-
-                波形循环触发测试();
+                timer新定义波形输出控制.Enabled = true;
             }
         }
 
@@ -2553,28 +2733,79 @@ namespace VRChatX郊狼
             }
 
 
-            确认非空(textBox配置名1C, a郊狼存档.textBox配置名1C);
-            确认非空(textBox配置名2C, a郊狼存档.textBox配置名2C);
-            确认非空(textBox配置名3C, a郊狼存档.textBox配置名3C);
-            确认非空(textBox配置名4C, a郊狼存档.textBox配置名4C);
-            确认非空(textBox配置名5C, a郊狼存档.textBox配置名5C);
+            确认非空(textBox配置名1C, a郊狼存档.通道A.textBox配置名1C);
+            确认非空(textBox配置名2C, a郊狼存档.通道A.textBox配置名2C);
+            确认非空(textBox配置名3C, a郊狼存档.通道A.textBox配置名3C);
+            确认非空(textBox配置名4C, a郊狼存档.通道A.textBox配置名4C);
+            确认非空(textBox配置名5C, a郊狼存档.通道A.textBox配置名5C);
 
 
 
 
-            确认非空(comboBox配置条件1, a郊狼存档.textBox配置条件1C);
-            确认非空(comboBox配置条件2, a郊狼存档.textBox配置条件2C);
-            确认非空(comboBox配置条件3, a郊狼存档.textBox配置条件3C);
-            确认非空(comboBox配置条件4, a郊狼存档.textBox配置条件4C);
-            确认非空(comboBox配置条件5, a郊狼存档.textBox配置条件5C);
+            确认非空(comboBox配置条件1, a郊狼存档.通道A.textBox配置条件1C);
+            确认非空(comboBox配置条件2, a郊狼存档.通道A.textBox配置条件2C);
+            确认非空(comboBox配置条件3, a郊狼存档.通道A.textBox配置条件3C);
+            确认非空(comboBox配置条件4, a郊狼存档.通道A.textBox配置条件4C);
+            确认非空(comboBox配置条件5, a郊狼存档.通道A.textBox配置条件5C);
 
 
 
-            确认非空(textBoxA通强度参数C, a郊狼存档.textBoxA通强度参数C);
-            确认非空(textBoxB通强度参数C, a郊狼存档.textBoxB通强度参数C);
+            确认非空(textBox配置名1C2, a郊狼存档.通道B.textBox配置名1C);
+            确认非空(textBox配置名2C2, a郊狼存档.通道B.textBox配置名2C);
+            确认非空(textBox配置名3C2, a郊狼存档.通道B.textBox配置名3C);
+            确认非空(textBox配置名4C2, a郊狼存档.通道B.textBox配置名4C);
+            确认非空(textBox配置名5C2, a郊狼存档.通道B.textBox配置名5C);
 
-            确认非空(textBoxA通倍率, a郊狼存档.textBoxA通倍率C);
-            确认非空(textBoxB通倍率, a郊狼存档.textBoxB通倍率C);
+
+
+
+            确认非空(comboBox配置条件12, a郊狼存档.通道B.textBox配置条件1C);
+            确认非空(comboBox配置条件22, a郊狼存档.通道B.textBox配置条件2C);
+            确认非空(comboBox配置条件32, a郊狼存档.通道B.textBox配置条件3C);
+            确认非空(comboBox配置条件42, a郊狼存档.通道B.textBox配置条件4C);
+            确认非空(comboBox配置条件52, a郊狼存档.通道B.textBox配置条件5C);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            确认非空(textBoxA通强度参数C, a郊狼存档.通道A.textBoxA通强度参数C);
+            确认非空(textBoxB通强度参数C, a郊狼存档.通道A.textBoxB通强度参数C);
+
+            确认非空(textBoxA通倍率, a郊狼存档.通道A.textBoxA通倍率C);
+            确认非空(textBoxB通倍率, a郊狼存档.通道A.textBoxB通倍率C);
+
+
+
+
+
+            确认非空(comboBox配置1, a郊狼存档.通道A.comboBox配置1C);
+            确认非空(comboBox配置2, a郊狼存档.通道A.comboBox配置2C);
+            确认非空(comboBox配置3, a郊狼存档.通道A.comboBox配置3C);
+            确认非空(comboBox配置4, a郊狼存档.通道A.comboBox配置4C);
+            确认非空(comboBox配置5, a郊狼存档.通道A.comboBox配置5C);
+
+
+
+            确认非空(comboBox配置12, a郊狼存档.通道B.comboBox配置1C);
+            确认非空(comboBox配置22, a郊狼存档.通道B.comboBox配置2C);
+            确认非空(comboBox配置32, a郊狼存档.通道B.comboBox配置3C);
+            确认非空(comboBox配置42, a郊狼存档.通道B.comboBox配置4C);
+            确认非空(comboBox配置52, a郊狼存档.通道B.comboBox配置5C);
+
+
 
             填充vrc波形配置(false);
 
@@ -2595,35 +2826,65 @@ namespace VRChatX郊狼
 
 
 
-            确认非空(textBox配置名1C, a郊狼存档.textBox配置名1C);
-            确认非空(textBox配置名2C, a郊狼存档.textBox配置名2C);
-            确认非空(textBox配置名3C, a郊狼存档.textBox配置名3C);
-            确认非空(textBox配置名4C, a郊狼存档.textBox配置名4C);
-            确认非空(textBox配置名5C, a郊狼存档.textBox配置名5C);
+            确认非空(textBox配置名1C, a郊狼存档.通道A.textBox配置名1C);
+            确认非空(textBox配置名2C, a郊狼存档.通道A.textBox配置名2C);
+            确认非空(textBox配置名3C, a郊狼存档.通道A.textBox配置名3C);
+            确认非空(textBox配置名4C, a郊狼存档.通道A.textBox配置名4C);
+            确认非空(textBox配置名5C, a郊狼存档.通道A.textBox配置名5C);
 
 
 
 
-            确认非空(comboBox配置条件1, a郊狼存档.textBox配置条件1C);
-            确认非空(comboBox配置条件2, a郊狼存档.textBox配置条件2C);
-            确认非空(comboBox配置条件3, a郊狼存档.textBox配置条件3C);
-            确认非空(comboBox配置条件4, a郊狼存档.textBox配置条件4C);
-            确认非空(comboBox配置条件5, a郊狼存档.textBox配置条件5C);
+            确认非空(comboBox配置条件1, a郊狼存档.通道A.textBox配置条件1C);
+            确认非空(comboBox配置条件2, a郊狼存档.通道A.textBox配置条件2C);
+            确认非空(comboBox配置条件3, a郊狼存档.通道A.textBox配置条件3C);
+            确认非空(comboBox配置条件4, a郊狼存档.通道A.textBox配置条件4C);
+            确认非空(comboBox配置条件5, a郊狼存档.通道A.textBox配置条件5C);
 
 
 
-            确认非空(textBoxA通强度参数C, a郊狼存档.textBoxA通强度参数C);
-            确认非空(textBoxB通强度参数C, a郊狼存档.textBoxB通强度参数C);
 
-            确认非空(textBoxA通倍率, a郊狼存档.textBoxA通倍率C);
-            确认非空(textBoxB通倍率, a郊狼存档.textBoxB通倍率C);
+            确认非空(textBox配置名1C2, a郊狼存档.通道B.textBox配置名1C);
+            确认非空(textBox配置名2C2, a郊狼存档.通道B.textBox配置名2C);
+            确认非空(textBox配置名3C2, a郊狼存档.通道B.textBox配置名3C);
+            确认非空(textBox配置名4C2, a郊狼存档.通道B.textBox配置名4C);
+            确认非空(textBox配置名5C2, a郊狼存档.通道B.textBox配置名5C);
 
 
-            确认非空(comboBox配置1, a郊狼存档.comboBox配置1C);
-            确认非空(comboBox配置2, a郊狼存档.comboBox配置2C);
-            确认非空(comboBox配置3, a郊狼存档.comboBox配置3C);
-            确认非空(comboBox配置4, a郊狼存档.comboBox配置4C);
-            确认非空(comboBox配置5, a郊狼存档.comboBox配置5C);
+
+
+            确认非空(comboBox配置条件12, a郊狼存档.通道B.textBox配置条件1C);
+            确认非空(comboBox配置条件22, a郊狼存档.通道B.textBox配置条件2C);
+            确认非空(comboBox配置条件32, a郊狼存档.通道B.textBox配置条件3C);
+            确认非空(comboBox配置条件42, a郊狼存档.通道B.textBox配置条件4C);
+            确认非空(comboBox配置条件52, a郊狼存档.通道B.textBox配置条件5C);
+
+
+
+
+            确认非空(textBoxA通强度参数C, a郊狼存档.通道A.textBoxA通强度参数C);
+            确认非空(textBoxB通强度参数C, a郊狼存档.通道A.textBoxB通强度参数C);
+
+            确认非空(textBoxA通倍率, a郊狼存档.通道A.textBoxA通倍率C);
+            确认非空(textBoxB通倍率, a郊狼存档.通道A.textBoxB通倍率C);
+
+
+
+
+
+            确认非空(comboBox配置1, a郊狼存档.通道A.comboBox配置1C);
+            确认非空(comboBox配置2, a郊狼存档.通道A.comboBox配置2C);
+            确认非空(comboBox配置3, a郊狼存档.通道A.comboBox配置3C);
+            确认非空(comboBox配置4, a郊狼存档.通道A.comboBox配置4C);
+            确认非空(comboBox配置5, a郊狼存档.通道A.comboBox配置5C);
+
+
+
+            确认非空(comboBox配置12, a郊狼存档.通道B.comboBox配置1C);
+            确认非空(comboBox配置22, a郊狼存档.通道B.comboBox配置2C);
+            确认非空(comboBox配置32, a郊狼存档.通道B.comboBox配置3C);
+            确认非空(comboBox配置42, a郊狼存档.通道B.comboBox配置4C);
+            确认非空(comboBox配置52, a郊狼存档.通道B.comboBox配置5C);
 
 
 
@@ -2672,9 +2933,9 @@ namespace VRChatX郊狼
         {
             DG启用Vrc = true;
 
-            timer波形连续输出.Enabled = true;
+           // timer波形连续输出.Enabled = true;
 
-
+            timer新定义波形输出控制.Enabled = true;
             groupBox36.Visible = true;
 
             button19.Visible = true;
@@ -2725,16 +2986,11 @@ namespace VRChatX郊狼
             尝试追加参数名(textBoxA通强度参数C, 参数名);
             尝试追加参数名(textBoxB通强度参数C, 参数名);
 
-
-
-
-
-
-
-
-
-
-
+            尝试追加参数名(textBox配置名1C2, 参数名);
+            尝试追加参数名(textBox配置名2C2, 参数名);
+            尝试追加参数名(textBox配置名3C2, 参数名);
+            尝试追加参数名(textBox配置名4C2, 参数名);
+            尝试追加参数名(textBox配置名5C2, 参数名);
 
 
 
@@ -2758,11 +3014,45 @@ namespace VRChatX郊狼
             {
                 textBox触发值5.Text = 值.Trim();
             }
-            else if (textBoxA通强度参数C.Text.Trim() == 参数名.Trim())
+
+
+
+
+
+
+            if (textBox配置名1C2.Text.Trim() == 参数名.Trim())
+            {
+                textBox触发值12.Text = 值.Trim();
+            }
+            else if (textBox配置名2C2.Text.Trim() == 参数名.Trim())
+            {
+                textBox触发值22.Text = 值.Trim();
+            }
+            else if (textBox配置名3C2.Text.Trim() == 参数名.Trim())
+            {
+                textBox触发值32.Text = 值.Trim();
+            }
+            else if (textBox配置名4C2.Text.Trim() == 参数名.Trim())
+            {
+                textBox触发值42.Text = 值.Trim();
+            }
+            else if (textBox配置名5C2.Text.Trim() == 参数名.Trim())
+            {
+                textBox触发值52.Text = 值.Trim();
+            }
+
+
+
+
+
+
+             
+
+            if (textBoxA通强度参数C.Text.Trim() == 参数名.Trim())
             {
                 textBoxA通强度值.Text = 值.Trim();
             }
-            else if (textBoxB通强度参数C.Text.Trim() == 参数名.Trim())
+             if (textBoxB通强度参数C.Text.Trim() == 参数名.Trim())
             {
                 textBoxB通强度值.Text = 值.Trim();
             }
@@ -2808,10 +3098,6 @@ namespace VRChatX郊狼
                 changedata = "";
                 for (int i = 0; i < data.Count; i++)
                 {
-
-
-
-
                     string a = dataKeys[i].Replace("/avatar/parameters/", "");
                     string b = data[dataKeys[i]];
 
@@ -2888,32 +3174,43 @@ Grounded:True
 
         private void textBoxA通强度值_TextChanged(object sender, EventArgs e)
         {
-            float bb = float.Parse(textBoxA通强度值.Text);
-            if (bb < set数值最小值)
-            {
-                bb = set数值最小值;
+            float bb = 0; 
+            if (float.TryParse(textBoxA通强度值.Text, out bb))
+            { 
+                if (bb < set数值最小值)
+                {
+                    bb = set数值最小值;
+                }
+                if (bb > set数值最大值)
+                {
+                    bb = set数值最大值;
+                }
+                textBoxA通强度值.Text = bb.ToString();
+                textBoxA参.Text = bb.ToString();
             }
-            if (bb > set数值最大值)
-            {
-                bb = set数值最大值;
-            }
-            textBoxA通强度值.Text = bb.ToString();
-            textBoxA参.Text = bb.ToString();
         }
 
         private void textBoxB通强度值_TextChanged(object sender, EventArgs e)
         {
-            float bb = float.Parse(textBoxB通强度值.Text);
-            if (bb < set数值最小值)
+
+            float bb = 0;
+
+            if (float.TryParse (textBoxB通强度值.Text,out bb))
             {
-                bb = set数值最小值;
-            }
-            if (bb > set数值最大值)
-            {
-                bb = set数值最大值;
-            }
-            textBoxB通强度值.Text = bb.ToString();
-            textBoxB参.Text = bb.ToString();
+
+                if (bb < set数值最小值)
+                {
+                    bb = set数值最小值;
+                }
+                if (bb > set数值最大值)
+                {
+                    bb = set数值最大值;
+                }
+                textBoxB通强度值.Text = bb.ToString();
+                textBoxB参.Text = bb.ToString();
+
+            }    
+          
         }
 
         private void button34_Click(object sender, EventArgs e)
@@ -3020,70 +3317,70 @@ Grounded:True
 
         private void textBox配置名1C_TextChanged(object sender, EventArgs e)
         {
-            a郊狼存档.textBox配置名1C = textBox配置名1C.Text;
+            a郊狼存档.通道A.textBox配置名1C = textBox配置名1C.Text;
             groupBox配1.Text = textBox配置名1C.Text;
         }
 
         private void textBox配置名2C_TextChanged(object sender, EventArgs e)
         {
-            a郊狼存档.textBox配置名2C = textBox配置名2C.Text;
+            a郊狼存档.通道A.textBox配置名2C = textBox配置名2C.Text;
             groupBox配2.Text = textBox配置名2C.Text;
         }
 
         private void textBox配置名3C_TextChanged(object sender, EventArgs e)
         {
-            a郊狼存档.textBox配置名3C = textBox配置名3C.Text;
+            a郊狼存档.通道A.textBox配置名3C = textBox配置名3C.Text;
             groupBox配3.Text = textBox配置名3C.Text;
         }
 
 
         private void textBox配置名4C_TextChanged(object sender, EventArgs e)
         {
-            a郊狼存档.textBox配置名4C = textBox配置名4C.Text;
+            a郊狼存档.通道A.textBox配置名4C = textBox配置名4C.Text;
             groupBox配4.Text = textBox配置名4C.Text;
         }
 
         private void textBox配置名5C_TextChanged(object sender, EventArgs e)
         {
-            a郊狼存档.textBox配置名5C = textBox配置名5C.Text;
+            a郊狼存档.通道A.textBox配置名5C = textBox配置名5C.Text;
             groupBox配5.Text = textBox配置名5C.Text;
         }
 
         private void comboBox配置条件1_TextChanged(object sender, EventArgs e)
         {
-            a郊狼存档.textBox配置条件1C = comboBox配置条件1.Text;
+            a郊狼存档.通道A.textBox配置条件1C = comboBox配置条件1.Text;
         }
 
         private void comboBox配置条件2_TextChanged(object sender, EventArgs e)
         {
-            a郊狼存档.textBox配置条件2C = comboBox配置条件2.Text;
+            a郊狼存档.通道A.textBox配置条件2C = comboBox配置条件2.Text;
         }
 
         private void comboBox配置条件3_TextChanged(object sender, EventArgs e)
         {
-            a郊狼存档.textBox配置条件3C = comboBox配置条件3.Text;
+            a郊狼存档.通道A.textBox配置条件3C = comboBox配置条件3.Text;
         }
 
         private void comboBox配置条件4_TextChanged(object sender, EventArgs e)
         {
-            a郊狼存档.textBox配置条件4C = comboBox配置条件4.Text;
+            a郊狼存档.通道A.textBox配置条件4C = comboBox配置条件4.Text;
         }
 
         private void comboBox配置条件5_TextChanged(object sender, EventArgs e)
         {
-            a郊狼存档.textBox配置条件5C = comboBox配置条件5.Text;
+            a郊狼存档.通道A.textBox配置条件5C = comboBox配置条件5.Text;
         }
 
         private void textBoxA通强度参数C_TextChanged(object sender, EventArgs e)
         {
-            a郊狼存档.textBoxA通强度参数C = textBoxA通强度参数C.Text;
+            a郊狼存档.通道A.textBoxA通强度参数C = textBoxA通强度参数C.Text;
 
             groupBoxA强.Text = textBoxA通强度参数C.Text;
         }
 
         private void textBoxB通强度参数C_TextChanged(object sender, EventArgs e)
         {
-            a郊狼存档.textBoxB通强度参数C = textBoxB通强度参数C.Text;
+            a郊狼存档.通道A.textBoxB通强度参数C = textBoxB通强度参数C.Text;
 
             groupBoxB强.Text = textBoxB通强度参数C.Text;
         }
@@ -3100,7 +3397,7 @@ Grounded:True
                 bb = 5;
             }
             textBoxA通倍率.Text = bb.ToString();
-            a郊狼存档.textBoxA通倍率C = textBoxA通倍率.Text;
+            a郊狼存档.通道A.textBoxA通倍率C = textBoxA通倍率.Text;
             刷新最大值最小值();
         }
 
@@ -3116,25 +3413,60 @@ Grounded:True
                 bb = 5;
             }
             textBoxB通倍率.Text = bb.ToString();
-            a郊狼存档.textBoxB通倍率C = textBoxB通倍率.Text;
+            a郊狼存档.通道A.textBoxB通倍率C = textBoxB通倍率.Text;
             刷新最大值最小值();
         }
         void 初次写入()
         {
-            a郊狼存档.textBox配置名1C = textBox配置名1C.Text;
-            a郊狼存档.textBox配置名2C = textBox配置名2C.Text;
-            a郊狼存档.textBox配置名3C = textBox配置名3C.Text;
-            a郊狼存档.textBox配置名4C = textBox配置名4C.Text;
-            a郊狼存档.textBox配置名5C = textBox配置名5C.Text;
-            a郊狼存档.textBox配置条件1C = comboBox配置条件1.Text;
-            a郊狼存档.textBox配置条件2C = comboBox配置条件2.Text;
-            a郊狼存档.textBox配置条件3C = comboBox配置条件3.Text;
-            a郊狼存档.textBox配置条件4C = comboBox配置条件4.Text;
-            a郊狼存档.textBox配置条件5C = comboBox配置条件5.Text;
-            a郊狼存档.textBoxA通强度参数C = textBoxA通强度参数C.Text;
-            a郊狼存档.textBoxB通强度参数C = textBoxB通强度参数C.Text;
-            a郊狼存档.textBoxA通倍率C = textBoxA通倍率.Text;
-            a郊狼存档.textBoxB通倍率C = textBoxB通倍率.Text;
+            a郊狼存档.通道A.textBox配置名1C = textBox配置名1C.Text;
+            a郊狼存档.通道A.textBox配置名2C = textBox配置名2C.Text;
+            a郊狼存档.通道A.textBox配置名3C = textBox配置名3C.Text;
+            a郊狼存档.通道A.textBox配置名4C = textBox配置名4C.Text;
+            a郊狼存档.通道A.textBox配置名5C = textBox配置名5C.Text;
+            a郊狼存档.通道A.textBox配置条件1C = comboBox配置条件1.Text;
+            a郊狼存档.通道A.textBox配置条件2C = comboBox配置条件2.Text;
+            a郊狼存档.通道A.textBox配置条件3C = comboBox配置条件3.Text;
+            a郊狼存档.通道A.textBox配置条件4C = comboBox配置条件4.Text;
+            a郊狼存档.通道A.textBox配置条件5C = comboBox配置条件5.Text;
+            a郊狼存档.通道A.textBoxA通强度参数C = textBoxA通强度参数C.Text;
+            a郊狼存档.通道A.textBoxB通强度参数C = textBoxB通强度参数C.Text;
+            a郊狼存档.通道A.textBoxA通倍率C = textBoxA通倍率.Text;
+            a郊狼存档.通道A.textBoxB通倍率C = textBoxB通倍率.Text;
+
+            a郊狼存档.通道A.comboBox配置1C= comboBox配置1.Text;
+            a郊狼存档.通道A.comboBox配置2C = comboBox配置2.Text;
+            a郊狼存档.通道A.comboBox配置3C = comboBox配置3.Text;
+            a郊狼存档.通道A.comboBox配置4C = comboBox配置4.Text;
+            a郊狼存档.通道A.comboBox配置5C = comboBox配置5.Text;
+
+
+
+
+
+
+            a郊狼存档.通道B.textBox配置名1C = textBox配置名1C2.Text;
+            a郊狼存档.通道B.textBox配置名2C = textBox配置名2C2.Text;
+            a郊狼存档.通道B.textBox配置名3C = textBox配置名3C2.Text;
+            a郊狼存档.通道B.textBox配置名4C = textBox配置名4C2.Text;
+            a郊狼存档.通道B.textBox配置名5C = textBox配置名5C2.Text;
+            a郊狼存档.通道B.textBox配置条件1C = comboBox配置条件12.Text;
+            a郊狼存档.通道B.textBox配置条件2C = comboBox配置条件22.Text;
+            a郊狼存档.通道B.textBox配置条件3C = comboBox配置条件32.Text;
+            a郊狼存档.通道B.textBox配置条件4C = comboBox配置条件42.Text;
+            a郊狼存档.通道B.textBox配置条件5C = comboBox配置条件52.Text;
+            a郊狼存档.通道B.textBoxA通强度参数C = textBoxA通强度参数C.Text;
+            a郊狼存档.通道B.textBoxB通强度参数C = textBoxB通强度参数C.Text;
+            a郊狼存档.通道B.textBoxA通倍率C = textBoxA通倍率.Text;
+            a郊狼存档.通道B.textBoxB通倍率C = textBoxB通倍率.Text;
+
+
+            a郊狼存档.通道B.comboBox配置1C = comboBox配置12.Text;
+            a郊狼存档.通道B.comboBox配置2C = comboBox配置22.Text;
+            a郊狼存档.通道B.comboBox配置3C = comboBox配置32.Text;
+            a郊狼存档.通道B.comboBox配置4C = comboBox配置42.Text;
+            a郊狼存档.通道B.comboBox配置5C = comboBox配置52.Text;
+
+
 
 
         }
@@ -3742,7 +4074,8 @@ Grounded:True
         private void button51_Click(object sender, EventArgs e)
         {
             一键启动设置上限();
-        }
+            刷新最大值最小值();
+        } 
 
         private void textBoxA前_TextChanged(object sender, EventArgs e)
         {
@@ -3959,7 +4292,8 @@ Grounded:True
 
             //队列操控UI追加方法： 
 
-            波形循环触发测试();
+            // 波形循环触发测试();
+            timer新定义波形输出控制.Enabled = true;
 
         }
 
@@ -4037,12 +4371,153 @@ Grounded:True
 
         }
 
+
+
+        string 正在执行中的A通 = "";
+        string 正在执行中的B通 = "";
+        int index正在执行中的A通 = 0;
+        int index正在执行中的B通 = 0;
+
+        int 计数器新 = 0;
+        bool 收到单次回应=false;
+
+        int 单次回应等待时间上限 = 5;
+        int 单次回应等待时间 =0;
+
         private void timer新定义波形输出控制_Tick(object sender, EventArgs e)
         {
-            //负责检测参数是否触发。
+
+            if(DG启用Vrc)
+            {
+                //负责检测参数是否触发。
+                if (收到单次回应)
+                {   //vrc启用中不可测试
+
+                    DG启用Vrc名字 = 依次获取DG启用Vrc名字();//每轮更新A通//如果不为空则找到激活参数
+                    DG启用Vrc名字2 = 依次获取DG启用Vrc名字2();//每轮更新B通//如果不为空则找到激活参数
+                    string getA = "";
+                    string getB = "";
+
+                    //获取当前进度
+                    if (DG启用Vrc名字 != "")
+                    {
+                        if (DG启用Vrc名字 == 正在执行中的A通)
+                        {//执行中 
+                         //获得A通道当前执行强度
+                            getA = a郊狼存档.DG波形队列[DG启用Vrc名字].波形队列User包含全部格式的英文Tag[index正在执行中的A通];
+                            index正在执行中的A通++;
+
+                            if (index正在执行中的A通 >= a郊狼存档.DG波形队列[DG启用Vrc名字].波形队列User包含全部格式的英文Tag.Count)
+                            {
+                                index正在执行中的A通 = 0;
+                            }
+                        }
+                        else
+                        {//切换中 
+                            正在执行中的A通 = DG启用Vrc名字;
+                            index正在执行中的A通 = 0;
+                            getA = a郊狼存档.DG波形队列[DG启用Vrc名字].波形队列User包含全部格式的英文Tag[index正在执行中的A通];
+                        }
+                    }
+                    else
+                    {
+                        正在执行中的A通 = "";
+                        index正在执行中的A通 = 0;
+                    }
+                    if (DG启用Vrc名字2 != "")
+                    {
+                        if (DG启用Vrc名字2 == 正在执行中的B通)
+                        {//执行中 
+                            getB = a郊狼存档.DG波形队列[DG启用Vrc名字2].波形队列User包含全部格式的英文Tag[index正在执行中的B通];
+                            index正在执行中的B通++;
+                            if (index正在执行中的B通 >= a郊狼存档.DG波形队列[DG启用Vrc名字2].波形队列User包含全部格式的英文Tag.Count)
+                            {
+                                index正在执行中的B通 = 0;
+                            }
+                        }
+                        else
+                        {//切换中 
+                            正在执行中的B通 = DG启用Vrc名字2;
+                            index正在执行中的B通 = 0;
+                            getB = a郊狼存档.DG波形队列[DG启用Vrc名字2].波形队列User包含全部格式的英文Tag[index正在执行中的B通];
+
+                        }
+                    }
+                    else
+                    {
+                        正在执行中的B通 = "";
+                        index正在执行中的B通 = 0;
+                    }
+                    if (getA != "" || getB != "")
+                    {
+                        计数器新++;
+                        label53.Text = 计数器新.ToString();
+                        byte[] data = string转byte波形AB(getA, getB, float.Parse(textBoxA通强度值.Text), float.Parse(textBoxB通强度值.Text));
+                        write(data);
+                        收到单次回应 = false;
+                    }
 
 
 
+                }
+                else
+                {
+                    单次回应等待时间++;
+                    if (单次回应等待时间 > 单次回应等待时间上限)
+                    {
+                        收到单次回应 = true;
+                    }
+                }
+
+
+            }
+            else
+            {
+                //测试用触发
+                //负责检测参数是否触发。
+                if (收到单次回应&& 待执行波形列表.Count >0)
+                {   //vrc启用中不可测试
+
+                    if (index正在执行中的A通 >= 待执行波形列表.Count)
+                    {
+                        index正在执行中的A通 = 0;
+                        待执行波形列表.Clear();
+                        timer新定义波形输出控制.Enabled = false;
+                        return ;    
+                    }
+
+
+                    write(待执行波形列表[index正在执行中的A通]);
+                    收到单次回应 = false;
+                    index正在执行中的A通++;
+
+                  
+                        
+
+                   
+                     计数器新++;
+                     label53.Text = 计数器新.ToString();
+                    
+                    
+
+
+
+                }
+                else
+                {
+                    单次回应等待时间++;
+                    if (单次回应等待时间 > 单次回应等待时间上限)
+                    {
+                        收到单次回应 = true;
+                    }
+                }
+
+
+
+
+
+            }
+           
 
         }
 
@@ -4050,6 +4525,36 @@ Grounded:True
         {
             //负责依照固定频率将数据发送给蓝牙
 
+        }
+
+        private void textBox配置名1C2_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.通道B.textBox配置名1C = textBox配置名1C2.Text;
+            groupBox配12.Text = textBox配置名1C2.Text;
+        }
+
+        private void textBox配置名2C2_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.通道B.textBox配置名2C = textBox配置名2C2.Text;
+            groupBox配22.Text = textBox配置名2C2.Text;
+        }
+
+        private void textBox配置名3C2_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.通道B.textBox配置名3C = textBox配置名3C2.Text;
+            groupBox配32.Text = textBox配置名3C2.Text;
+        }
+
+        private void textBox配置名4C2_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.通道B.textBox配置名4C = textBox配置名4C2.Text;
+            groupBox配42.Text = textBox配置名4C2.Text;
+        }
+
+        private void textBox配置名5C2_TextChanged(object sender, EventArgs e)
+        {
+            a郊狼存档.通道B.textBox配置名5C = textBox配置名5C2.Text;
+            groupBox配52.Text = textBox配置名5C2.Text;
         }
     } 
 }

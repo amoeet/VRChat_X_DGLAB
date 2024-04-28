@@ -74,42 +74,26 @@ namespace VRChatX郊狼
     [Serializable]
     public class 郊狼存档
     {
-
+        public 通道 通道A;
+        public 通道 通道B;
 
         public 郊狼存档()
         {
             DG波形列表 = new Dictionary<string, string>();
             DG波形队列 = new Dictionary<string, 波形队列序列化>();
-            textBox配置名1C = "";
-            textBox配置名2C = "";
-            textBox配置名3C = "";
-            textBox配置名4C = "";
-            textBox配置名5C = "";
-            textBoxA通强度参数C = "";
-            textBoxB通强度参数C = "";
-            textBox配置条件1C = "";
-            textBox配置条件2C = "";
-            textBox配置条件3C = "";
-            textBox配置条件4C = "";
-            textBox配置条件5C = "";
-            textBoxA通倍率C = "";
-            textBoxB通倍率C = "";
 
-            comboBox配置1C = "";
-            comboBox配置2C = "";
-            comboBox配置3C = "";
-            comboBox配置4C = "";
-            comboBox配置5C = "";
+            通道A=new 通道 (); 
+            通道B = new 通道();
 
+        } 
+        public Dictionary<string, string> DG波形列表; 
+        public Dictionary<string, 波形队列序列化> DG波形队列; 
 
-        }
+    }
 
-
-        public Dictionary<string, string> DG波形列表;
-
-        public Dictionary<string, 波形队列序列化> DG波形队列;
-
-
+    [Serializable]
+    public class 通道
+    {
         public string textBox配置名1C;
         public string textBox配置名2C;
         public string textBox配置名3C;
@@ -132,11 +116,30 @@ namespace VRChatX郊狼
         public string comboBox配置3C;
         public string comboBox配置4C;
         public string comboBox配置5C;
+        public 通道()
+        {
 
+            textBox配置名1C = "";
+            textBox配置名2C = "";
+            textBox配置名3C = "";
+            textBox配置名4C = "";
+            textBox配置名5C = "";
+            textBoxA通强度参数C = "";
+            textBoxB通强度参数C = "";
+            textBox配置条件1C = "";
+            textBox配置条件2C = "";
+            textBox配置条件3C = "";
+            textBox配置条件4C = "";
+            textBox配置条件5C = "";
+            textBoxA通倍率C = "";
+            textBoxB通倍率C = "";
 
+            comboBox配置1C = "";
+            comboBox配置2C = "";
+            comboBox配置3C = "";
+            comboBox配置4C = "";
+            comboBox配置5C = "";
 
+        }
     }
-
-
-
 }

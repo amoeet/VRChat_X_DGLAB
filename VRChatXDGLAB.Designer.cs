@@ -419,59 +419,60 @@
             this.textBox服务器监听端口号 = new System.Windows.Forms.TextBox();
             this.timer写入蓝牙 = new System.Windows.Forms.Timer(this.components);
             this.groupBox77 = new System.Windows.Forms.GroupBox();
-            this.groupBox78 = new System.Windows.Forms.GroupBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.groupBox79 = new System.Windows.Forms.GroupBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.groupBox80 = new System.Windows.Forms.GroupBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.groupBox81 = new System.Windows.Forms.GroupBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.groupBox106 = new System.Windows.Forms.GroupBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.groupBox配12 = new System.Windows.Forms.GroupBox();
+            this.checkBox配12 = new System.Windows.Forms.CheckBox();
+            this.groupBox配22 = new System.Windows.Forms.GroupBox();
+            this.checkBox配22 = new System.Windows.Forms.CheckBox();
+            this.groupBox配52 = new System.Windows.Forms.GroupBox();
+            this.checkBox配52 = new System.Windows.Forms.CheckBox();
+            this.groupBox配32 = new System.Windows.Forms.GroupBox();
+            this.checkBox配32 = new System.Windows.Forms.CheckBox();
+            this.groupBox配42 = new System.Windows.Forms.GroupBox();
+            this.checkBox配42 = new System.Windows.Forms.CheckBox();
             this.groupBox107 = new System.Windows.Forms.GroupBox();
             this.groupBox108 = new System.Windows.Forms.GroupBox();
             this.groupBox109 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox配置条件52 = new System.Windows.Forms.ComboBox();
             this.groupBox110 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox配置名5C2 = new System.Windows.Forms.ComboBox();
+            this.textBox触发值52 = new System.Windows.Forms.TextBox();
             this.groupBox113 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox配置52 = new System.Windows.Forms.ComboBox();
             this.groupBox114 = new System.Windows.Forms.GroupBox();
             this.groupBox115 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox配置条件42 = new System.Windows.Forms.ComboBox();
             this.groupBox116 = new System.Windows.Forms.GroupBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.textBox触发值42 = new System.Windows.Forms.TextBox();
+            this.textBox配置名4C2 = new System.Windows.Forms.ComboBox();
             this.groupBox117 = new System.Windows.Forms.GroupBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBox配置42 = new System.Windows.Forms.ComboBox();
             this.groupBox118 = new System.Windows.Forms.GroupBox();
             this.groupBox119 = new System.Windows.Forms.GroupBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.comboBox配置条件32 = new System.Windows.Forms.ComboBox();
             this.groupBox120 = new System.Windows.Forms.GroupBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.textBox触发值32 = new System.Windows.Forms.TextBox();
+            this.textBox配置名3C2 = new System.Windows.Forms.ComboBox();
             this.groupBox121 = new System.Windows.Forms.GroupBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.comboBox配置32 = new System.Windows.Forms.ComboBox();
             this.groupBox122 = new System.Windows.Forms.GroupBox();
             this.groupBox123 = new System.Windows.Forms.GroupBox();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.comboBox配置条件22 = new System.Windows.Forms.ComboBox();
             this.groupBox124 = new System.Windows.Forms.GroupBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.textBox触发值22 = new System.Windows.Forms.TextBox();
+            this.textBox配置名2C2 = new System.Windows.Forms.ComboBox();
             this.groupBox125 = new System.Windows.Forms.GroupBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.comboBox配置22 = new System.Windows.Forms.ComboBox();
             this.groupBox126 = new System.Windows.Forms.GroupBox();
             this.groupBox127 = new System.Windows.Forms.GroupBox();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
+            this.comboBox配置条件12 = new System.Windows.Forms.ComboBox();
             this.groupBox128 = new System.Windows.Forms.GroupBox();
-            this.comboBox14 = new System.Windows.Forms.ComboBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.textBox配置名1C2 = new System.Windows.Forms.ComboBox();
+            this.textBox触发值12 = new System.Windows.Forms.TextBox();
             this.groupBox129 = new System.Windows.Forms.GroupBox();
-            this.comboBox15 = new System.Windows.Forms.ComboBox();
+            this.comboBox配置12 = new System.Windows.Forms.ComboBox();
             this.timer新定义波形输出控制 = new System.Windows.Forms.Timer(this.components);
             this.timer新定义写入蓝牙 = new System.Windows.Forms.Timer(this.components);
+            this.label53 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.RSSI_trackBar)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage8.SuspendLayout();
@@ -622,11 +623,11 @@
             this.groupBox9.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox77.SuspendLayout();
-            this.groupBox78.SuspendLayout();
-            this.groupBox79.SuspendLayout();
-            this.groupBox80.SuspendLayout();
-            this.groupBox81.SuspendLayout();
-            this.groupBox106.SuspendLayout();
+            this.groupBox配12.SuspendLayout();
+            this.groupBox配22.SuspendLayout();
+            this.groupBox配52.SuspendLayout();
+            this.groupBox配32.SuspendLayout();
+            this.groupBox配42.SuspendLayout();
             this.groupBox107.SuspendLayout();
             this.groupBox108.SuspendLayout();
             this.groupBox109.SuspendLayout();
@@ -1422,6 +1423,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label53);
             this.tabPage2.Controls.Add(this.groupBox107);
             this.tabPage2.Controls.Add(this.groupBox97);
             this.tabPage2.Controls.Add(this.groupBox94);
@@ -1502,7 +1504,7 @@
             // 
             this.groupBox94.Controls.Add(this.groupBox92);
             this.groupBox94.Controls.Add(this.groupBox93);
-            this.groupBox94.Location = new System.Drawing.Point(1550, 556);
+            this.groupBox94.Location = new System.Drawing.Point(320, 350);
             this.groupBox94.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox94.Name = "groupBox94";
             this.groupBox94.Padding = new System.Windows.Forms.Padding(2);
@@ -1966,6 +1968,7 @@
             this.groupBox76.TabIndex = 81;
             this.groupBox76.TabStop = false;
             this.groupBox76.Text = "B通强度输入参数值  波形预设    强度倍率                最终强度";
+            this.groupBox76.Visible = false;
             // 
             // listBox7
             // 
@@ -2021,6 +2024,7 @@
             this.groupBox13.TabIndex = 78;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "A通强度输入参数值  波形预设    强度倍率                最终强度";
+            this.groupBox13.Visible = false;
             // 
             // listBox10
             // 
@@ -2621,7 +2625,6 @@
             this.textBox配置名5C.Name = "textBox配置名5C";
             this.textBox配置名5C.Size = new System.Drawing.Size(120, 20);
             this.textBox配置名5C.TabIndex = 77;
-            this.textBox配置名5C.Text = "CTR_Angle";
             this.textBox配置名5C.TextChanged += new System.EventHandler(this.textBox配置名5C_TextChanged);
             // 
             // textBox触发值5
@@ -2728,7 +2731,6 @@
             this.textBox配置名4C.Name = "textBox配置名4C";
             this.textBox配置名4C.Size = new System.Drawing.Size(120, 20);
             this.textBox配置名4C.TabIndex = 76;
-            this.textBox配置名4C.Text = "Grounded";
             this.textBox配置名4C.TextChanged += new System.EventHandler(this.textBox配置名4C_TextChanged);
             // 
             // groupBox51
@@ -2827,7 +2829,6 @@
             this.textBox配置名3C.Name = "textBox配置名3C";
             this.textBox配置名3C.Size = new System.Drawing.Size(120, 20);
             this.textBox配置名3C.TabIndex = 75;
-            this.textBox配置名3C.Text = "Voice";
             this.textBox配置名3C.TextChanged += new System.EventHandler(this.textBox配置名3C_TextChanged);
             // 
             // groupBox47
@@ -2926,7 +2927,6 @@
             this.textBox配置名2C.Name = "textBox配置名2C";
             this.textBox配置名2C.Size = new System.Drawing.Size(120, 20);
             this.textBox配置名2C.TabIndex = 74;
-            this.textBox配置名2C.Text = "Leach_IsGrabbed";
             this.textBox配置名2C.TextChanged += new System.EventHandler(this.textBox配置名2C_TextChanged);
             // 
             // groupBox43
@@ -3017,7 +3017,6 @@
             this.textBox配置名1C.Name = "textBox配置名1C";
             this.textBox配置名1C.Size = new System.Drawing.Size(120, 20);
             this.textBox配置名1C.TabIndex = 73;
-            this.textBox配置名1C.Text = "CTR_Angle";
             this.textBox配置名1C.TextChanged += new System.EventHandler(this.textBox配置名1C_TextChanged);
             // 
             // textBox触发值1
@@ -5181,11 +5180,11 @@
             // 
             // groupBox77
             // 
-            this.groupBox77.Controls.Add(this.groupBox78);
-            this.groupBox77.Controls.Add(this.groupBox79);
-            this.groupBox77.Controls.Add(this.groupBox80);
-            this.groupBox77.Controls.Add(this.groupBox81);
-            this.groupBox77.Controls.Add(this.groupBox106);
+            this.groupBox77.Controls.Add(this.groupBox配12);
+            this.groupBox77.Controls.Add(this.groupBox配22);
+            this.groupBox77.Controls.Add(this.groupBox配52);
+            this.groupBox77.Controls.Add(this.groupBox配32);
+            this.groupBox77.Controls.Add(this.groupBox配42);
             this.groupBox77.Location = new System.Drawing.Point(134, 230);
             this.groupBox77.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox77.Name = "groupBox77";
@@ -5195,120 +5194,120 @@
             this.groupBox77.TabStop = false;
             this.groupBox77.Text = "B通触发参数预览";
             // 
-            // groupBox78
+            // groupBox配12
             // 
-            this.groupBox78.Controls.Add(this.checkBox7);
-            this.groupBox78.Location = new System.Drawing.Point(14, 20);
-            this.groupBox78.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox78.Name = "groupBox78";
-            this.groupBox78.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox78.Size = new System.Drawing.Size(90, 35);
-            this.groupBox78.TabIndex = 80;
-            this.groupBox78.TabStop = false;
-            this.groupBox78.Text = "groupBox106";
+            this.groupBox配12.Controls.Add(this.checkBox配12);
+            this.groupBox配12.Location = new System.Drawing.Point(14, 20);
+            this.groupBox配12.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox配12.Name = "groupBox配12";
+            this.groupBox配12.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox配12.Size = new System.Drawing.Size(90, 35);
+            this.groupBox配12.TabIndex = 80;
+            this.groupBox配12.TabStop = false;
+            this.groupBox配12.Text = "groupBox106";
             // 
-            // checkBox7
+            // checkBox配12
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(16, 14);
-            this.checkBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(48, 16);
-            this.checkBox7.TabIndex = 0;
-            this.checkBox7.Text = "触发";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox配12.AutoSize = true;
+            this.checkBox配12.Location = new System.Drawing.Point(16, 14);
+            this.checkBox配12.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox配12.Name = "checkBox配12";
+            this.checkBox配12.Size = new System.Drawing.Size(48, 16);
+            this.checkBox配12.TabIndex = 0;
+            this.checkBox配12.Text = "触发";
+            this.checkBox配12.UseVisualStyleBackColor = true;
             // 
-            // groupBox79
+            // groupBox配22
             // 
-            this.groupBox79.Controls.Add(this.checkBox8);
-            this.groupBox79.Location = new System.Drawing.Point(14, 65);
-            this.groupBox79.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox79.Name = "groupBox79";
-            this.groupBox79.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox79.Size = new System.Drawing.Size(90, 35);
-            this.groupBox79.TabIndex = 81;
-            this.groupBox79.TabStop = false;
-            this.groupBox79.Text = "groupBox107";
+            this.groupBox配22.Controls.Add(this.checkBox配22);
+            this.groupBox配22.Location = new System.Drawing.Point(14, 65);
+            this.groupBox配22.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox配22.Name = "groupBox配22";
+            this.groupBox配22.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox配22.Size = new System.Drawing.Size(90, 35);
+            this.groupBox配22.TabIndex = 81;
+            this.groupBox配22.TabStop = false;
+            this.groupBox配22.Text = "groupBox107";
             // 
-            // checkBox8
+            // checkBox配22
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(16, 14);
-            this.checkBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(48, 16);
-            this.checkBox8.TabIndex = 0;
-            this.checkBox8.Text = "触发";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.checkBox配22.AutoSize = true;
+            this.checkBox配22.Location = new System.Drawing.Point(16, 14);
+            this.checkBox配22.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox配22.Name = "checkBox配22";
+            this.checkBox配22.Size = new System.Drawing.Size(48, 16);
+            this.checkBox配22.TabIndex = 0;
+            this.checkBox配22.Text = "触发";
+            this.checkBox配22.UseVisualStyleBackColor = true;
             // 
-            // groupBox80
+            // groupBox配52
             // 
-            this.groupBox80.Controls.Add(this.checkBox9);
-            this.groupBox80.Location = new System.Drawing.Point(14, 196);
-            this.groupBox80.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox80.Name = "groupBox80";
-            this.groupBox80.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox80.Size = new System.Drawing.Size(90, 35);
-            this.groupBox80.TabIndex = 82;
-            this.groupBox80.TabStop = false;
-            this.groupBox80.Text = "groupBox110";
+            this.groupBox配52.Controls.Add(this.checkBox配52);
+            this.groupBox配52.Location = new System.Drawing.Point(14, 196);
+            this.groupBox配52.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox配52.Name = "groupBox配52";
+            this.groupBox配52.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox配52.Size = new System.Drawing.Size(90, 35);
+            this.groupBox配52.TabIndex = 82;
+            this.groupBox配52.TabStop = false;
+            this.groupBox配52.Text = "groupBox110";
             // 
-            // checkBox9
+            // checkBox配52
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(16, 14);
-            this.checkBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(48, 16);
-            this.checkBox9.TabIndex = 0;
-            this.checkBox9.Text = "触发";
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.checkBox配52.AutoSize = true;
+            this.checkBox配52.Location = new System.Drawing.Point(16, 14);
+            this.checkBox配52.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox配52.Name = "checkBox配52";
+            this.checkBox配52.Size = new System.Drawing.Size(48, 16);
+            this.checkBox配52.TabIndex = 0;
+            this.checkBox配52.Text = "触发";
+            this.checkBox配52.UseVisualStyleBackColor = true;
             // 
-            // groupBox81
+            // groupBox配32
             // 
-            this.groupBox81.Controls.Add(this.checkBox10);
-            this.groupBox81.Location = new System.Drawing.Point(14, 113);
-            this.groupBox81.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox81.Name = "groupBox81";
-            this.groupBox81.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox81.Size = new System.Drawing.Size(90, 35);
-            this.groupBox81.TabIndex = 81;
-            this.groupBox81.TabStop = false;
-            this.groupBox81.Text = "groupBox108";
+            this.groupBox配32.Controls.Add(this.checkBox配32);
+            this.groupBox配32.Location = new System.Drawing.Point(14, 113);
+            this.groupBox配32.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox配32.Name = "groupBox配32";
+            this.groupBox配32.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox配32.Size = new System.Drawing.Size(90, 35);
+            this.groupBox配32.TabIndex = 81;
+            this.groupBox配32.TabStop = false;
+            this.groupBox配32.Text = "groupBox108";
             // 
-            // checkBox10
+            // checkBox配32
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(16, 14);
-            this.checkBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(48, 16);
-            this.checkBox10.TabIndex = 0;
-            this.checkBox10.Text = "触发";
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.checkBox配32.AutoSize = true;
+            this.checkBox配32.Location = new System.Drawing.Point(16, 14);
+            this.checkBox配32.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox配32.Name = "checkBox配32";
+            this.checkBox配32.Size = new System.Drawing.Size(48, 16);
+            this.checkBox配32.TabIndex = 0;
+            this.checkBox配32.Text = "触发";
+            this.checkBox配32.UseVisualStyleBackColor = true;
             // 
-            // groupBox106
+            // groupBox配42
             // 
-            this.groupBox106.Controls.Add(this.checkBox11);
-            this.groupBox106.Location = new System.Drawing.Point(14, 155);
-            this.groupBox106.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox106.Name = "groupBox106";
-            this.groupBox106.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox106.Size = new System.Drawing.Size(90, 35);
-            this.groupBox106.TabIndex = 81;
-            this.groupBox106.TabStop = false;
-            this.groupBox106.Text = "groupBox109";
+            this.groupBox配42.Controls.Add(this.checkBox配42);
+            this.groupBox配42.Location = new System.Drawing.Point(14, 155);
+            this.groupBox配42.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox配42.Name = "groupBox配42";
+            this.groupBox配42.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox配42.Size = new System.Drawing.Size(90, 35);
+            this.groupBox配42.TabIndex = 81;
+            this.groupBox配42.TabStop = false;
+            this.groupBox配42.Text = "groupBox109";
             // 
-            // checkBox11
+            // checkBox配42
             // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(16, 14);
-            this.checkBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(48, 16);
-            this.checkBox11.TabIndex = 0;
-            this.checkBox11.Text = "触发";
-            this.checkBox11.UseVisualStyleBackColor = true;
+            this.checkBox配42.AutoSize = true;
+            this.checkBox配42.Location = new System.Drawing.Point(16, 14);
+            this.checkBox配42.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox配42.Name = "checkBox配42";
+            this.checkBox配42.Size = new System.Drawing.Size(48, 16);
+            this.checkBox配42.TabIndex = 0;
+            this.checkBox配42.Text = "触发";
+            this.checkBox配42.UseVisualStyleBackColor = true;
             // 
             // groupBox107
             // 
@@ -5343,7 +5342,7 @@
             // 
             // groupBox109
             // 
-            this.groupBox109.Controls.Add(this.comboBox1);
+            this.groupBox109.Controls.Add(this.comboBox配置条件52);
             this.groupBox109.Location = new System.Drawing.Point(280, 20);
             this.groupBox109.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox109.Name = "groupBox109";
@@ -5353,10 +5352,10 @@
             this.groupBox109.TabStop = false;
             this.groupBox109.Text = "预设触发条件";
             // 
-            // comboBox1
+            // comboBox配置条件52
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox配置条件52.FormattingEnabled = true;
+            this.comboBox配置条件52.Items.AddRange(new object[] {
             "true/1执行",
             "false/0执行 ",
             "大于0.5执行",
@@ -5365,17 +5364,17 @@
             "小于0.25执行",
             "大于0.75执行",
             "小于0.75执行"});
-            this.comboBox1.Location = new System.Drawing.Point(6, 19);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(108, 20);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "true/1执行";
+            this.comboBox配置条件52.Location = new System.Drawing.Point(6, 19);
+            this.comboBox配置条件52.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox配置条件52.Name = "comboBox配置条件52";
+            this.comboBox配置条件52.Size = new System.Drawing.Size(108, 20);
+            this.comboBox配置条件52.TabIndex = 0;
+            this.comboBox配置条件52.Text = "true/1执行";
             // 
             // groupBox110
             // 
-            this.groupBox110.Controls.Add(this.comboBox2);
-            this.groupBox110.Controls.Add(this.textBox17);
+            this.groupBox110.Controls.Add(this.textBox配置名5C2);
+            this.groupBox110.Controls.Add(this.textBox触发值52);
             this.groupBox110.Location = new System.Drawing.Point(6, 19);
             this.groupBox110.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox110.Name = "groupBox110";
@@ -5385,27 +5384,27 @@
             this.groupBox110.TabStop = false;
             this.groupBox110.Text = "指定触发参数名";
             // 
-            // comboBox2
+            // textBox配置名5C2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 20);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(120, 20);
-            this.comboBox2.TabIndex = 77;
-            this.comboBox2.Text = "CTR_Angle";
+            this.textBox配置名5C2.FormattingEnabled = true;
+            this.textBox配置名5C2.Location = new System.Drawing.Point(6, 20);
+            this.textBox配置名5C2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox配置名5C2.Name = "textBox配置名5C2";
+            this.textBox配置名5C2.Size = new System.Drawing.Size(120, 20);
+            this.textBox配置名5C2.TabIndex = 77;
+            this.textBox配置名5C2.TextChanged += new System.EventHandler(this.textBox配置名5C2_TextChanged);
             // 
-            // textBox17
+            // textBox触发值52
             // 
-            this.textBox17.Location = new System.Drawing.Point(206, 14);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(54, 21);
-            this.textBox17.TabIndex = 40;
+            this.textBox触发值52.Location = new System.Drawing.Point(206, 14);
+            this.textBox触发值52.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox触发值52.Name = "textBox触发值52";
+            this.textBox触发值52.Size = new System.Drawing.Size(54, 21);
+            this.textBox触发值52.TabIndex = 40;
             // 
             // groupBox113
             // 
-            this.groupBox113.Controls.Add(this.comboBox3);
+            this.groupBox113.Controls.Add(this.comboBox配置52);
             this.groupBox113.Location = new System.Drawing.Point(410, 20);
             this.groupBox113.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox113.Name = "groupBox113";
@@ -5415,14 +5414,14 @@
             this.groupBox113.TabStop = false;
             this.groupBox113.Text = "波形队列选择";
             // 
-            // comboBox3
+            // comboBox配置52
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(6, 20);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(153, 20);
-            this.comboBox3.TabIndex = 0;
+            this.comboBox配置52.FormattingEnabled = true;
+            this.comboBox配置52.Location = new System.Drawing.Point(6, 20);
+            this.comboBox配置52.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox配置52.Name = "comboBox配置52";
+            this.comboBox配置52.Size = new System.Drawing.Size(153, 20);
+            this.comboBox配置52.TabIndex = 0;
             // 
             // groupBox114
             // 
@@ -5440,7 +5439,7 @@
             // 
             // groupBox115
             // 
-            this.groupBox115.Controls.Add(this.comboBox4);
+            this.groupBox115.Controls.Add(this.comboBox配置条件42);
             this.groupBox115.Location = new System.Drawing.Point(280, 20);
             this.groupBox115.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox115.Name = "groupBox115";
@@ -5450,10 +5449,10 @@
             this.groupBox115.TabStop = false;
             this.groupBox115.Text = "预设触发条件";
             // 
-            // comboBox4
+            // comboBox配置条件42
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.comboBox配置条件42.FormattingEnabled = true;
+            this.comboBox配置条件42.Items.AddRange(new object[] {
             "true/1执行",
             "false/0执行 ",
             "大于0.5执行",
@@ -5462,17 +5461,17 @@
             "小于0.25执行",
             "大于0.75执行",
             "小于0.75执行"});
-            this.comboBox4.Location = new System.Drawing.Point(6, 19);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(108, 20);
-            this.comboBox4.TabIndex = 0;
-            this.comboBox4.Text = "false/0执行 ";
+            this.comboBox配置条件42.Location = new System.Drawing.Point(6, 19);
+            this.comboBox配置条件42.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox配置条件42.Name = "comboBox配置条件42";
+            this.comboBox配置条件42.Size = new System.Drawing.Size(108, 20);
+            this.comboBox配置条件42.TabIndex = 0;
+            this.comboBox配置条件42.Text = "false/0执行 ";
             // 
             // groupBox116
             // 
-            this.groupBox116.Controls.Add(this.textBox18);
-            this.groupBox116.Controls.Add(this.comboBox5);
+            this.groupBox116.Controls.Add(this.textBox触发值42);
+            this.groupBox116.Controls.Add(this.textBox配置名4C2);
             this.groupBox116.Location = new System.Drawing.Point(6, 19);
             this.groupBox116.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox116.Name = "groupBox116";
@@ -5482,27 +5481,27 @@
             this.groupBox116.TabStop = false;
             this.groupBox116.Text = "指定触发参数名";
             // 
-            // textBox18
+            // textBox触发值42
             // 
-            this.textBox18.Location = new System.Drawing.Point(206, 14);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(54, 21);
-            this.textBox18.TabIndex = 39;
+            this.textBox触发值42.Location = new System.Drawing.Point(206, 14);
+            this.textBox触发值42.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox触发值42.Name = "textBox触发值42";
+            this.textBox触发值42.Size = new System.Drawing.Size(54, 21);
+            this.textBox触发值42.TabIndex = 39;
             // 
-            // comboBox5
+            // textBox配置名4C2
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(6, 20);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(120, 20);
-            this.comboBox5.TabIndex = 76;
-            this.comboBox5.Text = "Grounded";
+            this.textBox配置名4C2.FormattingEnabled = true;
+            this.textBox配置名4C2.Location = new System.Drawing.Point(6, 20);
+            this.textBox配置名4C2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox配置名4C2.Name = "textBox配置名4C2";
+            this.textBox配置名4C2.Size = new System.Drawing.Size(120, 20);
+            this.textBox配置名4C2.TabIndex = 76;
+            this.textBox配置名4C2.TextChanged += new System.EventHandler(this.textBox配置名4C2_TextChanged);
             // 
             // groupBox117
             // 
-            this.groupBox117.Controls.Add(this.comboBox6);
+            this.groupBox117.Controls.Add(this.comboBox配置42);
             this.groupBox117.Location = new System.Drawing.Point(410, 20);
             this.groupBox117.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox117.Name = "groupBox117";
@@ -5512,14 +5511,14 @@
             this.groupBox117.TabStop = false;
             this.groupBox117.Text = "波形队列选择";
             // 
-            // comboBox6
+            // comboBox配置42
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(6, 20);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(153, 20);
-            this.comboBox6.TabIndex = 0;
+            this.comboBox配置42.FormattingEnabled = true;
+            this.comboBox配置42.Location = new System.Drawing.Point(6, 20);
+            this.comboBox配置42.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox配置42.Name = "comboBox配置42";
+            this.comboBox配置42.Size = new System.Drawing.Size(153, 20);
+            this.comboBox配置42.TabIndex = 0;
             // 
             // groupBox118
             // 
@@ -5537,7 +5536,7 @@
             // 
             // groupBox119
             // 
-            this.groupBox119.Controls.Add(this.comboBox7);
+            this.groupBox119.Controls.Add(this.comboBox配置条件32);
             this.groupBox119.Location = new System.Drawing.Point(280, 20);
             this.groupBox119.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox119.Name = "groupBox119";
@@ -5547,10 +5546,10 @@
             this.groupBox119.TabStop = false;
             this.groupBox119.Text = "预设触发条件";
             // 
-            // comboBox7
+            // comboBox配置条件32
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
+            this.comboBox配置条件32.FormattingEnabled = true;
+            this.comboBox配置条件32.Items.AddRange(new object[] {
             "true/1执行",
             "false/0执行 ",
             "大于0.5执行",
@@ -5559,17 +5558,17 @@
             "小于0.25执行",
             "大于0.75执行",
             "小于0.75执行"});
-            this.comboBox7.Location = new System.Drawing.Point(6, 19);
-            this.comboBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(108, 20);
-            this.comboBox7.TabIndex = 0;
-            this.comboBox7.Text = "大于0.25执行";
+            this.comboBox配置条件32.Location = new System.Drawing.Point(6, 19);
+            this.comboBox配置条件32.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox配置条件32.Name = "comboBox配置条件32";
+            this.comboBox配置条件32.Size = new System.Drawing.Size(108, 20);
+            this.comboBox配置条件32.TabIndex = 0;
+            this.comboBox配置条件32.Text = "大于0.25执行";
             // 
             // groupBox120
             // 
-            this.groupBox120.Controls.Add(this.textBox19);
-            this.groupBox120.Controls.Add(this.comboBox8);
+            this.groupBox120.Controls.Add(this.textBox触发值32);
+            this.groupBox120.Controls.Add(this.textBox配置名3C2);
             this.groupBox120.Location = new System.Drawing.Point(6, 19);
             this.groupBox120.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox120.Name = "groupBox120";
@@ -5579,27 +5578,27 @@
             this.groupBox120.TabStop = false;
             this.groupBox120.Text = "指定触发参数名";
             // 
-            // textBox19
+            // textBox触发值32
             // 
-            this.textBox19.Location = new System.Drawing.Point(206, 14);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(54, 21);
-            this.textBox19.TabIndex = 38;
+            this.textBox触发值32.Location = new System.Drawing.Point(206, 14);
+            this.textBox触发值32.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox触发值32.Name = "textBox触发值32";
+            this.textBox触发值32.Size = new System.Drawing.Size(54, 21);
+            this.textBox触发值32.TabIndex = 38;
             // 
-            // comboBox8
+            // textBox配置名3C2
             // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(6, 22);
-            this.comboBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(120, 20);
-            this.comboBox8.TabIndex = 75;
-            this.comboBox8.Text = "Voice";
+            this.textBox配置名3C2.FormattingEnabled = true;
+            this.textBox配置名3C2.Location = new System.Drawing.Point(6, 22);
+            this.textBox配置名3C2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox配置名3C2.Name = "textBox配置名3C2";
+            this.textBox配置名3C2.Size = new System.Drawing.Size(120, 20);
+            this.textBox配置名3C2.TabIndex = 75;
+            this.textBox配置名3C2.TextChanged += new System.EventHandler(this.textBox配置名3C2_TextChanged);
             // 
             // groupBox121
             // 
-            this.groupBox121.Controls.Add(this.comboBox9);
+            this.groupBox121.Controls.Add(this.comboBox配置32);
             this.groupBox121.Location = new System.Drawing.Point(410, 20);
             this.groupBox121.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox121.Name = "groupBox121";
@@ -5609,14 +5608,14 @@
             this.groupBox121.TabStop = false;
             this.groupBox121.Text = "波形队列选择";
             // 
-            // comboBox9
+            // comboBox配置32
             // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(6, 20);
-            this.comboBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(153, 20);
-            this.comboBox9.TabIndex = 0;
+            this.comboBox配置32.FormattingEnabled = true;
+            this.comboBox配置32.Location = new System.Drawing.Point(6, 20);
+            this.comboBox配置32.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox配置32.Name = "comboBox配置32";
+            this.comboBox配置32.Size = new System.Drawing.Size(153, 20);
+            this.comboBox配置32.TabIndex = 0;
             // 
             // groupBox122
             // 
@@ -5634,7 +5633,7 @@
             // 
             // groupBox123
             // 
-            this.groupBox123.Controls.Add(this.comboBox10);
+            this.groupBox123.Controls.Add(this.comboBox配置条件22);
             this.groupBox123.Location = new System.Drawing.Point(280, 20);
             this.groupBox123.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox123.Name = "groupBox123";
@@ -5644,10 +5643,10 @@
             this.groupBox123.TabStop = false;
             this.groupBox123.Text = "预设触发条件";
             // 
-            // comboBox10
+            // comboBox配置条件22
             // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Items.AddRange(new object[] {
+            this.comboBox配置条件22.FormattingEnabled = true;
+            this.comboBox配置条件22.Items.AddRange(new object[] {
             "true/1执行",
             "false/0执行 ",
             "大于0.5执行",
@@ -5656,17 +5655,17 @@
             "小于0.25执行",
             "大于0.75执行",
             "小于0.75执行"});
-            this.comboBox10.Location = new System.Drawing.Point(6, 19);
-            this.comboBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(108, 20);
-            this.comboBox10.TabIndex = 0;
-            this.comboBox10.Text = "true/1执行";
+            this.comboBox配置条件22.Location = new System.Drawing.Point(6, 19);
+            this.comboBox配置条件22.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox配置条件22.Name = "comboBox配置条件22";
+            this.comboBox配置条件22.Size = new System.Drawing.Size(108, 20);
+            this.comboBox配置条件22.TabIndex = 0;
+            this.comboBox配置条件22.Text = "true/1执行";
             // 
             // groupBox124
             // 
-            this.groupBox124.Controls.Add(this.textBox20);
-            this.groupBox124.Controls.Add(this.comboBox11);
+            this.groupBox124.Controls.Add(this.textBox触发值22);
+            this.groupBox124.Controls.Add(this.textBox配置名2C2);
             this.groupBox124.Location = new System.Drawing.Point(6, 19);
             this.groupBox124.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox124.Name = "groupBox124";
@@ -5676,27 +5675,27 @@
             this.groupBox124.TabStop = false;
             this.groupBox124.Text = "指定触发参数名";
             // 
-            // textBox20
+            // textBox触发值22
             // 
-            this.textBox20.Location = new System.Drawing.Point(206, 14);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(54, 21);
-            this.textBox20.TabIndex = 37;
+            this.textBox触发值22.Location = new System.Drawing.Point(206, 14);
+            this.textBox触发值22.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox触发值22.Name = "textBox触发值22";
+            this.textBox触发值22.Size = new System.Drawing.Size(54, 21);
+            this.textBox触发值22.TabIndex = 37;
             // 
-            // comboBox11
+            // textBox配置名2C2
             // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(6, 22);
-            this.comboBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(120, 20);
-            this.comboBox11.TabIndex = 74;
-            this.comboBox11.Text = "Leach_IsGrabbed";
+            this.textBox配置名2C2.FormattingEnabled = true;
+            this.textBox配置名2C2.Location = new System.Drawing.Point(6, 22);
+            this.textBox配置名2C2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox配置名2C2.Name = "textBox配置名2C2";
+            this.textBox配置名2C2.Size = new System.Drawing.Size(120, 20);
+            this.textBox配置名2C2.TabIndex = 74;
+            this.textBox配置名2C2.TextChanged += new System.EventHandler(this.textBox配置名2C2_TextChanged);
             // 
             // groupBox125
             // 
-            this.groupBox125.Controls.Add(this.comboBox12);
+            this.groupBox125.Controls.Add(this.comboBox配置22);
             this.groupBox125.Location = new System.Drawing.Point(410, 20);
             this.groupBox125.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox125.Name = "groupBox125";
@@ -5706,14 +5705,14 @@
             this.groupBox125.TabStop = false;
             this.groupBox125.Text = "波形队列选择";
             // 
-            // comboBox12
+            // comboBox配置22
             // 
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(6, 20);
-            this.comboBox12.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(153, 20);
-            this.comboBox12.TabIndex = 0;
+            this.comboBox配置22.FormattingEnabled = true;
+            this.comboBox配置22.Location = new System.Drawing.Point(6, 20);
+            this.comboBox配置22.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox配置22.Name = "comboBox配置22";
+            this.comboBox配置22.Size = new System.Drawing.Size(153, 20);
+            this.comboBox配置22.TabIndex = 0;
             // 
             // groupBox126
             // 
@@ -5731,7 +5730,7 @@
             // 
             // groupBox127
             // 
-            this.groupBox127.Controls.Add(this.comboBox13);
+            this.groupBox127.Controls.Add(this.comboBox配置条件12);
             this.groupBox127.Location = new System.Drawing.Point(280, 20);
             this.groupBox127.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox127.Name = "groupBox127";
@@ -5741,10 +5740,10 @@
             this.groupBox127.TabStop = false;
             this.groupBox127.Text = "预设触发条件";
             // 
-            // comboBox13
+            // comboBox配置条件12
             // 
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Items.AddRange(new object[] {
+            this.comboBox配置条件12.FormattingEnabled = true;
+            this.comboBox配置条件12.Items.AddRange(new object[] {
             "true/1执行",
             "false/0执行 ",
             "大于0.5执行",
@@ -5753,17 +5752,17 @@
             "小于0.25执行",
             "大于0.75执行",
             "小于0.75执行"});
-            this.comboBox13.Location = new System.Drawing.Point(6, 19);
-            this.comboBox13.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(108, 20);
-            this.comboBox13.TabIndex = 0;
-            this.comboBox13.Text = "大于0.25执行";
+            this.comboBox配置条件12.Location = new System.Drawing.Point(6, 19);
+            this.comboBox配置条件12.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox配置条件12.Name = "comboBox配置条件12";
+            this.comboBox配置条件12.Size = new System.Drawing.Size(108, 20);
+            this.comboBox配置条件12.TabIndex = 0;
+            this.comboBox配置条件12.Text = "大于0.25执行";
             // 
             // groupBox128
             // 
-            this.groupBox128.Controls.Add(this.comboBox14);
-            this.groupBox128.Controls.Add(this.textBox21);
+            this.groupBox128.Controls.Add(this.textBox配置名1C2);
+            this.groupBox128.Controls.Add(this.textBox触发值12);
             this.groupBox128.Location = new System.Drawing.Point(6, 19);
             this.groupBox128.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox128.Name = "groupBox128";
@@ -5773,27 +5772,27 @@
             this.groupBox128.TabStop = false;
             this.groupBox128.Text = "指定触发参数名";
             // 
-            // comboBox14
+            // textBox配置名1C2
             // 
-            this.comboBox14.FormattingEnabled = true;
-            this.comboBox14.Location = new System.Drawing.Point(6, 20);
-            this.comboBox14.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox14.Name = "comboBox14";
-            this.comboBox14.Size = new System.Drawing.Size(120, 20);
-            this.comboBox14.TabIndex = 73;
-            this.comboBox14.Text = "CTR_Angle";
+            this.textBox配置名1C2.FormattingEnabled = true;
+            this.textBox配置名1C2.Location = new System.Drawing.Point(6, 20);
+            this.textBox配置名1C2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox配置名1C2.Name = "textBox配置名1C2";
+            this.textBox配置名1C2.Size = new System.Drawing.Size(120, 20);
+            this.textBox配置名1C2.TabIndex = 73;
+            this.textBox配置名1C2.TextChanged += new System.EventHandler(this.textBox配置名1C2_TextChanged);
             // 
-            // textBox21
+            // textBox触发值12
             // 
-            this.textBox21.Location = new System.Drawing.Point(206, 14);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(54, 21);
-            this.textBox21.TabIndex = 36;
+            this.textBox触发值12.Location = new System.Drawing.Point(206, 14);
+            this.textBox触发值12.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox触发值12.Name = "textBox触发值12";
+            this.textBox触发值12.Size = new System.Drawing.Size(54, 21);
+            this.textBox触发值12.TabIndex = 36;
             // 
             // groupBox129
             // 
-            this.groupBox129.Controls.Add(this.comboBox15);
+            this.groupBox129.Controls.Add(this.comboBox配置12);
             this.groupBox129.Location = new System.Drawing.Point(410, 20);
             this.groupBox129.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox129.Name = "groupBox129";
@@ -5803,14 +5802,14 @@
             this.groupBox129.TabStop = false;
             this.groupBox129.Text = "波形队列选择";
             // 
-            // comboBox15
+            // comboBox配置12
             // 
-            this.comboBox15.FormattingEnabled = true;
-            this.comboBox15.Location = new System.Drawing.Point(6, 20);
-            this.comboBox15.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox15.Name = "comboBox15";
-            this.comboBox15.Size = new System.Drawing.Size(153, 20);
-            this.comboBox15.TabIndex = 0;
+            this.comboBox配置12.FormattingEnabled = true;
+            this.comboBox配置12.Location = new System.Drawing.Point(6, 20);
+            this.comboBox配置12.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox配置12.Name = "comboBox配置12";
+            this.comboBox配置12.Size = new System.Drawing.Size(153, 20);
+            this.comboBox配置12.TabIndex = 0;
             // 
             // timer新定义波形输出控制
             // 
@@ -5819,6 +5818,15 @@
             // timer新定义写入蓝牙
             // 
             this.timer新定义写入蓝牙.Tick += new System.EventHandler(this.timer新定义写入蓝牙_Tick);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(355, 303);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(47, 12);
+            this.label53.TabIndex = 77;
+            this.label53.Text = "label53";
             // 
             // VRChatXDGLAB
             // 
@@ -5848,6 +5856,7 @@
             this.Debug蓝牙链接.ResumeLayout(false);
             this.Debug蓝牙链接.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.groupBox97.ResumeLayout(false);
             this.groupBox98.ResumeLayout(false);
             this.groupBox98.PerformLayout();
@@ -6056,16 +6065,16 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox77.ResumeLayout(false);
-            this.groupBox78.ResumeLayout(false);
-            this.groupBox78.PerformLayout();
-            this.groupBox79.ResumeLayout(false);
-            this.groupBox79.PerformLayout();
-            this.groupBox80.ResumeLayout(false);
-            this.groupBox80.PerformLayout();
-            this.groupBox81.ResumeLayout(false);
-            this.groupBox81.PerformLayout();
-            this.groupBox106.ResumeLayout(false);
-            this.groupBox106.PerformLayout();
+            this.groupBox配12.ResumeLayout(false);
+            this.groupBox配12.PerformLayout();
+            this.groupBox配22.ResumeLayout(false);
+            this.groupBox配22.PerformLayout();
+            this.groupBox配52.ResumeLayout(false);
+            this.groupBox配52.PerformLayout();
+            this.groupBox配32.ResumeLayout(false);
+            this.groupBox配32.PerformLayout();
+            this.groupBox配42.ResumeLayout(false);
+            this.groupBox配42.PerformLayout();
             this.groupBox107.ResumeLayout(false);
             this.groupBox108.ResumeLayout(false);
             this.groupBox109.ResumeLayout(false);
@@ -6489,57 +6498,58 @@
         private System.Windows.Forms.GroupBox groupBox107;
         private System.Windows.Forms.GroupBox groupBox108;
         private System.Windows.Forms.GroupBox groupBox109;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox配置条件52;
         private System.Windows.Forms.GroupBox groupBox110;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.ComboBox textBox配置名5C2;
+        private System.Windows.Forms.TextBox textBox触发值52;
         private System.Windows.Forms.GroupBox groupBox113;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox配置52;
         private System.Windows.Forms.GroupBox groupBox114;
         private System.Windows.Forms.GroupBox groupBox115;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox配置条件42;
         private System.Windows.Forms.GroupBox groupBox116;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.TextBox textBox触发值42;
+        private System.Windows.Forms.ComboBox textBox配置名4C2;
         private System.Windows.Forms.GroupBox groupBox117;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox comboBox配置42;
         private System.Windows.Forms.GroupBox groupBox118;
         private System.Windows.Forms.GroupBox groupBox119;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox comboBox配置条件32;
         private System.Windows.Forms.GroupBox groupBox120;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.TextBox textBox触发值32;
+        private System.Windows.Forms.ComboBox textBox配置名3C2;
         private System.Windows.Forms.GroupBox groupBox121;
-        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox comboBox配置32;
         private System.Windows.Forms.GroupBox groupBox122;
         private System.Windows.Forms.GroupBox groupBox123;
-        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.ComboBox comboBox配置条件22;
         private System.Windows.Forms.GroupBox groupBox124;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.ComboBox comboBox11;
+        private System.Windows.Forms.TextBox textBox触发值22;
+        private System.Windows.Forms.ComboBox textBox配置名2C2;
         private System.Windows.Forms.GroupBox groupBox125;
-        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.ComboBox comboBox配置22;
         private System.Windows.Forms.GroupBox groupBox126;
         private System.Windows.Forms.GroupBox groupBox127;
-        private System.Windows.Forms.ComboBox comboBox13;
+        private System.Windows.Forms.ComboBox comboBox配置条件12;
         private System.Windows.Forms.GroupBox groupBox128;
-        private System.Windows.Forms.ComboBox comboBox14;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.ComboBox textBox配置名1C2;
+        private System.Windows.Forms.TextBox textBox触发值12;
         private System.Windows.Forms.GroupBox groupBox129;
-        private System.Windows.Forms.ComboBox comboBox15;
+        private System.Windows.Forms.ComboBox comboBox配置12;
         private System.Windows.Forms.GroupBox groupBox77;
-        private System.Windows.Forms.GroupBox groupBox78;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.GroupBox groupBox79;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.GroupBox groupBox80;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.GroupBox groupBox81;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.GroupBox groupBox106;
-        private System.Windows.Forms.CheckBox checkBox11;
+        private System.Windows.Forms.GroupBox groupBox配12;
+        private System.Windows.Forms.CheckBox checkBox配12;
+        private System.Windows.Forms.GroupBox groupBox配22;
+        private System.Windows.Forms.CheckBox checkBox配22;
+        private System.Windows.Forms.GroupBox groupBox配52;
+        private System.Windows.Forms.CheckBox checkBox配52;
+        private System.Windows.Forms.GroupBox groupBox配32;
+        private System.Windows.Forms.CheckBox checkBox配32;
+        private System.Windows.Forms.GroupBox groupBox配42;
+        private System.Windows.Forms.CheckBox checkBox配42;
         private System.Windows.Forms.Timer timer新定义波形输出控制;
         private System.Windows.Forms.Timer timer新定义写入蓝牙;
+        private System.Windows.Forms.Label label53;
     }
 }
 
