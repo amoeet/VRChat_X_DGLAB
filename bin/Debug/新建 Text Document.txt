@@ -1,0 +1,196 @@
+************ 异常文本 **************
+System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.ParseSingle(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Single.Parse(String s)
+   在 VRChatX郊狼.VRChatXDGLAB.timer新定义波形输出控制_Tick(Object sender, EventArgs e) 位置 D:\VS\AmoeetAllPrograms\AAP\郊狼蓝牙测试\VRChatXDGLAB.cs:行号 4455
+   在 System.Windows.Forms.Timer.OnTick(EventArgs e)
+   在 System.Windows.Forms.Timer.TimerNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+************** 已加载的程序集 **************
+mscorlib
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9181.0 built by: NET481REL1LAST_C
+    基本代码:file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/mscorlib.dll
+----------------------------------------
+VRChatX郊狼
+    程序集版本:1.0.0.0
+    Win32 版本:1.0.0.0
+    基本代码:file:///F:/xunleixiazai/Debug/VRChatX%E9%83%8A%E7%8B%BC.exe
+----------------------------------------
+System.Windows.Forms
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9181.0 built by: NET481REL1LAST_C
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Windows.Forms/v4.0_4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+----------------------------------------
+System
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9214.0 built by: NET481REL1LAST_B
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+System.Drawing
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9032.0 built by: NET481REL1
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Drawing/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll
+----------------------------------------
+Windows.Devices
+    程序集版本:255.255.255.255
+    Win32 版本:10.0.10011.16384
+    基本代码:file:///C:/WINDOWS/SysNative/WinMetadata/Windows.Devices.winmd
+----------------------------------------
+Windows.Foundation
+    程序集版本:255.255.255.255
+    Win32 版本:10.0.10011.16384
+    基本代码:file:///C:/WINDOWS/SysNative/WinMetadata/Windows.Foundation.winmd
+----------------------------------------
+System.Runtime
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9032.0
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Runtime/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Runtime.dll
+----------------------------------------
+System.Runtime.InteropServices.WindowsRuntime
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9032.0
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Runtime.InteropServices.WindowsRuntime/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Runtime.InteropServices.WindowsRuntime.dll
+----------------------------------------
+System.Configuration
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9032.0 built by: NET481REL1
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Configuration/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Configuration.dll
+----------------------------------------
+System.Core
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9214.0 built by: NET481REL1LAST_B
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Core/v4.0_4.0.0.0__b77a5c561934e089/System.Core.dll
+----------------------------------------
+System.Xml
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9032.0 built by: NET481REL1
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Xml/v4.0_4.0.0.0__b77a5c561934e089/System.Xml.dll
+----------------------------------------
+Accessibility
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9032.0 built by: NET481REL1
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/Accessibility/v4.0_4.0.0.0__b03f5f7f11d50a3a/Accessibility.dll
+----------------------------------------
+ImageListView
+    程序集版本:13.8.2.0
+    Win32 版本:13.8.2.0
+    基本代码:file:///F:/xunleixiazai/Debug/ImageListView.DLL
+----------------------------------------
+NAudio.Wasapi
+    程序集版本:2.2.1.0
+    Win32 版本:2.2.1.0
+    基本代码:file:///F:/xunleixiazai/Debug/NAudio.Wasapi.DLL
+----------------------------------------
+netstandard
+    程序集版本:2.0.0.0
+    Win32 版本:4.8.9032.0
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/netstandard/v4.0_2.0.0.0__cc7b13ffcd2ddd51/netstandard.dll
+----------------------------------------
+NAudio.Core
+    程序集版本:2.2.1.0
+    Win32 版本:2.2.1.0
+    基本代码:file:///F:/xunleixiazai/Debug/NAudio.Core.DLL
+----------------------------------------
+LibAudioVisualizerNetFW48
+    程序集版本:1.0.0.0
+    Win32 版本:1.0.0.0
+    基本代码:file:///F:/xunleixiazai/Debug/LibAudioVisualizerNetFW48.DLL
+----------------------------------------
+LibDynamicsNetFW48
+    程序集版本:1.0.0.0
+    Win32 版本:1.0.0.0
+    基本代码:file:///F:/xunleixiazai/Debug/LibDynamicsNetFW48.DLL
+----------------------------------------
+FFmpeg
+    程序集版本:1.0.0.0
+    Win32 版本:1.0.0.0
+    基本代码:file:///F:/xunleixiazai/Debug/FFmpeg.DLL
+----------------------------------------
+FftSharp
+    程序集版本:2.1.0.0
+    Win32 版本:2.1.0.0
+    基本代码:file:///F:/xunleixiazai/Debug/FftSharp.DLL
+----------------------------------------
+System.Memory
+    程序集版本:4.0.1.2
+    Win32 版本:4.6.31308.01
+    基本代码:file:///F:/xunleixiazai/Debug/System.Memory.DLL
+----------------------------------------
+System.Runtime.CompilerServices.Unsafe
+    程序集版本:4.0.4.1
+    Win32 版本:4.6.28619.01
+    基本代码:file:///F:/xunleixiazai/Debug/System.Runtime.CompilerServices.Unsafe.DLL
+----------------------------------------
+Windows.Storage
+    程序集版本:255.255.255.255有关调用实时(JIT)调试而不是此对话框的详细信息，
+请参见此消息的结尾。
+
+************** 异常文本 **************
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 VRChatX郊狼.VRChatXDGLAB.write(Byte[] data) 位置 D:\VS\AmoeetAllPrograms\AAP\郊狼蓝牙测试\VRChatXDGLAB.cs:行号 870
+   在 VRChatX郊狼.VRChatXDGLAB.timer新定义波形输出控制_Tick(Object sender, EventArgs e) 位置 D:\VS\AmoeetAllPrograms\AAP\郊狼蓝牙测试\VRChatXDGLAB.cs:行号 4456
+   在 System.Windows.Forms.Timer.OnTick(EventArgs e)
+   在 System.Windows.Forms.Timer.TimerNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+************** 已加载的程序集 **************
+mscorlib
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9181.0 built by: NET481REL1LAST_C
+    基本代码:file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/mscorlib.dll
+----------------------------------------
+VRChatX郊狼
+    程序集版本:1.0.0.0
+    Win32 版本:1.0.0.0
+    基本代码:file:///F:/xunleixiazai/Debug/VRChatX%E9%83%8A%E7%8B%BC.exe
+----------------------------------------
+System.Windows.Forms
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9181.0 built by: NET481REL1LAST_C
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Windows.Forms/v4.0_4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+----------------------------------------
+System
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9214.0 built by: NET481REL1LAST_B
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+System.Drawing
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9032.0 built by: NET481REL1
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Drawing/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll
+----------------------------------------
+Windows.Devices
+    程序集版本:255.255.255.255
+    Win32 版本:10.0.10011.16384
+    基本代码:file:///C:/WINDOWS/SysNative/WinMetadata/Windows.Devices.winmd
+----------------------------------------
+Windows.Foundation
+    程序集版本:255.255.255.255
+    Win32 版本:10.0.10011.16384
+    基本代码:file:///C:/WINDOWS/SysNative/WinMetadata/Windows.Foundation.winmd
+----------------------------------------
+System.Runtime
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9032.0
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Runtime/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Runtime.dll
+----------------------------------------
+System.Runtime.InteropServices.WindowsRuntime
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9032.0
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Runtime.InteropServices.WindowsRuntime/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Runtime.InteropServices.WindowsRuntime.dll
+----------------------------------------
+System.Configuration
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9032.0 built by: NET481REL1
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Configuration/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Configuration.dll
+----------------------------------------
+System.Core
+    程序集版本:4.0.0.0
+    Win32 版本:4.8.9214.0 built by: NET481REL1LAST_B
+    基本代码:file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Core/v4.0_4.0.0.0__b77a5c561934e089/System.Core.dll
+----------------------------------------
+System.Xml

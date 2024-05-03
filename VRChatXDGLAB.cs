@@ -1866,6 +1866,40 @@ namespace VRChatX郊狼
                     {
                         return false;
                     }
+                case "大于0.001执行":
+                    cc = 0.0f;
+                    if (float.TryParse(触发值.Text.Trim(), out cc))
+                    {
+                        if (触发值.Text.Trim() != "" && float.Parse(触发值.Text.Trim()) > 0.001)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case "小于0.999执行":
+                    cc = 0.0f;
+                    if (float.TryParse(触发值.Text.Trim(), out cc))
+                    {
+                        if (触发值.Text.Trim() != "" && float.Parse(触发值.Text.Trim()) < 0.999)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 case "大于0.75执行":
                     cc = 0.0f;
                     if (float.TryParse(触发值.Text.Trim(), out cc))
